@@ -90,9 +90,7 @@ export default function Home() {
           </p>
           <div className="diagnostic-list">
             <span>Photo screening</span>
-            <strong>50 €</strong>
             <span>On-site diagnostics</span>
-            <strong>from 250 € + travel</strong>
           </div>
           <p className="note">
             The objective is a reasoned diagnosis and a clear next step — not a catalogue of products.
