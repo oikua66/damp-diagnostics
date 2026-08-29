@@ -1,0 +1,42 @@
+.about-photo-placeholder {
+  min-height: 620px;
+  background-image: url("data:image/webp;base64,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");
+  background-size: cover;
+  background-position: center;
+  border: 1px solid var(--line);
+}
+.about-photo-placeholder span { display: none; }
+
+.damp {
+  background-image:
+    linear-gradient(90deg, rgba(23,23,23,1) 0%, rgba(23,23,23,.96) 48%, rgba(23,23,23,.58) 72%, rgba(23,23,23,.25) 100%),
+    url("https://www.bausachverstaendigerkrefeld.de/assets/feuchtigkeitsanalyse-krefeld-B4CExepb.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.solution-example {
+  background-image:
+    linear-gradient(90deg, rgba(235,230,220,.98) 0%, rgba(235,230,220,.95) 48%, rgba(235,230,220,.35) 72%, rgba(235,230,220,.08) 100%),
+    url("https://www.fresh-r.com/assets/files/fresh-r-beeld2.1280x0.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right center;
+}
+
+.online-analysis {
+  background-image:
+    linear-gradient(90deg, rgba(220,233,227,.98) 0%, rgba(220,233,227,.96) 54%, rgba(220,233,227,.30) 78%),
+    url("https://crawleysurveyor.co.uk/images/surveyor-defect-documentation.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right center;
+}
+
+@media (max-width: 900px) {
+  .about-photo-placeholder { min-height: 460px; }
+  .damp, .solution-example, .online-analysis {
+    background-image: none;
+  }
+}
