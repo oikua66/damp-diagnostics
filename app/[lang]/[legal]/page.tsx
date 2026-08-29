@@ -134,8 +134,8 @@ export default async function LegalPage({ params }: Props) {
         {doc.updated && <p className="legal-updated">{doc.updated}</p>}
         <div className="legal-content">
           {doc.sections.map(([heading, paragraphs]) => (
-            <section key={heading}>
-              <h3>{heading}</h3>
+            <section key={String(heading)}>
+              <h3>{String(heading)}</h3>
               {(paragraphs as string[]).map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
             </section>
           ))}
