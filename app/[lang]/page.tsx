@@ -3,6 +3,25 @@ import { copy, languageNames, languages, type Lang } from '../../lib/translation
 
 type Props = { params: Promise<{ lang: string }> };
 
+const contactCopy: Record<Lang, { title: string; text: string }> = {
+  en: {
+    title: 'Let’s discuss the task.',
+    text: 'Send a short description of the project, decision or problem you would like to discuss.',
+  },
+  ru: {
+    title: 'Давайте обсудим задачу.',
+    text: 'Пришлите короткое описание проекта, решения или проблемы, которую вы хотите обсудить.',
+  },
+  uk: {
+    title: 'Давайте обговоримо задачу.',
+    text: 'Надішліть короткий опис проєкту, рішення або проблеми, яку ви хочете обговорити.',
+  },
+  sr: {
+    title: 'Hajde da razgovaramo o zadatku.',
+    text: 'Pošaljite kratak opis projekta, odluke ili problema o kojem želite da razgovaramo.',
+  },
+};
+
 export function generateStaticParams() {
   return languages.map((lang) => ({ lang }));
 }
@@ -12,6 +31,7 @@ export default async function LocalizedHome({ params }: Props) {
   if (!languages.includes(rawLang as Lang)) notFound();
   const lang = rawLang as Lang;
   const t = copy[lang];
+  const contact = contactCopy[lang];
 
   return (
     <main>
@@ -24,7 +44,7 @@ export default async function LocalizedHome({ params }: Props) {
           <nav>
             <a href={`/${lang}#services`}>{t.nav.services}</a>
             <a href={`/${lang}#approach`}>{t.nav.approach}</a>
-            <a href={`/${lang}#damp`}>{t.nav.damp}</a>
+            <a href={`/${lang}/damp-diagnostics`}>{t.nav.damp}</a>
             <a href={`/${lang}#contact`}>{t.nav.contact}</a>
           </nav>
           <div className="language-switcher" aria-label="Language selector">
@@ -43,7 +63,6 @@ export default async function LocalizedHome({ params }: Props) {
         <p className="lead">{t.lead}</p>
         <div className="hero-actions">
           <a className="button button-dark" href="#contact">{t.discuss}</a>
-          <a className="button button-light" href="#damp">{t.dampButton}</a>
         </div>
       </section>
 
@@ -74,27 +93,10 @@ export default async function LocalizedHome({ params }: Props) {
         </div>
       </section>
 
-      <section className="section damp" id="damp">
-        <div className="damp-copy">
-          <p className="eyebrow">{t.dampEyebrow}</p>
-          <h2>{t.dampTitle}</h2>
-          <p className="lead-small">{t.dampLead}</p>
-          <div className="diagnostic-list">
-            <span>{t.photo}</span>
-            <span>{t.onsite}</span>
-          </div>
-          <p className="note">{t.dampNote}</p>
-        </div>
-        <div className="damp-panel">
-          <h3>{t.lookFor}</h3>
-          <ul>{t.issues.map((issue: string) => <li key={issue}>{issue}</li>)}</ul>
-        </div>
-      </section>
-
       <section className="section contact" id="contact">
         <p className="eyebrow">{t.contact}</p>
-        <h2>{t.contactTitle}</h2>
-        <p>{t.contactText}</p>
+        <h2>{contact.title}</h2>
+        <p>{contact.text}</p>
         <a className="button button-dark" href="mailto:consulting@koretskiy.com">consulting@koretskiy.com</a>
       </section>
 
