@@ -1,5 +1,6 @@
 import './globals.css';
 import type { Metadata } from 'next';
+import ContactDetails from './components/ContactDetails';
 
 export const metadata: Metadata = {
   title: 'Koretskiy Consulting',
@@ -9,7 +10,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        <ContactDetails />
+      </body>
     </html>
   );
 }
