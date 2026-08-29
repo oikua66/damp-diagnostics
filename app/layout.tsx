@@ -1,6 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import ContactDetails from './components/ContactDetails';
+import LegalFooter from './components/LegalFooter';
 
 export const metadata: Metadata = {
   title: 'Koretskiy Consulting',
@@ -13,6 +14,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body>
         {children}
         <ContactDetails />
+        <LegalFooter />
       </body>
     </html>
   );
