@@ -1,6 +1,6 @@
 .about-photo-placeholder {
   min-height: 620px;
-  background-image: url('/assets/about');
+  background-image: url('/images/about.svg');
   background-size: cover;
   background-position: center;
   border: 1px solid var(--line);
