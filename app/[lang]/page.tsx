@@ -187,6 +187,7 @@ export default async function LocalizedHome({ params }: Props) {
   const lang = rawLang as Lang;
   const t = copy[lang];
   const e = extra[lang];
+  const aboutLabel: Record<Lang, string> = { en: 'About', ru: 'Обо мне', uk: 'Про мене', sr: 'O meni' };
 
   return (
     <main>
@@ -197,6 +198,7 @@ export default async function LocalizedHome({ params }: Props) {
         </a>
         <div className="header-right">
           <nav>
+            <a href={`/${lang}/about`}>{aboutLabel[lang]}</a>
             <a href={`/${lang}#services`}>{t.nav.services}</a>
             <a href={`/${lang}#approach`}>{t.nav.approach}</a>
             <a href={`/${lang}/damp-diagnostics`}>{t.nav.damp}</a>
