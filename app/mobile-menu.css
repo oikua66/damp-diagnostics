@@ -71,9 +71,16 @@
   .mobile-menu-button {
     display: inline-flex;
     position: fixed;
-    top: 14px;
+    top: 70px;
     right: 14px;
     z-index: 1200;
     background: var(--bg);
+  }
+}
+
+@media (max-width: 520px) {
+  .mobile-menu-button {
+    top: 66px;
+    right: 5vw;
   }
 }
