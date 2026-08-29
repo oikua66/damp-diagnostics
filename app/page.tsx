@@ -1,19 +1,11 @@
 const services = [
-  {
-    title: 'Damp diagnostics',
-    text: 'Identify the real cause of moisture, mould and cold-wall problems before choosing a remedy.',
-    href: '#damp',
-  },
-  {
-    title: 'Independent second opinion',
-    text: 'A structured review of a project, contractor proposal or technical decision before you commit.',
-    href: '#approach',
-  },
-  {
-    title: 'Technical consulting',
-    text: 'From problem definition and requirements to contractor briefs, comparisons and decision support.',
-    href: '#contact',
-  },
+  'Engineering consulting',
+  'Technical due diligence',
+  'Independent project review',
+  'Energy systems',
+  'Industrial facilities',
+  'Process optimisation',
+  'Business and technical audits',
 ];
 
 export default function Home() {
@@ -25,75 +17,110 @@ export default function Home() {
           <span>Koretskiy Consulting</span>
         </a>
         <nav>
+          <a href="#philosophy">Philosophy</a>
           <a href="#services">Services</a>
-          <a href="#approach">Approach</a>
           <a href="#damp">Damp diagnostics</a>
           <a href="#contact">Contact</a>
         </nav>
       </header>
 
       <section className="hero" id="top">
-        <p className="eyebrow">Independent consulting · Serbia / Europe</p>
+        <p className="eyebrow">Independent engineering consulting</p>
         <h1>Finding the essential.</h1>
-        <p className="lead">
-          Complex technical and business problems rarely need more noise. They need the right question,
-          a clear diagnosis and a decision that still makes sense after the contractors arrive.
+        <p className="lead">Because true engineering elegance lies in simplicity.</p>
+        <p className="lead-small">
+          Independent engineering consulting for complex technical and business decisions.
         </p>
         <div className="hero-actions">
-          <a className="button button-dark" href="#contact">Discuss a problem</a>
+          <a className="button button-dark" href="#contact">Let&apos;s talk</a>
           <a className="button button-light" href="#damp">Damp diagnostics</a>
+        </div>
+      </section>
+
+      <section className="section split" id="philosophy">
+        <div>
+          <p className="eyebrow">Our philosophy</p>
+          <h2>Finding the essential. Eliminating the unnecessary.</h2>
+        </div>
+        <div className="prose">
+          <p>
+            Modern businesses are surrounded by an endless stream of technologies, methodologies,
+            software platforms and management frameworks. Too often, the proposed solution becomes
+            more complicated than the problem it is supposed to solve.
+          </p>
+          <p>
+            We believe consulting should do the opposite: understand the real problem and identify the
+            simplest solution that delivers the desired result.
+          </p>
+          <p>
+            We do not recommend technologies because they are fashionable. We do not make projects more
+            complicated to demonstrate expertise. Every recommendation should have a clear purpose,
+            create measurable value and remain no more complex than necessary.
+          </p>
+          <p>
+            We do not begin with equipment specifications, software platforms or vendors. We begin with
+            questions: Why does this system exist? What problem is it actually solving? What outcome is
+            the client trying to achieve? What can be removed without reducing that outcome?
+          </p>
+          <p>
+            Sometimes the right answer is a new project. Sometimes it is improving an existing one.
+            Sometimes it is deciding not to build, buy or implement anything at all. We see that as success.
+          </p>
         </div>
       </section>
 
       <section className="section" id="services">
         <div className="section-heading">
-          <p className="eyebrow">What I do</p>
-          <h2>Start with the problem, not the product.</h2>
+          <p className="eyebrow">What we can help you with</p>
+          <h2>Independent support before the decision becomes expensive.</h2>
         </div>
         <div className="cards">
-          {services.map((service) => (
-            <a className="card" href={service.href} key={service.title}>
-              <span className="card-number">0{services.indexOf(service) + 1}</span>
-              <h3>{service.title}</h3>
-              <p>{service.text}</p>
-            </a>
+          {services.map((service, index) => (
+            <div className="card" key={service}>
+              <span className="card-number">{String(index + 1).padStart(2, '0')}</span>
+              <h3>{service}</h3>
+            </div>
           ))}
         </div>
       </section>
 
-      <section className="section split" id="approach">
+      <section className="section split" id="ai">
         <div>
-          <p className="eyebrow">Method</p>
-          <h2>First define what has to be true.</h2>
+          <p className="eyebrow">Technology</p>
+          <h2>AI is a tool, not the goal.</h2>
         </div>
         <div className="prose">
           <p>
-            My role is not to sell a predetermined solution. I help establish the real objective,
-            separate symptoms from causes, inventory available resources and constraints, and turn the
-            result into a practical brief for the people who will execute it.
+            Artificial intelligence helps us analyse large volumes of information, compare alternatives,
+            prepare and review documentation, translate technical materials, automate repetitive work and
+            accelerate research.
           </p>
           <p>
-            That can mean a second opinion before a major purchase, a technical specification before a
-            design commission, or a diagnostic process before anyone starts opening walls.
+            Used correctly, AI improves speed and efficiency. Used blindly, it simply produces more noise.
+            It does not replace engineering judgement, define the problem, challenge assumptions or accept
+            responsibility for decisions. Those responsibilities remain with people.
           </p>
         </div>
       </section>
 
       <section className="section damp" id="damp">
         <div className="damp-copy">
-          <p className="eyebrow">New service</p>
+          <p className="eyebrow">Specialised service</p>
           <h2>Damp diagnostics</h2>
           <p className="lead-small">
-            A wet wall, mould or condensation does not automatically mean “waterproofing problem”.
-            The cause may be thermal bridging, ventilation, rain penetration, plumbing leakage,
-            rising damp or several factors at once.
+            A wet wall, mould or condensation does not automatically mean a waterproofing problem.
+            The cause may be thermal bridging, insufficient ventilation, rain penetration, plumbing leakage,
+            rising damp or several factors acting together.
           </p>
           <div className="diagnostic-list">
             <span>Photo screening</span>
             <span>On-site diagnostics</span>
+            <span>Cause analysis</span>
+            <span>Recommended next steps</span>
           </div>
           <p className="note">
-            The objective is a reasoned diagnosis and a clear next step — not a catalogue of products.
+            The objective is to determine the probable cause first and only then decide what intervention,
+            if any, is justified.
           </p>
         </div>
         <div className="damp-panel">
@@ -104,23 +131,23 @@ export default function Home() {
             <li>Rain or façade penetration</li>
             <li>Rising or lateral moisture</li>
             <li>Hidden plumbing leakage</li>
-            <li>Previous repairs that treated the symptom only</li>
+            <li>Repairs that addressed the symptom rather than the cause</li>
           </ul>
         </div>
       </section>
 
       <section className="section contact" id="contact">
-        <p className="eyebrow">Contact</p>
-        <h2>Before buying a solution, define the problem.</h2>
+        <p className="eyebrow">Let&apos;s talk</p>
+        <h2>Start with the problem, not the product.</h2>
         <p>
-          Send a short description of the situation, what has already been tried, and photos if relevant.
+          Send a short description of the situation, what has already been tried and any relevant photos or documents.
         </p>
         <a className="button button-dark" href="mailto:consulting@koretskiy.com">consulting@koretskiy.com</a>
       </section>
 
       <footer>
         <span>© 2026 Koretskiy Consulting</span>
-        <span>Independent technical consulting</span>
+        <span>Independent engineering consulting</span>
       </footer>
     </main>
   );
