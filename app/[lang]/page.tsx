@@ -22,6 +22,37 @@ const contactCopy: Record<Lang, { title: string; text: string }> = {
   },
 };
 
+const solutionCopy: Record<Lang, { eyebrow: string; title: string; text: string; current: string; action: string }> = {
+  en: {
+    eyebrow: 'Problem-specific solutions',
+    title: 'A growing library of practical problems.',
+    text: 'Alongside general consulting, I am adding dedicated pages for specific practical problems — especially where the cause must be understood before a solution is chosen. New topics will be added over time.',
+    current: 'First topic: damp diagnostics',
+    action: 'Open damp diagnostics',
+  },
+  ru: {
+    eyebrow: 'Решения по конкретным задачам',
+    title: 'Библиотека практических проблем будет расширяться.',
+    text: 'Помимо общего консалтинга, я постепенно добавляю отдельные страницы по конкретным практическим проблемам — особенно там, где важно сначала разобраться в причине, а уже потом выбирать решение. Новые темы будут добавляться постепенно.',
+    current: 'Первая тема: диагностика сырости',
+    action: 'Открыть диагностику сырости',
+  },
+  uk: {
+    eyebrow: 'Рішення для конкретних задач',
+    title: 'Бібліотека практичних проблем буде розширюватися.',
+    text: 'Окрім загального консалтингу, я поступово додаю окремі сторінки для конкретних практичних проблем — особливо там, де спочатку потрібно зрозуміти причину, а вже потім обирати рішення. Нові теми додаватимуться поступово.',
+    current: 'Перша тема: діагностика вологи',
+    action: 'Відкрити діагностику вологи',
+  },
+  sr: {
+    eyebrow: 'Rešenja za konkretne probleme',
+    title: 'Biblioteka praktičnih problema će se širiti.',
+    text: 'Pored opšteg konsaltinga, postepeno dodajem posebne stranice za konkretne praktične probleme — naročito tamo gde je prvo potrebno razumeti uzrok, a tek zatim birati rešenje. Nove teme će se dodavati vremenom.',
+    current: 'Prva tema: dijagnostika vlage',
+    action: 'Otvori dijagnostiku vlage',
+  },
+};
+
 export function generateStaticParams() {
   return languages.map((lang) => ({ lang }));
 }
@@ -32,6 +63,7 @@ export default async function LocalizedHome({ params }: Props) {
   const lang = rawLang as Lang;
   const t = copy[lang];
   const contact = contactCopy[lang];
+  const solutions = solutionCopy[lang];
 
   return (
     <main>
@@ -79,6 +111,18 @@ export default async function LocalizedHome({ params }: Props) {
               <p>{service[1]}</p>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="section split" id="solutions">
+        <div>
+          <p className="eyebrow">{solutions.eyebrow}</p>
+          <h2>{solutions.title}</h2>
+        </div>
+        <div className="prose">
+          <p>{solutions.text}</p>
+          <p><strong>{solutions.current}</strong></p>
+          <a className="button button-light" href={`/${lang}/damp-diagnostics`}>{solutions.action}</a>
         </div>
       </section>
 
