@@ -1,4 +1,5 @@
 import './globals.css';
+import './visuals.css';
 import type { Metadata } from 'next';
 import ContactDetails from './components/ContactDetails';
 import LegalFooter from './components/LegalFooter';
