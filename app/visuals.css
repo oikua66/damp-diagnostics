@@ -11,7 +11,7 @@
 .damp {
   background-image:
     linear-gradient(90deg, rgba(23,23,23,1) 0%, rgba(23,23,23,.96) 44%, rgba(23,23,23,.68) 64%, rgba(23,23,23,.28) 100%),
-    url("https://www.bausachverstaendigerkrefeld.de/assets/feuchtigkeitsanalyse-krefeld-B4CExepb.webp");
+    url('/images/damp-hero.svg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center right;
@@ -32,39 +32,33 @@ main > section:nth-of-type(3) .card::before {
   background-position: center;
   border-bottom: 1px solid var(--line);
 }
-main > section:nth-of-type(3) .card:nth-child(1)::before {
-  background-image: url("https://safetyculture.com/library/_next/image?q=75&url=https%3A%2F%2Fmedia-signed-url-download.au.safetyculture.com%2Fcontent-library%2Foriginals%2Fc%2Fc%2F1%2Fe%2Fcc1eca68-2b62-45b5-84f4-72ab1e9bfade&w=3840");
-}
-main > section:nth-of-type(3) .card:nth-child(2)::before {
-  background-image: url("https://www.proidea.ro/aplicatii-produse-5/testo-diagnosticare-profesionala-mucegai-cladiri-15547/a_43_d_2_1541168870369_testo_diagnosticare_mucegai_solutia.jpg");
-}
-main > section:nth-of-type(3) .card:nth-child(3)::before {
-  background-image: url("https://www.dekelderspecialistgorredijk.nl/storage/2/01KRN3A87D9DS3M7YQECTR1MPC.png");
-}
+main > section:nth-of-type(3) .card:nth-child(1)::before { background-image: url('/images/mould.svg'); }
+main > section:nth-of-type(3) .card:nth-child(2)::before { background-image: url('/images/condensation.svg'); }
+main > section:nth-of-type(3) .card:nth-child(3)::before { background-image: url('/images/basement.svg'); }
 main > section:nth-of-type(3) .card + .card::before {
   width: calc(100% + 56px);
   margin-left: -28px;
 }
 
-/* Ventilation example: make the image intentionally visible */
+/* Ventilation example */
 .solution-example {
   min-height: 650px;
   align-items: center;
   background-image:
     linear-gradient(90deg, rgba(235,230,220,.99) 0%, rgba(235,230,220,.96) 39%, rgba(235,230,220,.70) 51%, rgba(235,230,220,.08) 70%),
-    url("https://www.fresh-r.com/assets/files/fresh-r-beeld2.1280x0.jpg");
+    url('/images/ventilation.svg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: right center;
 }
 .solution-example > div { max-width: 620px; }
 
-/* Remote analysis: visible documentation / inspection image */
+/* Remote analysis */
 .online-analysis {
   min-height: 650px;
   background-image:
     linear-gradient(90deg, rgba(220,233,227,.99) 0%, rgba(220,233,227,.97) 43%, rgba(220,233,227,.70) 57%, rgba(220,233,227,.08) 76%),
-    url("https://crawleysurveyor.co.uk/images/surveyor-defect-documentation.jpg");
+    url('/images/remote.svg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: right center;
@@ -76,7 +70,7 @@ main > section:nth-of-type(3) .card + .card::before {
   .damp {
     background-image:
       linear-gradient(rgba(23,23,23,.84), rgba(23,23,23,.84)),
-      url("https://www.bausachverstaendigerkrefeld.de/assets/feuchtigkeitsanalyse-krefeld-B4CExepb.webp");
+      url('/images/damp-hero.svg');
   }
   .solution-example, .online-analysis {
     min-height: auto;
