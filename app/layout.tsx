@@ -2,6 +2,7 @@ import './globals.css';
 import './visuals.css';
 import './mobile-menu.css';
 import './header-nav.css';
+import './tender-typography.css';
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';
 import { Analytics } from '@vercel/analytics/next';
