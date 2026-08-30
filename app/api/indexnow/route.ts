@@ -14,6 +14,10 @@ const currentUrls = [
   'https://koretskiy.com/ru/damp-diagnostics',
   'https://koretskiy.com/uk/damp-diagnostics',
   'https://koretskiy.com/sr/damp-diagnostics',
+  'https://koretskiy.com/en/tender-equipment',
+  'https://koretskiy.com/ru/tender-equipment',
+  'https://koretskiy.com/uk/tender-equipment',
+  'https://koretskiy.com/sr/tender-equipment',
 ];
 
 export async function GET() {
