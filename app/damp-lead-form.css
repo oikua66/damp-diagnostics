@@ -1,0 +1,40 @@
+.damp-lead-form { width: min(100%, 440px); }
+.damp-lead-button { min-width: 190px; }
+.damp-lead-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  padding: 22px;
+  border: 1px solid rgba(23,23,23,.28);
+  background: rgba(244,241,234,.92);
+}
+.damp-lead-intro {
+  margin: 0 0 4px;
+  color: var(--ink) !important;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.damp-lead-fields label { display: flex; flex-direction: column; gap: 7px; }
+.damp-lead-fields label span { font-size: 12px; font-weight: 700; letter-spacing: .04em; }
+.damp-lead-fields input,
+.damp-lead-fields textarea {
+  width: 100%;
+  border: 1px solid rgba(23,23,23,.3);
+  border-radius: 0;
+  background: #fff;
+  color: var(--ink);
+  padding: 12px 13px;
+  font: inherit;
+  outline: none;
+}
+.damp-lead-fields input:focus,
+.damp-lead-fields textarea:focus { border-color: var(--ink); }
+.damp-lead-fields textarea { resize: vertical; }
+.damp-lead-error { margin: -4px 0 0 !important; color: #8a1f1f !important; font-size: 13px; }
+.damp-lead-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+
+@media (max-width: 900px) {
+  .damp-lead-form { width: 100%; }
+  .damp-lead-fields { padding: 18px; }
+}
