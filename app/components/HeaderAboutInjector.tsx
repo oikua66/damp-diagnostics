@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 type NavCopy = {
   about: string;
   services: string;
+  methodology: string;
   damp: string;
   contact: string;
   back: string;
@@ -15,6 +16,7 @@ const labels: Record<string, NavCopy> = {
   en: {
     about: 'About',
     services: 'Key services',
+    methodology: 'Methodology',
     damp: 'Damp diagnostics',
     contact: 'Contact',
     back: 'Back to main page',
@@ -22,6 +24,7 @@ const labels: Record<string, NavCopy> = {
   ru: {
     about: 'Обо мне',
     services: 'Ключевые услуги',
+    methodology: 'Методология',
     damp: 'Диагностика сырости',
     contact: 'Контакты',
     back: 'Вернуться на главную',
@@ -29,6 +32,7 @@ const labels: Record<string, NavCopy> = {
   uk: {
     about: 'Про мене',
     services: 'Ключові послуги',
+    methodology: 'Методологія',
     damp: 'Діагностика вологи',
     contact: 'Контакти',
     back: 'Повернутися на головну',
@@ -36,6 +40,7 @@ const labels: Record<string, NavCopy> = {
   sr: {
     about: 'O meni',
     services: 'Ključne usluge',
+    methodology: 'Metodologija',
     damp: 'Dijagnostika vlage',
     contact: 'Kontakt',
     back: 'Nazad na početnu',
@@ -55,7 +60,6 @@ export default function HeaderAboutInjector() {
     const headerRight = header?.querySelector<HTMLElement>('.header-right');
     if (!header || !headerRight) return;
 
-    // Remove page-specific links that live directly in header-right.
     Array.from(headerRight.children).forEach((child) => {
       if (child.matches('a') && !child.classList.contains('header-home-button')) child.remove();
     });
@@ -70,6 +74,7 @@ export default function HeaderAboutInjector() {
     const links = [
       { href: `/${lang}/about`, label: copy.about },
       { href: `/${lang}#services`, label: copy.services },
+      { href: `/${lang}#approach`, label: copy.methodology },
       { href: `/${lang}/damp-diagnostics`, label: copy.damp },
       { href: `/${lang}#contact`, label: copy.contact },
     ];
