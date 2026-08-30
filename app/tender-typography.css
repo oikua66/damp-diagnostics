@@ -1,0 +1,48 @@
+.tender-page .section h2,
+.tender-page .contact h2 {
+  font-size: clamp(26px, 2.3vw, 34px);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  font-weight: 600;
+}
+
+.tender-page .card h3 {
+  font-size: clamp(21px, 1.8vw, 25px);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+
+.tender-page .prose {
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.tender-page .card p,
+.tender-page .contact p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.tender-page .section-heading {
+  margin-bottom: 42px;
+}
+
+.tender-page .card-number {
+  margin-bottom: 34px;
+}
+
+@media (max-width: 900px) {
+  .tender-page .section h2,
+  .tender-page .contact h2 {
+    font-size: 26px;
+  }
+
+  .tender-page .card h3 {
+    font-size: 22px;
+  }
+
+  .tender-page .prose {
+    font-size: 18px;
+  }
+}
