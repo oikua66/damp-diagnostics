@@ -1,7 +1,7 @@
 import './globals.css';
 import './visuals.css';
 import './mobile-menu.css';
-import './damp-lead-form.css';
+import './header-nav.css';
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';
 import { Analytics } from '@vercel/analytics/next';
@@ -10,7 +10,6 @@ import ContactDetails from './components/ContactDetails';
 import LegalFooter from './components/LegalFooter';
 import HeaderAboutInjector from './components/HeaderAboutInjector';
 import MobileMenu from './components/MobileMenu';
-import DampLeadFormInjector from './components/DampLeadFormInjector';
 
 export const metadata: Metadata = {
   title: 'Koretskiy Consulting',
@@ -26,7 +25,6 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
       <body>
         <HeaderAboutInjector />
         <MobileMenu />
-        <DampLeadFormInjector />
         {children}
         <ContactDetails />
         <LegalFooter />
