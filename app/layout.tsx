@@ -2,6 +2,7 @@ import './globals.css';
 import './visuals.css';
 import './mobile-menu.css';
 import type { Metadata } from 'next';
+import { headers } from 'next/headers';
 import ContactDetails from './components/ContactDetails';
 import LegalFooter from './components/LegalFooter';
 import HeaderAboutInjector from './components/HeaderAboutInjector';
@@ -12,9 +13,12 @@ export const metadata: Metadata = {
   description: 'Independent consulting for complex technical and business decisions.',
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  const requestHeaders = await headers();
+  const lang = requestHeaders.get('x-site-lang') || 'en';
+
   return (
-    <html lang="en">
+    <html lang={lang}>
       <body>
         <HeaderAboutInjector />
         <MobileMenu />
