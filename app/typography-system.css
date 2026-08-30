@@ -1,0 +1,117 @@
+/* Unified site-wide typography. Keep headings close to body text and avoid oversized display type. */
+
+:root {
+  --text-size: 18px;
+  --h3-size: clamp(21px, 1.8vw, 25px);
+  --h2-size: clamp(24px, 2.2vw, 30px);
+  --h1-size: clamp(32px, 3.6vw, 46px);
+}
+
+body {
+  font-size: var(--text-size);
+  line-height: 1.55;
+}
+
+h1,
+h2,
+h3,
+.hero h1,
+.damp h1,
+.about-hero h1,
+.legal-page h1,
+.about-block h2,
+.contact h2,
+.online-analysis h2,
+.method-step h3,
+.card h3,
+.damp-panel h3 {
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+}
+
+h1,
+.hero h1,
+.damp h1,
+.about-hero h1,
+.legal-page h1 {
+  font-size: var(--h1-size) !important;
+  max-width: 900px;
+  font-weight: 600;
+}
+
+h2,
+.about-block h2,
+.contact h2,
+.online-analysis h2 {
+  font-size: var(--h2-size) !important;
+  font-weight: 600;
+}
+
+h3,
+.method-step h3,
+.card h3,
+.damp-panel h3 {
+  font-size: var(--h3-size) !important;
+  font-weight: 600;
+}
+
+.lead,
+.lead-small,
+.prose,
+.contact p,
+.about-intro,
+.about-title,
+.method-step p,
+.factor-item p,
+.card p,
+.legal-content p {
+  font-size: clamp(17px, 1.35vw, 20px) !important;
+  line-height: 1.55;
+}
+
+.hero {
+  min-height: auto;
+  padding-top: clamp(56px, 8vh, 96px);
+  padding-bottom: clamp(56px, 8vh, 96px);
+}
+
+.section {
+  padding-top: clamp(54px, 7vh, 86px);
+  padding-bottom: clamp(54px, 7vh, 86px);
+}
+
+.section-heading {
+  margin-bottom: 38px;
+}
+
+.card-number,
+.factor-item span {
+  margin-bottom: 26px;
+}
+
+.about-title {
+  margin-top: 20px;
+}
+
+.contact {
+  min-height: auto;
+}
+
+@media (max-width: 900px) {
+  :root {
+    --text-size: 17px;
+    --h3-size: 21px;
+    --h2-size: 24px;
+    --h1-size: 32px;
+  }
+
+  .hero {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .section {
+    padding-top: 44px;
+    padding-bottom: 44px;
+  }
+}
