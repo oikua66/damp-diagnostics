@@ -3,11 +3,43 @@
 import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 
-const labels: Record<string, string> = {
-  en: 'About',
-  ru: 'Обо мне',
-  uk: 'Про мене',
-  sr: 'O meni',
+type NavCopy = {
+  about: string;
+  services: string;
+  damp: string;
+  contact: string;
+  back: string;
+};
+
+const labels: Record<string, NavCopy> = {
+  en: {
+    about: 'About',
+    services: 'Key services',
+    damp: 'Damp diagnostics',
+    contact: 'Contact',
+    back: 'Back to main page',
+  },
+  ru: {
+    about: 'Обо мне',
+    services: 'Ключевые услуги',
+    damp: 'Диагностика сырости',
+    contact: 'Контакты',
+    back: 'Вернуться на главную',
+  },
+  uk: {
+    about: 'Про мене',
+    services: 'Ключові послуги',
+    damp: 'Діагностика вологи',
+    contact: 'Контакти',
+    back: 'Повернутися на головну',
+  },
+  sr: {
+    about: 'O meni',
+    services: 'Ključne usluge',
+    damp: 'Dijagnostika vlage',
+    contact: 'Kontakt',
+    back: 'Nazad na početnu',
+  },
 };
 
 export default function HeaderAboutInjector() {
@@ -16,21 +48,50 @@ export default function HeaderAboutInjector() {
   useEffect(() => {
     const parts = pathname.split('/').filter(Boolean);
     const lang = parts[0] && labels[parts[0]] ? parts[0] : 'en';
+    const copy = labels[lang];
     const isDamp = parts.includes('damp-diagnostics');
-    if (!isDamp) return;
 
-    const nav = document.querySelector('.site-header nav');
-    if (!nav || nav.querySelector('[data-about-injected="true"]')) return;
+    const header = document.querySelector<HTMLElement>('.site-header');
+    const headerRight = header?.querySelector<HTMLElement>('.header-right');
+    if (!header || !headerRight) return;
 
-    const link = document.createElement('a');
-    link.href = `/${lang}/about`;
-    link.textContent = labels[lang];
-    link.setAttribute('data-about-injected', 'true');
-    nav.prepend(link);
+    // Remove page-specific links that live directly in header-right.
+    Array.from(headerRight.children).forEach((child) => {
+      if (child.matches('a') && !child.classList.contains('header-home-button')) child.remove();
+    });
 
-    return () => {
-      link.remove();
-    };
+    let nav = headerRight.querySelector<HTMLElement>('nav');
+    if (!nav) {
+      nav = document.createElement('nav');
+      const languageSwitcher = headerRight.querySelector('.language-switcher');
+      headerRight.insertBefore(nav, languageSwitcher || null);
+    }
+
+    const links = [
+      { href: `/${lang}/about`, label: copy.about },
+      { href: `/${lang}#services`, label: copy.services },
+      { href: `/${lang}/damp-diagnostics`, label: copy.damp },
+      { href: `/${lang}#contact`, label: copy.contact },
+    ];
+
+    nav.innerHTML = '';
+    links.forEach(({ href, label }) => {
+      const link = document.createElement('a');
+      link.href = href;
+      link.textContent = label;
+      nav?.appendChild(link);
+    });
+
+    const oldBack = headerRight.querySelector('.header-home-button');
+    if (oldBack) oldBack.remove();
+
+    if (isDamp) {
+      const back = document.createElement('a');
+      back.href = `/${lang}`;
+      back.className = 'header-home-button';
+      back.textContent = `← ${copy.back}`;
+      headerRight.insertBefore(back, nav);
+    }
   }, [pathname]);
 
   return null;
