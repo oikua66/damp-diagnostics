@@ -122,13 +122,13 @@ const copy: Record<Lang, TenderCopy> = {
     consortium: [
       'Для великих або комплексних тендерів оптимальна пропозиція може потребувати участі кількох виробників, постачальників, інженерних компаній або спеціалізованих підрядників.',
       'Ми готові працювати в наявному консорціумі, знаходити відсутніх учасників, об’єднувати взаємодоповнювальні позиції та за потреби допомагати створювати консорціум під конкретний тендер.',
-      'Мета — зібрати команду і пропозицію, які разом закривають вимоги закупівлі.',
+      'Завдання — зібрати команду та пропозицію, які разом закривають вимоги закупівлі, а не намагатися провести весь обсяг через одного постачальника.',
     ],
     principleEyebrow: 'Наш принцип',
     principleTitle: 'Рішення визначає тендер, а не каталог постачальника.',
     principle: [
-      'Ми не прив’язані до одного виробника або однієї лінійки обладнання. Відправна точка — вимоги тендера і реальна можливість їх виконати.',
-      'Результатом може бути пряме співпадіння, технічно обґрунтований еквівалент, змінена конфігурація або об’єднана пропозиція кількох компаній.',
+      'Ми не прив’язані до одного виробника чи однієї лінійки обладнання. Відправна точка — вимоги тендера та реальна можливість їх виконати.',
+      'Результатом може бути пряме відповідність, технічно обґрунтований еквівалент, змінена конфігурація або об’єднана пропозиція кількох компаній.',
     ],
     startEyebrow: 'З чого почати',
     startTitle: 'Надішліть специфікацію.',
@@ -138,34 +138,34 @@ const copy: Record<Lang, TenderCopy> = {
   },
   sr: {
     eyebrow: 'Izbor opreme za tendere',
-    title: 'Ne tražimo samo jednu stavku. Sastavljamo funkcionalno tendersko rešenje.',
+    title: 'Ne jedna pozicija. Funkcionalno tendersko rešenje.',
     lead: 'Analiziramo specifikacije, biramo proizvođače i tehničke ekvivalente, povezujemo pozicije i formiramo realnu tehničku i komercijalnu ponudu za složene tendere.',
     intro: [
-      'Tenderska specifikacija je retko samo spisak za kupovinu. Pravi zadatak je razumeti obavezne zahteve, pronaći prihvatljive alternative i sastaviti opremu koja se zaista može isporučiti, dokumentovati i tehnički obrazložiti.',
-      'Tokom rada formirana je velika baza proizvođača i dobavljača iz različitih zemalja. Pretraga se ne ograničava na tu bazu: za konkretan tender dodatno tražimo proizvođače, nestandardne konfiguracije i alternativne tehničke pristupe.',
+      'Tenderska specifikacija retko je samo spisak za kupovinu. Stvarni zadatak je razumeti obavezne zahteve, utvrditi prihvatljive alternative i sastaviti opremu koja se zaista može isporučiti, dokumentovati i tehnički odbraniti.',
+      'Tokom rada formirana je velika baza proizvođača i dobavljača opreme iz različitih zemalja. Pretraga nije ograničena na ovu bazu: za konkretan tender dodatno tražimo proizvođače, nestandardne konfiguracije i alternativne tehničke pristupe.',
     ],
     scopeEyebrow: 'Šta radimo',
     scopeTitle: 'Od specifikacije do kompletne ponude.',
     scope: [
-      { title: 'Analiziramo specifikaciju', text: 'Razdvajamo obavezne parametre od poželjnih, proveravamo sertifikate, poreklo, kompletnost, dokumentaciju i moguće nejasnoće.' },
-      { title: 'Biramo proizvođače i opremu', text: 'Koristimo postojeću bazu proizvođača i dodatno istraživanje tržišta. Poredimo usklađenost, dostupnost, rokove i realnu mogućnost isporuke.' },
-      { title: 'Uključujemo stručnjake', text: 'Kada tender zahteva usku stručnost, uključujemo inženjere i specijaliste odgovarajućeg profila.' },
-      { title: 'Tražimo nestandardna rešenja', text: 'Razmatramo ekvivalente, drugačiju konfiguraciju, kombinovanje više proizvoda ili podelu složene pozicije između više proizvođača.' },
-      { title: 'Povezujemo pozicije', text: 'Ako jedan proizvođač ne može da pokrije ceo tender, sastavljamo rešenje od više dobavljača i proveravamo međusobnu kompatibilnost.' },
+      { title: 'Analiziramo specifikaciju', text: 'Odvajamo obavezne parametre od poželjnih, proveravamo zahteve za sertifikate, poreklo, kompletnost, dokumentaciju i moguće nejasnoće.' },
+      { title: 'Biramo proizvođače i opremu', text: 'Koristimo postojeću bazu proizvođača i dodatnu pretragu tržišta. Poredimo usklađenost, dostupnost, rokove i realnu mogućnost isporuke.' },
+      { title: 'Uključujemo stručnjake', text: 'Kada tender zahteva usku stručnost, uključujemo odgovarajuće inženjere i specijaliste.' },
+      { title: 'Tražimo nestandardna rešenja', text: 'Razmatramo ekvivalente, drugačije konfiguracije, kombinacije više proizvoda ili podelu složene pozicije između više proizvođača.' },
+      { title: 'Povezujemo pozicije', text: 'Ako jedan proizvođač ne može da pokrije tender, sastavljamo rešenje od više dobavljača i proveravamo tehničku kompatibilnost.' },
       { title: 'Pomažemo u formiranju ponude', text: 'Po potrebi pomažemo da se izabrano rešenje pretvori u jasan tehnički paket za ponuđača.' },
     ],
     consortiumEyebrow: 'Konzorcijumi',
     consortiumTitle: 'Kada jedna kompanija nije dovoljna.',
     consortium: [
-      'Za velike ili multidisciplinarne tendere optimalna ponuda može zahtevati više proizvođača, dobavljača, inženjerskih kompanija ili specijalizovanih izvođača.',
-      'Spremni smo da radimo u postojećem konzorcijumu, pronađemo nedostajuće učesnike, povežemo komplementarne pozicije i po potrebi pomognemo u formiranju konzorcijuma za konkretan tender.',
-      'Cilj je da se sastave tim i ponuda koji zajedno ispunjavaju zahteve nabavke.',
+      'Za velike ili kompleksne tendere optimalna ponuda može zahtevati više proizvođača, dobavljača, inženjerskih kompanija ili specijalizovanih izvođača.',
+      'Spremni smo da radimo u postojećem konzorcijumu, pronađemo nedostajuće učesnike, povežemo komplementarne pozicije i, kada je potrebno, pomognemo u formiranju konzorcijuma za konkretan tender.',
+      'Cilj je sastaviti tim i ponudu koji zajedno ispunjavaju zahteve nabavke, umesto da se čitav obim veštački provlači kroz jednog dobavljača.',
     ],
     principleEyebrow: 'Naš princip',
-    principleTitle: 'Rešenje određuje tender, a ne katalog dobavljača.',
+    principleTitle: 'Tender određuje rešenje, a ne katalog dobavljača.',
     principle: [
       'Nismo vezani za jednog proizvođača ili jednu liniju opreme. Polazna tačka su zahtevi tendera i realna mogućnost da se oni ispune.',
-      'Rezultat može biti direktno podudaranje, tehnički opravdan ekvivalent, izmenjena konfiguracija ili objedinjena ponuda više kompanija.',
+      'Rezultat može biti direktno poklapanje, tehnički opravdan ekvivalent, izmenjena konfiguracija ili zajednička ponuda više kompanija.',
     ],
     startEyebrow: 'Početak',
     startTitle: 'Pošaljite specifikaciju.',
@@ -186,7 +186,7 @@ export default async function TenderEquipmentPage({ params }: Props) {
   const t = copy[lang];
 
   return (
-    <main>
+    <main className="tender-page">
       <header className="site-header">
         <a className="brand" href={`/${lang}`} aria-label="Koretskiy Consulting home">
           <span className="brand-mark">KC</span>
