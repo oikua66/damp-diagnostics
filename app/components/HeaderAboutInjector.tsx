@@ -8,6 +8,7 @@ type NavCopy = {
   services: string;
   methodology: string;
   damp: string;
+  tenders: string;
   contact: string;
   back: string;
 };
@@ -18,6 +19,7 @@ const labels: Record<string, NavCopy> = {
     services: 'Key services',
     methodology: 'Methodology',
     damp: 'Damp diagnostics',
+    tenders: 'Tenders & equipment',
     contact: 'Contact',
     back: 'Back to main page',
   },
@@ -26,6 +28,7 @@ const labels: Record<string, NavCopy> = {
     services: 'Ключевые услуги',
     methodology: 'Методология',
     damp: 'Диагностика сырости',
+    tenders: 'Тендеры и оборудование',
     contact: 'Контакты',
     back: 'Вернуться на главную',
   },
@@ -34,6 +37,7 @@ const labels: Record<string, NavCopy> = {
     services: 'Ключові послуги',
     methodology: 'Методологія',
     damp: 'Діагностика вологи',
+    tenders: 'Тендери та обладнання',
     contact: 'Контакти',
     back: 'Повернутися на головну',
   },
@@ -42,6 +46,7 @@ const labels: Record<string, NavCopy> = {
     services: 'Ključne usluge',
     methodology: 'Metodologija',
     damp: 'Dijagnostika vlage',
+    tenders: 'Tenderi i oprema',
     contact: 'Kontakt',
     back: 'Nazad na početnu',
   },
@@ -76,6 +81,7 @@ export default function HeaderAboutInjector() {
       { href: `/${lang}#services`, label: copy.services },
       { href: `/${lang}#approach`, label: copy.methodology },
       { href: `/${lang}/damp-diagnostics`, label: copy.damp },
+      { href: `/${lang}/tender-equipment`, label: copy.tenders },
       { href: `/${lang}#contact`, label: copy.contact },
     ];
 
