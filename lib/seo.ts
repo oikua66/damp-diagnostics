@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || 'https://damp-diagnostics.vercel.app').replace(/\/$/, '');
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || 'https://koretskiy.com').replace(/\/$/, '');
 
 export const langs = ['en', 'ru', 'uk', 'sr'] as const;
 export type SeoLang = (typeof langs)[number];
