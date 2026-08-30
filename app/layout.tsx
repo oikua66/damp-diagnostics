@@ -3,6 +3,8 @@ import './visuals.css';
 import './mobile-menu.css';
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import ContactDetails from './components/ContactDetails';
 import LegalFooter from './components/LegalFooter';
 import HeaderAboutInjector from './components/HeaderAboutInjector';
@@ -25,6 +27,8 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
         {children}
         <ContactDetails />
         <LegalFooter />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
