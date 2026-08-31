@@ -4,7 +4,7 @@ export type Lang = (typeof languages)[number];
 export const languageNames: Record<Lang, string> = {
   en: 'EN',
   ru: 'RU',
-  uk: 'UK',
+  uk: 'UA',
   sr: 'SR',
 };
 
@@ -130,7 +130,7 @@ export const copy: Record<Lang, any> = {
     issues: ['Kondenzaciju i nedovoljnu ventilaciju','Toplotne mostove i nedovoljnu izolaciju','Prodor kiše kroz fasadu','Kapilarnu ili bočnu vlagu','Skrivena curenja instalacija','Prethodne popravke koje su tretirale samo simptom'],
     contact: 'Kontakt',
     contactTitle: 'Pre kupovine rešenja, definišite problem.',
-    contactText: 'Pošaljite kratak opis situacije, šta je do sada pokušano i fotografije ako su relevantne.',
+    contactText: 'Pošaljite kratak opis situacije, šta je već pokušano i fotografije ako su relevantne.',
     footer: 'Nezavisni tehnički konsalting',
   },
 };
