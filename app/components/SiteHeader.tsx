@@ -12,8 +12,11 @@ export default function SiteHeader({ lang }: { lang: Lang }) {
   return (
     <header className="site-header">
       <a className="brand" href={`/${lang}`} aria-label="Koretskiy Consulting home">
-        <span className="brand-mark">KC</span>
-        <span>Koretskiy Consulting</span>
+        <img
+          src="/logo.svg"
+          alt="Koretskiy Consulting"
+          style={{ width: 'clamp(118px, 11vw, 150px)', height: 'auto', display: 'block' }}
+        />
       </a>
       <div className="header-right">
         <nav>
