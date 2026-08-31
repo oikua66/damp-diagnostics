@@ -53,11 +53,12 @@ export default function ClimtecPreviewCalculator() {
   }, [area, people]);
 
   const volume = Math.round(area * height);
+  const maxSupportedWall = matches.length ? Math.max(...matches.map((m) => m.maxLength)) : 1000;
   const wallNote = wall < 250
-    ? 'Толщина стены меньше 250 мм — нужен отдельный монтажный разбор.'
-    : matches.some((m) => wall >= m.minLength && wall <= m.maxLength)
-      ? 'По толщине стены есть стандартные варианты монтажа среди подобранных моделей.'
-      : 'Толщина стены выходит за стандартную длину выбранных модулей — потребуется уточнение или нестандартный узел.';
+    ? 'Толщина стены меньше 250 мм — требуется отдельная проверка монтажного решения.'
+    : wall <= maxSupportedWall
+      ? 'Толщина стены подходит для штатного монтажа. Для тонких стен производителем предусмотрены специальные монтажные решения.'
+      : 'Толщина стены больше стандартного диапазона модулей — потребуется уточнение монтажного решения.';
 
   const mailBody = encodeURIComponent([
     'Заявка на предварительный подбор CLIMTEC',
@@ -109,7 +110,7 @@ export default function ClimtecPreviewCalculator() {
                 <div><dt>Рекомендуемая площадь</dt><dd>до {m.area} м²</dd></div>
                 <div><dt>Людей</dt><dd>до {m.people}</dd></div>
                 <div><dt>Отверстие</dt><dd>Ø {m.hole} мм</dd></div>
-                <div><dt>Длина модуля</dt><dd>{m.minLength}–{m.maxLength} мм</dd></div>
+                <div><dt>Длина рабочего модуля</dt><dd>{m.minLength}–{m.maxLength} мм</dd></div>
                 <div><dt>Рекуперация</dt><dd>{m.efficiency}</dd></div>
               </dl>
               <p>{m.features.join(' · ')}</p>
