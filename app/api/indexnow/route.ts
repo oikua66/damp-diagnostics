@@ -18,6 +18,10 @@ const currentUrls = [
   'https://koretskiy.com/ru/tender-equipment',
   'https://koretskiy.com/uk/tender-equipment',
   'https://koretskiy.com/sr/tender-equipment',
+  'https://koretskiy.com/en/perspectives',
+  'https://koretskiy.com/ru/perspectives',
+  'https://koretskiy.com/uk/perspectives',
+  'https://koretskiy.com/sr/perspectives',
 ];
 
 export async function GET() {
