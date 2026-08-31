@@ -70,6 +70,21 @@ export default function HeaderAboutInjector() {
     const headerRight = header?.querySelector<HTMLElement>('.header-right');
     if (!header || !headerRight) return;
 
+    const brand = header.querySelector<HTMLAnchorElement>('.brand');
+    if (brand) {
+      brand.href = `/${lang}`;
+      brand.setAttribute('aria-label', 'Koretskiy Consulting home');
+      brand.innerHTML = '';
+
+      const logo = document.createElement('img');
+      logo.src = '/logo.svg';
+      logo.alt = 'Koretskiy Consulting';
+      logo.style.width = 'clamp(118px, 11vw, 150px)';
+      logo.style.height = 'auto';
+      logo.style.display = 'block';
+      brand.appendChild(logo);
+    }
+
     Array.from(headerRight.children).forEach((child) => {
       if (child.matches('a') && !child.classList.contains('header-home-button')) child.remove();
     });
