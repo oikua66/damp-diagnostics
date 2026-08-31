@@ -39,9 +39,6 @@ export default function ClimtecPreviewCalculator() {
   const [wall, setWall] = useState(380);
   const [material, setMaterial] = useState('кирпич');
   const [insulation, setInsulation] = useState('не знаю');
-  const [name, setName] = useState('');
-  const [contact, setContact] = useState('');
-  const [city, setCity] = useState('');
 
   const matches = useMemo(() => {
     const suitable = models.filter((m) => m.area >= area && m.people >= people);
@@ -59,25 +56,6 @@ export default function ClimtecPreviewCalculator() {
     : wall <= maxSupportedWall
       ? 'Толщина стены подходит для штатного монтажа. Для тонких стен производителем предусмотрены специальные монтажные решения.'
       : 'Толщина стены больше стандартного диапазона модулей — потребуется уточнение монтажного решения.';
-
-  const mailBody = encodeURIComponent([
-    'Заявка на предварительный подбор CLIMTEC',
-    '',
-    `Имя: ${name || '—'}`,
-    `Контакт: ${contact || '—'}`,
-    `Город: ${city || '—'}`,
-    `Площадь помещения: ${area} м²`,
-    `Высота: ${height} м`,
-    `Объём: ${volume} м³`,
-    `Количество людей: ${people}`,
-    `Материал стены: ${material}`,
-    `Толщина стены: ${wall} мм`,
-    `Наружное утепление: ${insulation}`,
-    '',
-    `Предварительные варианты: ${matches.map((m) => m.name).join(', ') || 'нужен ручной подбор'}`,
-    '',
-    'Прошу проверить конфигурацию и возможность монтажа.'
-  ].join('\n'));
 
   return (
     <section className="ct-calc" id="calculator">
@@ -116,16 +94,6 @@ export default function ClimtecPreviewCalculator() {
               <p>{m.features.join(' · ')}</p>
             </article>
           )) : <p>Для этих данных нужен ручной подбор.</p>}
-        </div>
-      </div>
-
-      <div className="ct-order">
-        <div><p className="eyebrow">Заявка на расчёт</p><h2>Отправить исходные данные для проверки.</h2><p>Предварительный результат попадёт в письмо автоматически. Останется только добавить контакты.</p></div>
-        <div className="ct-order-fields">
-          <label>Имя<input value={name} onChange={(e) => setName(e.target.value)} /></label>
-          <label>Телефон / email / мессенджер<input value={contact} onChange={(e) => setContact(e.target.value)} /></label>
-          <label>Город<input value={city} onChange={(e) => setCity(e.target.value)} /></label>
-          <a className="button button-dark" href={`mailto:consulting@koretskiy.com?subject=CLIMTEC%20—%20предварительный%20подбор&body=${mailBody}`}>Отправить на расчёт</a>
         </div>
       </div>
     </section>
