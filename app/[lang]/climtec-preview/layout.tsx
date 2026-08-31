@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import '../../../climtec-preview.css';
+import '../../climtec-preview.css';
 
 export const metadata: Metadata = {
   title: 'CLIMTEC — preview | Koretskiy Consulting',
