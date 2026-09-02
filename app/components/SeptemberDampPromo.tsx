@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { track } from '@vercel/analytics';
 
 const END_AT = Date.parse('2026-09-29T22:00:00Z'); // 30 Sep 00:00 Europe/Belgrade (CEST)
 
@@ -47,7 +48,12 @@ export default function SeptemberDampPromo() {
         <span>{t.text}</span>
         <small>{t.note}</small>
       </div>
-      <a href={`/${lang}#contact`}>{t.action}</a>
+      <a
+        href={`/${lang}#contact`}
+        onClick={() => track('September Promo Click', { lang, page: window.location.pathname })}
+      >
+        {t.action}
+      </a>
     </div>
   );
 }
