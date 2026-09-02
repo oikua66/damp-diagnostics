@@ -9,7 +9,7 @@ type ProjectsCopy = {
   projects: string;
   lookingFor: string;
   stage: string;
-  presentationSoon: string;
+  downloadPresentation: string;
   contactTitle: string;
   contactText: string;
   projectTitle: string;
@@ -25,7 +25,7 @@ const copy: Record<Lang, ProjectsCopy> = {
     projects: 'Current projects',
     lookingFor: 'Looking for',
     stage: 'Current stage',
-    presentationSoon: 'Presentation will be added',
+    downloadPresentation: 'Download presentation',
     contactTitle: 'Interested in one of the projects?',
     contactText: 'If you see a possible role for your company, organisation or investment team, send me a short note and we can discuss the project directly.',
     projectTitle: 'AI Energy Campus — Serbia',
@@ -39,7 +39,7 @@ const copy: Record<Lang, ProjectsCopy> = {
     projects: 'Текущие проекты',
     lookingFor: 'Ищем',
     stage: 'Текущая стадия',
-    presentationSoon: 'Презентация будет добавлена',
+    downloadPresentation: 'Скачать презентацию',
     contactTitle: 'Заинтересовал один из проектов?',
     contactText: 'Если вы видите возможную роль своей компании, организации или инвестиционной команды, напишите мне — проект можно обсудить напрямую.',
     projectTitle: 'AI Energy Campus — Serbia',
@@ -53,7 +53,7 @@ const copy: Record<Lang, ProjectsCopy> = {
     projects: 'Поточні проєкти',
     lookingFor: 'Шукаємо',
     stage: 'Поточна стадія',
-    presentationSoon: 'Презентацію буде додано',
+    downloadPresentation: 'Завантажити презентацію',
     contactTitle: 'Зацікавив один із проєктів?',
     contactText: 'Якщо ви бачите можливу роль своєї компанії, організації чи інвестиційної команди, напишіть мені — проєкт можна обговорити безпосередньо.',
     projectTitle: 'AI Energy Campus — Serbia',
@@ -67,7 +67,7 @@ const copy: Record<Lang, ProjectsCopy> = {
     projects: 'Aktuelni projekti',
     lookingFor: 'Tražimo',
     stage: 'Trenutna faza',
-    presentationSoon: 'Prezentacija će biti dodata',
+    downloadPresentation: 'Preuzmi prezentaciju',
     contactTitle: 'Zainteresovani ste za neki od projekata?',
     contactText: 'Ako vidite moguću ulogu svoje kompanije, organizacije ili investicionog tima, javite mi se i projekat možemo direktno razmotriti.',
     projectTitle: 'AI Energy Campus — Serbia',
@@ -75,6 +75,13 @@ const copy: Record<Lang, ProjectsCopy> = {
     projectLookingFor: 'Naručioca, investitora, infrastrukturnog partnera ili operatera',
     projectStage: 'Koncept je razvijen; razmatra se model realizacije pilota',
   },
+};
+
+const projectPdf: Record<Lang, string> = {
+  en: '/projects/AI_Energy_Campus_Project_Card_EN.pdf',
+  ru: '/projects/AI_Energy_Campus_Project_Card_RU.pdf',
+  uk: '/projects/AI_Energy_Campus_Project_Card_UA.pdf',
+  sr: '/projects/AI_Energy_Campus_Project_Card_SR.pdf',
 };
 
 export default async function ProjectsPage({ params }: Props) {
@@ -121,9 +128,9 @@ export default async function ProjectsPage({ params }: Props) {
             <p>{t.projectDescription}</p>
             <p><strong>{t.lookingFor}:</strong> {t.projectLookingFor}</p>
             <p><strong>{t.stage}:</strong> {t.projectStage}</p>
-            <span className="button button-light" aria-disabled="true" style={{ opacity: 0.55, cursor: 'default' }}>
-              {t.presentationSoon}
-            </span>
+            <a className="button button-light" href={projectPdf[lang]} download>
+              {t.downloadPresentation}
+            </a>
           </article>
         </div>
       </section>
