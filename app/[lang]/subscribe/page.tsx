@@ -1,5 +1,5 @@
 import { redirect } from 'next/navigation';
-import { languages, type Lang } from '../../../../lib/translations';
+import { languages, type Lang } from '../../../lib/translations';
 
 type Props = { params: Promise<{ lang: string }> };
 
