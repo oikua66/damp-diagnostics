@@ -81,7 +81,7 @@ export default function NewsletterSignup() {
   const t = copy[lang];
 
   return (
-    <section className="newsletter-signup" aria-labelledby="newsletter-title">
+    <section id="subscribe" className="newsletter-signup" aria-labelledby="newsletter-title">
       <div className="newsletter-signup-inner">
         <div className="newsletter-intro">
           <p className="eyebrow">{t.eyebrow}</p>
