@@ -3,46 +3,81 @@ import { languageNames, languages, type Lang } from '../../../lib/translations';
 
 type Props = { params: Promise<{ lang: string }> };
 
-type PerspectivesCopy = {
+type ProjectsCopy = {
   title: string;
   intro: string;
-  publications: string;
-  empty: string;
-  emailLead: string;
+  projects: string;
+  lookingFor: string;
+  stage: string;
+  presentationSoon: string;
+  contactTitle: string;
+  contactText: string;
+  projectTitle: string;
+  projectDescription: string;
+  projectLookingFor: string;
+  projectStage: string;
 };
 
-const copy: Record<Lang, PerspectivesCopy> = {
+const copy: Record<Lang, ProjectsCopy> = {
   en: {
-    title: 'Perspectives',
-    intro: 'Analyses of technical and business problems, disputed solutions and practical questions. The format of this section is still evolving. Suggestions for topics, comments and materials for discussion can be sent to consulting@koretskiy.com.',
-    publications: 'Publications',
-    empty: 'The first publications will appear here.',
-    emailLead: 'Have another point of view or material worth discussing?',
+    title: 'Projects for implementation',
+    intro: 'A selection of project concepts that are developed far enough to discuss practical implementation. Each project starts from a defined problem and a workable technical or business concept. Depending on the project, I may be looking for a client, investor, industrial partner, supplier or operating partner.',
+    projects: 'Current projects',
+    lookingFor: 'Looking for',
+    stage: 'Current stage',
+    presentationSoon: 'Presentation will be added',
+    contactTitle: 'Interested in one of the projects?',
+    contactText: 'If you see a possible role for your company, organisation or investment team, send me a short note and we can discuss the project directly.',
+    projectTitle: 'AI Energy Campus — Serbia',
+    projectDescription: 'A modular AI-ready energy and infrastructure platform in Serbia: a 5 MW pilot designed to scale to 50+ MW. The concept combines on-site generation, cooling, storage and infrastructure for liquid-cooled AI computing loads.',
+    projectLookingFor: 'Client, investor, infrastructure partner or operator',
+    projectStage: 'Concept developed; pilot implementation model under discussion',
   },
   ru: {
-    title: 'Мнения',
-    intro: 'Разборы технических и бизнес-задач, спорных решений и практических вопросов. Формат раздела ещё развивается. Предложения тем, замечания и материалы для обсуждения можно присылать на consulting@koretskiy.com.',
-    publications: 'Публикации',
-    empty: 'Здесь появятся первые публикации.',
-    emailLead: 'Есть другая точка зрения или материал для обсуждения?',
+    title: 'Проекты для реализации',
+    intro: 'Здесь собраны проекты и технические концепции, уже проработанные до уровня, на котором можно обсуждать практическую реализацию. В основе каждого проекта — конкретная задача и рабочая техническая или бизнес-концепция. В зависимости от проекта я ищу заказчика, инвестора, промышленного партнёра, поставщика или оператора.',
+    projects: 'Текущие проекты',
+    lookingFor: 'Ищем',
+    stage: 'Текущая стадия',
+    presentationSoon: 'Презентация будет добавлена',
+    contactTitle: 'Заинтересовал один из проектов?',
+    contactText: 'Если вы видите возможную роль своей компании, организации или инвестиционной команды, напишите мне — проект можно обсудить напрямую.',
+    projectTitle: 'AI Energy Campus — Serbia',
+    projectDescription: 'Модульная энергетическая и инфраструктурная платформа для AI/Data Center в Сербии: пилот 5 МВт с масштабированием до 50+ МВт. Концепция объединяет локальную генерацию, охлаждение, накопление энергии и инфраструктуру для жидкостно-охлаждаемых вычислительных нагрузок.',
+    projectLookingFor: 'Заказчика, инвестора, инфраструктурного партнёра или оператора',
+    projectStage: 'Концепция разработана; обсуждается модель реализации пилота',
   },
   uk: {
-    title: 'Погляди',
-    intro: 'Розбори технічних і бізнес-завдань, спірних рішень та практичних питань. Формат розділу ще розвивається. Пропозиції тем, зауваження та матеріали для обговорення можна надсилати на consulting@koretskiy.com.',
-    publications: 'Публікації',
-    empty: 'Тут з’являться перші публікації.',
-    emailLead: 'Є інша точка зору або матеріал для обговорення?',
+    title: 'Проєкти для реалізації',
+    intro: 'Тут зібрані проєкти та технічні концепції, вже опрацьовані до рівня, на якому можна обговорювати практичну реалізацію. В основі кожного проєкту — конкретне завдання та робоча технічна або бізнес-концепція. Залежно від проєкту я шукаю замовника, інвестора, промислового партнера, постачальника або оператора.',
+    projects: 'Поточні проєкти',
+    lookingFor: 'Шукаємо',
+    stage: 'Поточна стадія',
+    presentationSoon: 'Презентацію буде додано',
+    contactTitle: 'Зацікавив один із проєктів?',
+    contactText: 'Якщо ви бачите можливу роль своєї компанії, організації чи інвестиційної команди, напишіть мені — проєкт можна обговорити безпосередньо.',
+    projectTitle: 'AI Energy Campus — Serbia',
+    projectDescription: 'Модульна енергетична та інфраструктурна платформа для AI/Data Center у Сербії: пілот 5 МВт із масштабуванням до 50+ МВт. Концепція поєднує локальну генерацію, охолодження, накопичення енергії та інфраструктуру для обчислювальних навантажень із рідинним охолодженням.',
+    projectLookingFor: 'Замовника, інвестора, інфраструктурного партнера або оператора',
+    projectStage: 'Концепцію розроблено; обговорюється модель реалізації пілота',
   },
   sr: {
-    title: 'Stavovi',
-    intro: 'Analize tehničkih i poslovnih zadataka, spornih rešenja i praktičnih pitanja. Format ovog odeljka se još razvija. Predloge tema, komentare i materijale za diskusiju možete poslati na consulting@koretskiy.com.',
-    publications: 'Objave',
-    empty: 'Prve objave će se pojaviti ovde.',
-    emailLead: 'Imate drugačije mišljenje ili materijal za diskusiju?',
+    title: 'Projekti za realizaciju',
+    intro: 'Ovde su predstavljeni projekti i tehnički koncepti razrađeni do nivoa na kome se može razgovarati o praktičnoj realizaciji. Svaki projekat polazi od konkretnog problema i radnog tehničkog ili poslovnog koncepta. U zavisnosti od projekta, tražim naručioca, investitora, industrijskog partnera, dobavljača ili operatera.',
+    projects: 'Aktuelni projekti',
+    lookingFor: 'Tražimo',
+    stage: 'Trenutna faza',
+    presentationSoon: 'Prezentacija će biti dodata',
+    contactTitle: 'Zainteresovani ste za neki od projekata?',
+    contactText: 'Ako vidite moguću ulogu svoje kompanije, organizacije ili investicionog tima, javite mi se i projekat možemo direktno razmotriti.',
+    projectTitle: 'AI Energy Campus — Serbia',
+    projectDescription: 'Modularna energetska i infrastrukturna platforma za AI/Data Center u Srbiji: pilot od 5 MW sa mogućnošću skaliranja na 50+ MW. Koncept kombinuje lokalnu proizvodnju energije, hlađenje, skladištenje energije i infrastrukturu za računarske sisteme sa tečnim hlađenjem.',
+    projectLookingFor: 'Naručioca, investitora, infrastrukturnog partnera ili operatera',
+    projectStage: 'Koncept je razvijen; razmatra se model realizacije pilota',
   },
 };
 
-export default async function PerspectivesPage({ params }: Props) {
+export default async function ProjectsPage({ params }: Props) {
   const { lang: rawLang } = await params;
   if (!languages.includes(rawLang as Lang)) notFound();
   const lang = rawLang as Lang;
@@ -77,17 +112,26 @@ export default async function PerspectivesPage({ params }: Props) {
 
       <section className="section" style={{ minHeight: '34vh' }}>
         <div className="section-heading" style={{ marginBottom: 32 }}>
-          <p className="eyebrow">{t.publications}</p>
-          <div>
-            <h2>{t.publications}</h2>
-            <p className="lead-small" style={{ marginTop: 20 }}>{t.empty}</p>
-          </div>
+          <p className="eyebrow">{t.projects}</p>
+        </div>
+
+        <div className="cards" style={{ gridTemplateColumns: 'minmax(0, 1fr)' }}>
+          <article className="card" style={{ maxWidth: 980 }}>
+            <h2>{t.projectTitle}</h2>
+            <p>{t.projectDescription}</p>
+            <p><strong>{t.lookingFor}:</strong> {t.projectLookingFor}</p>
+            <p><strong>{t.stage}:</strong> {t.projectStage}</p>
+            <span className="button button-light" aria-disabled="true" style={{ opacity: 0.55, cursor: 'default' }}>
+              {t.presentationSoon}
+            </span>
+          </article>
         </div>
       </section>
 
       <section className="section" style={{ background: 'var(--panel)' }}>
         <div style={{ maxWidth: 820 }}>
-          <h2>{t.emailLead}</h2>
+          <h2>{t.contactTitle}</h2>
+          <p className="lead-small">{t.contactText}</p>
           <p className="lead-small" style={{ marginBottom: 0 }}>
             <a href="mailto:consulting@koretskiy.com" style={{ borderBottom: '1px solid currentColor' }}>
               consulting@koretskiy.com
