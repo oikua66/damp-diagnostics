@@ -1,0 +1,16 @@
+.cards[style*="minmax(0, 1fr)"] .card[style*="max-width: 980px"] p {
+  max-width: 880px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.cards[style*="minmax(0, 1fr)"] .card[style*="max-width: 980px"] h2 {
+  max-width: 880px;
+}
+
+@media (max-width: 900px) {
+  .cards[style*="minmax(0, 1fr)"] .card[style*="max-width: 980px"] p,
+  .cards[style*="minmax(0, 1fr)"] .card[style*="max-width: 980px"] h2 {
+    max-width: none;
+  }
+}
