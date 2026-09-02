@@ -5,6 +5,13 @@
 .project-card-wide {
   width: 100%;
   max-width: 980px !important;
+  border-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+.project-card-wide + .project-card-wide {
+  border-left: 0 !important;
+  padding-left: 0 !important;
 }
 
 .project-card-wide p,
