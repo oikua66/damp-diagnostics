@@ -1,16 +1,25 @@
-.cards[style*="minmax(0, 1fr)"] .card[style*="max-width: 980px"] p {
-  max-width: 880px;
+.projects-list {
+  grid-template-columns: minmax(0, 1fr) !important;
+}
+
+.project-card-wide {
+  width: 100%;
+  max-width: 980px !important;
+}
+
+.project-card-wide p,
+.project-card-wide h2 {
+  max-width: 880px !important;
+}
+
+.project-card-wide p {
   font-size: 18px;
   line-height: 1.6;
 }
 
-.cards[style*="minmax(0, 1fr)"] .card[style*="max-width: 980px"] h2 {
-  max-width: 880px;
-}
-
 @media (max-width: 900px) {
-  .cards[style*="minmax(0, 1fr)"] .card[style*="max-width: 980px"] p,
-  .cards[style*="minmax(0, 1fr)"] .card[style*="max-width: 980px"] h2 {
-    max-width: none;
+  .project-card-wide p,
+  .project-card-wide h2 {
+    max-width: none !important;
   }
 }
