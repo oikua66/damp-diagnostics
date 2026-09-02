@@ -1,6 +1,7 @@
 'use client';
 
 import { FormEvent, useState } from 'react';
+import { track } from '@vercel/analytics';
 
 const labels: Record<string, { name: string; phone: string; problem: string; button: string }> = {
   ru: { name: 'Имя', phone: 'Телефон', problem: 'Коротко опишите проблему', button: 'Отправить' },
@@ -17,6 +18,7 @@ export default function SeptemberDampLeadForm({ lang }: { lang: string }) {
 
   function submit(e: FormEvent) {
     e.preventDefault();
+    track('September Damp Form Submit', { lang, page: window.location.pathname });
     const text = [
       'September damp inspection — Novi Sad',
       `Name: ${name}`,
