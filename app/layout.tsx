@@ -7,6 +7,7 @@ import './typography-system.css';
 import './september-promo.css';
 import './newsletter.css';
 import './projects.css';
+import './homepage.css';
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';
 import { Analytics } from '@vercel/analytics/next';
