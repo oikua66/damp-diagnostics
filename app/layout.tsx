@@ -14,6 +14,7 @@ import LegalFooter from './components/LegalFooter';
 import HeaderAboutInjector from './components/HeaderAboutInjector';
 import MobileMenu from './components/MobileMenu';
 import SeptemberDampPromo from './components/SeptemberDampPromo';
+import SeptemberDampLeadInjector from './components/SeptemberDampLeadInjector';
 
 export const metadata: Metadata = {
   title: 'Koretskiy Consulting',
@@ -31,6 +32,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
         <HeaderAboutInjector />
         <MobileMenu />
         {children}
+        <SeptemberDampLeadInjector />
         <ContactDetails />
         <LegalFooter />
         <Analytics />
