@@ -5,6 +5,7 @@ import './header-nav.css';
 import './tender-typography.css';
 import './typography-system.css';
 import './september-promo.css';
+import './newsletter.css';
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';
 import { Analytics } from '@vercel/analytics/next';
@@ -15,6 +16,7 @@ import HeaderAboutInjector from './components/HeaderAboutInjector';
 import MobileMenu from './components/MobileMenu';
 import SeptemberDampPromo from './components/SeptemberDampPromo';
 import SeptemberDampLeadInjector from './components/SeptemberDampLeadInjector';
+import NewsletterSignup from './components/NewsletterSignup';
 
 export const metadata: Metadata = {
   title: 'Koretskiy Consulting',
@@ -33,6 +35,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
         <MobileMenu />
         {children}
         <SeptemberDampLeadInjector />
+        <NewsletterSignup />
         <ContactDetails />
         <LegalFooter />
         <Analytics />
