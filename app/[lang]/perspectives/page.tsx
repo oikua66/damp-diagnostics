@@ -152,8 +152,8 @@ export default async function ProjectsPage({ params }: Props) {
           <p className="eyebrow">{t.projects}</p>
         </div>
 
-        <div className="cards" style={{ gridTemplateColumns: 'minmax(0, 1fr)', gap: 24 }}>
-          <article className="card" style={{ maxWidth: 980 }}>
+        <div className="cards projects-list" style={{ gridTemplateColumns: 'minmax(0, 1fr)', gap: 24 }}>
+          <article className="card project-card-wide" style={{ maxWidth: 980 }}>
             <h2>{t.projectTitle}</h2>
             <p>{t.projectDescription}</p>
             <p><strong>{t.lookingFor}:</strong> {t.projectLookingFor}</p>
@@ -163,7 +163,7 @@ export default async function ProjectsPage({ params }: Props) {
             </a>
           </article>
 
-          <article className="card" style={{ maxWidth: 980 }}>
+          <article className="card project-card-wide" style={{ maxWidth: 980 }}>
             <h2>{t.project2Title}</h2>
             <p>{t.project2Description}</p>
             <p><strong>{t.lookingFor}:</strong> {t.project2LookingFor}</p>
