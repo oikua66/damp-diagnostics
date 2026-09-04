@@ -4,7 +4,6 @@ import './mobile-menu.css';
 import './header-nav.css';
 import './tender-typography.css';
 import './typography-system.css';
-import './september-promo.css';
 import './newsletter.css';
 import './projects.css';
 import './homepage.css';
@@ -16,8 +15,6 @@ import ContactDetails from './components/ContactDetails';
 import LegalFooter from './components/LegalFooter';
 import HeaderAboutInjector from './components/HeaderAboutInjector';
 import MobileMenu from './components/MobileMenu';
-import SeptemberDampPromo from './components/SeptemberDampPromo';
-import SeptemberDampLeadInjector from './components/SeptemberDampLeadInjector';
 import NewsletterSignup from './components/NewsletterSignup';
 import ProjectEstimateCTAInjector from './components/ProjectEstimateCTAInjector';
 
@@ -33,12 +30,10 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
   return (
     <html lang={lang}>
       <body>
-        <SeptemberDampPromo />
         <HeaderAboutInjector />
         <MobileMenu />
         <ProjectEstimateCTAInjector />
         {children}
-        <SeptemberDampLeadInjector />
         <NewsletterSignup />
         <ContactDetails />
         <LegalFooter />
