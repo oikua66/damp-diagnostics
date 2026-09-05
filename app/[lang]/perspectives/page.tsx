@@ -116,6 +116,13 @@ const projectPdf: Record<Lang, string> = {
   sr: '/projects/AI_Energy_Campus_Project_Card_SR.pdf',
 };
 
+const estimateCta: Record<Lang, string> = {
+  en: 'Send project data for a preliminary estimate',
+  ru: 'Отправить данные для предварительной оценки',
+  uk: 'Надіслати дані для попередньої оцінки',
+  sr: 'Pošaljite podatke za preliminarnu procenu',
+};
+
 export default async function ProjectsPage({ params }: Props) {
   const { lang: rawLang } = await params;
   if (!languages.includes(rawLang as Lang)) notFound();
@@ -156,9 +163,9 @@ export default async function ProjectsPage({ params }: Props) {
             <p><strong>{t.lookingFor}:</strong> {t.project2LookingFor}</p>
             <p><strong>{t.stage}:</strong> {t.project2Stage}</p>
             <p>{t.project2Applications}</p>
-            <span className="button button-light" aria-disabled="true" style={{ opacity: 0.55, cursor: 'default' }}>
-              {t.presentationSoon}
-            </span>
+            <a className="button button-light" href={`/${lang}#contact`}>
+              {estimateCta[lang]}
+            </a>
           </article>
         </div>
       </section>

@@ -13,7 +13,6 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import ContactDetails from './components/ContactDetails';
 import LegalFooter from './components/LegalFooter';
 import NewsletterSignup from './components/NewsletterSignup';
-import ProjectEstimateCTAInjector from './components/ProjectEstimateCTAInjector';
 import { business } from '../lib/business';
 
 export const metadata: Metadata = {
@@ -28,7 +27,6 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
   return (
     <html lang={lang}>
       <body>
-        <ProjectEstimateCTAInjector />
         {children}
         <NewsletterSignup />
         <ContactDetails />
