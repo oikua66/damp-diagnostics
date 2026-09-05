@@ -1,2 +1,3 @@
-# damp-diagnostics
-Website for damp and moisture diagnostics by Koretskiy Consulting
+# Koretskiy Consulting
+
+Website for Koretskiy Consulting at koretskiy.com.

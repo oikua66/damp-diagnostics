@@ -18,7 +18,6 @@ export default async function ClimtecPreviewPage({ params }: { params: Promise<{
         <p className="ct-lead">Компактные приточно-вытяжные установки с рекуперацией тепла для квартир, домов и других помещений, где монтаж обычной сети воздуховодов затруднён или нецелесообразен.</p>
         <div className="ct-hero-actions">
           <a className="button button-dark" href="#calculator">Подобрать оборудование</a>
-          <a className="button button-light" href="/ru/damp-diagnostics">Диагностика сырости</a>
         </div>
       </section>
 
