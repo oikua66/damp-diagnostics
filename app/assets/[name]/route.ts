@@ -3,7 +3,6 @@ import path from 'node:path';
 
 const files: Record<string, string> = {
   about: 'about.webp.b64',
-  'damp-hero': 'damp-hero.webp.b64',
 };
 
 export async function GET(_request: Request, { params }: { params: Promise<{ name: string }> }) {

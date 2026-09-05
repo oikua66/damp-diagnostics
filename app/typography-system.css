@@ -16,22 +16,18 @@ h1,
 h2,
 h3,
 .hero h1,
-.damp h1,
 .about-hero h1,
 .legal-page h1,
 .about-block h2,
 .contact h2,
-.online-analysis h2,
 .method-step h3,
-.card h3,
-.damp-panel h3 {
+.card h3 {
   letter-spacing: -0.02em;
   line-height: 1.12;
 }
 
 h1,
 .hero h1,
-.damp h1,
 .about-hero h1,
 .legal-page h1 {
   font-size: var(--h1-size) !important;
@@ -41,16 +37,14 @@ h1,
 
 h2,
 .about-block h2,
-.contact h2,
-.online-analysis h2 {
+.contact h2 {
   font-size: var(--h2-size) !important;
   font-weight: 600;
 }
 
 h3,
 .method-step h3,
-.card h3,
-.damp-panel h3 {
+.card h3 {
   font-size: var(--h3-size) !important;
   font-weight: 600;
 }

@@ -1,1 +1,0 @@
-Local site visuals for Koretskiy Consulting damp diagnostics pages. Generated/illustrated assets are stored in this directory to avoid dependency on third-party image hosts.
