@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
+import { business } from './business';
 
-export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || 'https://koretskiy.com').replace(/\/$/, '');
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || business.website.canonicalUrl).replace(/\/$/, '');
 
 export const langs = ['en', 'ru', 'uk', 'sr'] as const;
 export type SeoLang = (typeof langs)[number];
@@ -47,7 +48,7 @@ export function buildMetadata({
       url,
       title,
       description,
-      siteName: 'Koretskiy Consulting',
+      siteName: business.operatingName,
       locale: localeMap[lang],
       alternateLocale: langs.filter((item) => item !== lang).map((item) => localeMap[item]),
     },

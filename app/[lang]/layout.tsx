@@ -1,21 +1,22 @@
 import type { Metadata } from 'next';
 import { buildMetadata, langs, type SeoLang, SITE_URL } from '../../lib/seo';
+import { business } from '../../lib/business';
 
 const copy: Record<SeoLang, { title: string; description: string }> = {
   en: {
-    title: 'Koretskiy Consulting | Independent Technical & Business Consulting',
+    title: `${business.operatingName} | Independent Technical & Business Consulting`,
     description: 'Independent consulting for complex technical and business decisions: problem definition, technical briefs, contractor requirements, alternatives and implementation roadmaps.',
   },
   ru: {
-    title: 'Koretskiy Consulting | Независимый технический и бизнес-консалтинг',
+    title: `${business.operatingName} | Независимый технический и бизнес-консалтинг`,
     description: 'Независимый консалтинг для сложных технических и бизнес-задач: постановка задачи, ТЗ, требования к подрядчикам, сравнение решений и дорожные карты.',
   },
   uk: {
-    title: 'Koretskiy Consulting | Незалежний технічний та бізнес-консалтинг',
+    title: `${business.operatingName} | Незалежний технічний та бізнес-консалтинг`,
     description: 'Незалежний консалтинг для складних технічних і бізнес-задач: постановка задачі, ТЗ, вимоги до підрядників, порівняння рішень та дорожні карти.',
   },
   sr: {
-    title: 'Koretskiy Consulting | Nezavisni tehnički i poslovni konsalting',
+    title: `${business.operatingName} | Nezavisni tehnički i poslovni konsalting`,
     description: 'Nezavisni konsalting za složene tehničke i poslovne odluke: definisanje zadatka, tehnički zahtevi, poređenje rešenja i plan realizacije.',
   },
 };
@@ -38,14 +39,14 @@ export default async function LanguageLayout({ children, params }: Props) {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
-    name: 'Koretskiy Consulting',
+    name: business.operatingName,
     url: `${SITE_URL}/${safeLang}`,
-    email: 'consulting@koretskiy.com',
-    telephone: '+381638421005',
+    email: business.email,
+    telephone: business.phone.e164,
     areaServed: ['Serbia', 'Europe'],
     founder: {
       '@type': 'Person',
-      name: 'Oleksandr Koretskiy',
+      name: business.founder.canonicalName,
     },
     knowsAbout: [
       'Technical consulting',

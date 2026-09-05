@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import { languages, type Lang } from '../../../lib/translations';
 import SiteHeader from '../../components/SiteHeader';
+import { mailtoHrefWithSubject } from '../../../lib/business';
 
 type Props = { params: Promise<{ lang: string }> };
 
@@ -195,7 +196,7 @@ export default async function TenderEquipmentPage({ params }: Props) {
         <h1>{t.title}</h1>
         <p className="lead">{t.lead}</p>
         <div className="hero-actions">
-          <a className="button button-dark" href="mailto:consulting@koretskiy.com?subject=Tender%20specification">{t.button}</a>
+          <a className="button button-dark" href={mailtoHrefWithSubject('Tender specification')}>{t.button}</a>
           <a className="button button-light" href={`/${lang}`}>← {t.back}</a>
         </div>
       </section>
@@ -232,7 +233,7 @@ export default async function TenderEquipmentPage({ params }: Props) {
         <p className="eyebrow">{t.startEyebrow}</p>
         <h2>{t.startTitle}</h2>
         <p>{t.startText}</p>
-        <a className="button button-dark" href="mailto:consulting@koretskiy.com?subject=Tender%20specification">{t.button}</a>
+        <a className="button button-dark" href={mailtoHrefWithSubject('Tender specification')}>{t.button}</a>
       </section>
     </main>
   );

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import type { Lang } from '../../lib/translations';
+import { business } from '../../lib/business';
 
 export type NavLink = { href: string; label: string };
 
@@ -46,7 +47,7 @@ export default function MobileMenu({ lang, links }: { lang: Lang; links: NavLink
         <div className="mobile-menu-overlay" id="mobile-site-menu" role="dialog" aria-modal="true">
           <div className="mobile-menu-panel">
             <div className="mobile-menu-top">
-              <span className="mobile-menu-title">Koretskiy Consulting</span>
+              <span className="mobile-menu-title">{business.operatingName}</span>
               <button type="button" className="mobile-menu-close" onClick={() => setOpen(false)}>
                 {closeLabels[lang]} ×
               </button>

@@ -1,24 +1,10 @@
 import { NextResponse } from 'next/server';
 import { submitToIndexNow } from '../../../lib/indexnow';
+import { business } from '../../../lib/business';
 
-const currentUrls = [
-  'https://koretskiy.com/en',
-  'https://koretskiy.com/ru',
-  'https://koretskiy.com/uk',
-  'https://koretskiy.com/sr',
-  'https://koretskiy.com/en/about',
-  'https://koretskiy.com/ru/about',
-  'https://koretskiy.com/uk/about',
-  'https://koretskiy.com/sr/about',
-  'https://koretskiy.com/en/tender-equipment',
-  'https://koretskiy.com/ru/tender-equipment',
-  'https://koretskiy.com/uk/tender-equipment',
-  'https://koretskiy.com/sr/tender-equipment',
-  'https://koretskiy.com/en/perspectives',
-  'https://koretskiy.com/ru/perspectives',
-  'https://koretskiy.com/uk/perspectives',
-  'https://koretskiy.com/sr/perspectives',
-];
+const currentUrls = ['', '/about', '/tender-equipment', '/perspectives'].flatMap((path) =>
+  ['en', 'ru', 'uk', 'sr'].map((lang) => `${business.website.canonicalUrl}/${lang}${path}`),
+);
 
 export async function GET() {
   const result = await submitToIndexNow(currentUrls);

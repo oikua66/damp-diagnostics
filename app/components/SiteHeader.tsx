@@ -1,5 +1,6 @@
 import { languageNames, languages, type Lang } from '../../lib/translations';
 import MobileMenu, { type NavLink } from './MobileMenu';
+import { business } from '../../lib/business';
 
 type LanguagePath = '' | '/about' | '/perspectives' | '/tender-equipment';
 
@@ -33,10 +34,10 @@ export default function SiteHeader({ lang, languagePath }: { lang: Lang; languag
   return (
     <>
       <header className="site-header">
-        <a className="brand" href={`/${lang}`} aria-label="Koretskiy Consulting home">
+        <a className="brand" href={`/${lang}`} aria-label={`${business.operatingName} home`}>
           <img
             src="/logo.svg"
-            alt="Koretskiy Consulting"
+            alt={business.operatingName}
             style={{ width: 'clamp(118px, 11vw, 150px)', height: 'auto', display: 'block' }}
           />
         </a>
