@@ -2,7 +2,7 @@ import { business, mailtoHref } from '../../lib/business';
 
 export default function ContactDetails() {
   return (
-    <section className="contact-details" aria-label={`${business.operatingName} contact details`}>
+    <section id="contact" className="contact-details" aria-label={`${business.operatingName} contact details`}>
       <div className="contact-details-inner">
         <div>
           <p className="eyebrow">{business.operatingName}</p>
