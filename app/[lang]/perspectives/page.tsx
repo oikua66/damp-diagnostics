@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import { languages, type Lang } from '../../../lib/translations';
 import SiteHeader from '../../components/SiteHeader';
+import { business, mailtoHref } from '../../../lib/business';
 
 type Props = { params: Promise<{ lang: string }> };
 
@@ -127,7 +128,7 @@ export default async function ProjectsPage({ params }: Props) {
 
       <section className="section" style={{ paddingTop: '9vh' }}>
         <div style={{ maxWidth: 920 }}>
-          <p className="eyebrow">Koretskiy Consulting</p>
+          <p className="eyebrow">{business.operatingName}</p>
           <h1>{t.title}</h1>
           <p className="lead-small" style={{ maxWidth: 900 }}>{t.intro}</p>
         </div>
@@ -167,8 +168,8 @@ export default async function ProjectsPage({ params }: Props) {
           <h2>{t.contactTitle}</h2>
           <p className="lead-small">{t.contactText}</p>
           <p className="lead-small" style={{ marginBottom: 0 }}>
-            <a href="mailto:consulting@koretskiy.com" style={{ borderBottom: '1px solid currentColor' }}>
-              consulting@koretskiy.com
+            <a href={mailtoHref()} style={{ borderBottom: '1px solid currentColor' }}>
+              {business.email}
             </a>
           </p>
         </div>

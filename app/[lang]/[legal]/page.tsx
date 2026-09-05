@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import { languages, type Lang } from '../../../lib/translations';
+import { business } from '../../../lib/business';
 
 type Props = { params: Promise<{ lang: string; legal: string }> };
 
@@ -47,9 +48,9 @@ const privacy = {
       'We may update this Privacy Policy from time to time. The latest version will always be available on this page.',
     ]],
     ['9. Contact', [
-      'Koretskiy Consulting',
-      'Email: consulting@koretskiy.com',
-      'Website: https://koretskiy.com',
+      business.operatingName,
+      `Email: ${business.email}`,
+      `Website: ${business.website.canonicalUrl}`,
     ]],
   ],
 };
@@ -82,7 +83,7 @@ const terms = {
     ['7. Limitation of Liability', ['To the fullest extent permitted by applicable law, Koretskiy Consulting shall not be liable for any direct, indirect, incidental, consequential, or other damages arising from or related to the use of this website or reliance on its content.']],
     ['8. Changes to These Terms', ['Koretskiy Consulting reserves the right to modify these Terms of Use at any time. The most current version will always be published on this page.']],
     ['9. Governing Law', ['These Terms of Use shall be governed by and interpreted in accordance with the laws of the Republic of Serbia.']],
-    ['10. Contact', ['Koretskiy Consulting', 'Email: consulting@koretskiy.com', 'Website: https://koretskiy.com']],
+    ['10. Contact', [business.operatingName, `Email: ${business.email}`, `Website: ${business.website.canonicalUrl}`]],
   ],
 };
 
@@ -90,9 +91,9 @@ const notice = {
   title: 'Legal Notice',
   sections: [
     ['Company Information', [
-      'Business Name: OLEKSANDR KORETSKIY PR AGENCIJA ZA TEHNIČKI KONSALTING FUTOG',
-      'Operating Name: Koretskiy Consulting',
-      'Owner: Oleksandr Koretskiy',
+      `Business Name: ${business.registeredSerbianName}`,
+      `Operating Name: ${business.operatingName}`,
+      `Owner: ${business.founder.canonicalName}`,
       'Principal Business Activity: Engineering Activities and Technical Consulting (Activity Code 7112)',
     ]],
     ['Registration Details', [
@@ -101,7 +102,7 @@ const notice = {
       'Tax Identification Number (PIB): 115052587',
     ]],
     ['Location', ['Futog', 'Novi Sad', 'Republic of Serbia']],
-    ['Contact', ['Email: consulting@koretskiy.com', 'Phone: +381 63 842 1005', 'Website: https://koretskiy.com']],
+    ['Contact', [`Email: ${business.email}`, `Phone: ${business.phone.display}`, `Website: ${business.website.canonicalUrl}`]],
     ['Legal Jurisdiction', ['This website is operated from the Republic of Serbia and is governed by the applicable laws of the Republic of Serbia.']],
   ],
 };
@@ -121,15 +122,15 @@ export default async function LegalPage({ params }: Props) {
   return (
     <main>
       <header className="site-header">
-        <a className="brand" href={`/${lang}`} aria-label="Koretskiy Consulting home">
+        <a className="brand" href={`/${lang}`} aria-label={`${business.operatingName} home`}>
           <span className="brand-mark">KC</span>
-          <span>Koretskiy Consulting</span>
+          <span>{business.operatingName}</span>
         </a>
         <a className="button button-light" href={`/${lang}`}>Back to site</a>
       </header>
 
       <article className="legal-page">
-        <p className="eyebrow">Koretskiy Consulting</p>
+        <p className="eyebrow">{business.operatingName}</p>
         <h1>{doc.title}</h1>
         {doc.updated && <p className="legal-updated">{doc.updated}</p>}
         <div className="legal-content">

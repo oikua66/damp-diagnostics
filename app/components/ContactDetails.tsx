@@ -1,17 +1,19 @@
+import { business, mailtoHref } from '../../lib/business';
+
 export default function ContactDetails() {
   return (
-    <section className="contact-details" aria-label="Koretskiy Consulting contact details">
+    <section id="contact" className="contact-details" aria-label={`${business.operatingName} contact details`}>
       <div className="contact-details-inner">
         <div>
-          <p className="eyebrow">Koretskiy Consulting</p>
-          <h3>Oleksandr Koretskiy</h3>
-          <p className="contact-company">OLEKSANDR KORETSKIY PR AGENCIJA ZA TEHNIČKI KONSALTING FUTOG</p>
+          <p className="eyebrow">{business.operatingName}</p>
+          <h3>{business.founder.canonicalName}</h3>
+          <p className="contact-company">{business.registeredSerbianName}</p>
         </div>
         <div className="contact-links">
-          <a href="mailto:consulting@koretskiy.com">consulting@koretskiy.com</a>
-          <a href="tel:+381638421005">+381 63 842 1005</a>
-          <a href="https://www.koretskiy.com">www.koretskiy.com</a>
-          <span>WhatsApp · Viber · Telegram</span>
+          <a href={mailtoHref()}>{business.email}</a>
+          <a href={business.phone.href}>{business.phone.display}</a>
+          <a href={business.website.contactUrl}>{business.website.contactDisplay}</a>
+          <span>{business.messagingChannelLabels.join(' · ')}</span>
         </div>
       </div>
     </section>
