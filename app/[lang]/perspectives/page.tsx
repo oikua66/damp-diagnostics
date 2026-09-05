@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
-import { languageNames, languages, type Lang } from '../../../lib/translations';
+import { languages, type Lang } from '../../../lib/translations';
+import SiteHeader from '../../components/SiteHeader';
 
 type Props = { params: Promise<{ lang: string }> };
 
@@ -122,22 +123,7 @@ export default async function ProjectsPage({ params }: Props) {
 
   return (
     <main>
-      <header className="site-header">
-        <a className="brand" href={`/${lang}`}>
-          <span className="brand-mark">KC</span>
-          <span>Koretskiy Consulting</span>
-        </a>
-        <div className="header-right">
-          <nav />
-          <div className="language-switcher">
-            {languages.map((item) => (
-              <a key={item} href={`/${item}/perspectives`} className={item === lang ? 'active' : ''}>
-                {languageNames[item]}
-              </a>
-            ))}
-          </div>
-        </div>
-      </header>
+      <SiteHeader lang={lang} languagePath="/perspectives" />
 
       <section className="section" style={{ paddingTop: '9vh' }}>
         <div style={{ maxWidth: 920 }}>

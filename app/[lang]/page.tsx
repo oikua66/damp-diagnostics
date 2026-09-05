@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
-import { copy, languageNames, languages, type Lang } from '../../lib/translations';
+import { copy, languages, type Lang } from '../../lib/translations';
+import SiteHeader from '../components/SiteHeader';
 
 type Props = { params: Promise<{ lang: string }> };
 
@@ -107,13 +108,7 @@ export default async function LocalizedHome({ params }: Props) {
 
   return (
     <main>
-      <header className="site-header">
-        <a className="brand" href={`/${lang}#top`} aria-label="Koretskiy Consulting home"><span className="brand-mark">KC</span><span>Koretskiy Consulting</span></a>
-        <div className="header-right">
-          <nav><a href={`/${lang}/about`}>{h.about}</a><a href={`/${lang}#services`}>{t.nav.services}</a><a href={`/${lang}#approach`}>{t.nav.approach}</a><a href={`/${lang}#contact`}>{t.nav.contact}</a></nav>
-          <div className="language-switcher" aria-label="Language selector">{languages.map((code) => <a key={code} href={`/${code}`} className={code === lang ? 'active' : ''}>{languageNames[code]}</a>)}</div>
-        </div>
-      </header>
+      <SiteHeader lang={lang} languagePath="" />
       <section className="hero" id="top"><p className="eyebrow">Koretskiy Consulting</p><h1>{t.hero}</h1><p className="lead">{h.intro}</p><div className="hero-actions"><a className="button button-dark" href="#services">{t.nav.services}</a><a className="button button-light" href={`/${lang}/perspectives`}>{h.openProjects}</a></div></section>
       <section className="section" id="services"><div className="section-heading"><p className="eyebrow">{h.directionsEyebrow}</p><h2>{h.directionsTitle}</h2></div><div className="cards home-direction-grid">{h.directions.map((item, index) => <article className="card home-direction-card" key={item.title}><span className="card-number">0{index + 1}</span><h3>{item.title}</h3><p>{item.text}</p><a className="button button-light" href={`/${lang}${item.href}`}>{item.cta}</a></article>)}</div></section>
       <section className="section" id="current-projects"><div className="section-heading"><p className="eyebrow">{h.currentEyebrow}</p><h2>{h.currentTitle}</h2></div><div className="home-project-grid"><article className="home-project-card"><h3>{h.project1Title}</h3><p>{h.project1Text}</p></article><article className="home-project-card"><h3>{h.project2Title}</h3><p>{h.project2Text}</p></article></div><div className="hero-actions"><a className="button button-dark" href={`/${lang}/perspectives`}>{h.openProjects}</a></div></section>

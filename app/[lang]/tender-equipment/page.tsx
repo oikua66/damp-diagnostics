@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
-import { languageNames, languages, type Lang } from '../../../lib/translations';
+import { languages, type Lang } from '../../../lib/translations';
+import SiteHeader from '../../components/SiteHeader';
 
 type Props = { params: Promise<{ lang: string }> };
 
@@ -187,22 +188,7 @@ export default async function TenderEquipmentPage({ params }: Props) {
 
   return (
     <main className="tender-page">
-      <header className="site-header">
-        <a className="brand" href={`/${lang}`} aria-label="Koretskiy Consulting home">
-          <span className="brand-mark">KC</span>
-          <span>Koretskiy Consulting</span>
-        </a>
-        <div className="header-right">
-          <nav />
-          <div className="language-switcher" aria-label="Language selector">
-            {languages.map((code) => (
-              <a key={code} href={`/${code}/tender-equipment`} className={code === lang ? 'active' : ''}>
-                {languageNames[code]}
-              </a>
-            ))}
-          </div>
-        </div>
-      </header>
+      <SiteHeader lang={lang} languagePath="/tender-equipment" />
 
       <section className="hero">
         <p className="eyebrow">{t.eyebrow}</p>

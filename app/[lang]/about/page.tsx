@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
-import { languageNames, languages, type Lang } from '../../../lib/translations';
+import { languages, type Lang } from '../../../lib/translations';
+import SiteHeader from '../../components/SiteHeader';
 
 type Props = { params: Promise<{ lang: string }> };
 
@@ -78,20 +79,7 @@ export default async function AboutPage({ params }: Props) {
 
   return (
     <main>
-      <header className="site-header">
-        <a className="brand" href={`/${lang}`}>
-          <span className="brand-mark">KC</span>
-          <span>Koretskiy Consulting</span>
-        </a>
-        <div className="header-right">
-          <a href={`/${lang}`}>{t.back}</a>
-          <div className="language-switcher" aria-label="Language selector">
-            {languages.map((code) => (
-              <a key={code} href={`/${code}/about`} className={code === lang ? 'active' : ''}>{languageNames[code]}</a>
-            ))}
-          </div>
-        </div>
-      </header>
+      <SiteHeader lang={lang} languagePath="/about" />
 
       <section className="about-hero">
         <div>
