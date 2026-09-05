@@ -1,7 +1,6 @@
 import './globals.css';
 import './visuals.css';
 import './mobile-menu.css';
-import './header-nav.css';
 import './tender-typography.css';
 import './typography-system.css';
 import './newsletter.css';
@@ -13,8 +12,6 @@ import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import ContactDetails from './components/ContactDetails';
 import LegalFooter from './components/LegalFooter';
-import HeaderAboutInjector from './components/HeaderAboutInjector';
-import MobileMenu from './components/MobileMenu';
 import NewsletterSignup from './components/NewsletterSignup';
 import ProjectEstimateCTAInjector from './components/ProjectEstimateCTAInjector';
 
@@ -30,8 +27,6 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
   return (
     <html lang={lang}>
       <body>
-        <HeaderAboutInjector />
-        <MobileMenu />
         <ProjectEstimateCTAInjector />
         {children}
         <NewsletterSignup />

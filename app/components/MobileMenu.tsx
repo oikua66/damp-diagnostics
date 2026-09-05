@@ -1,53 +1,26 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { usePathname } from 'next/navigation';
+import type { Lang } from '../../lib/translations';
 
-type NavLink = { href: string; label: string };
+export type NavLink = { href: string; label: string };
 
-const menuLabels: Record<string, string> = {
+const menuLabels: Record<Lang, string> = {
   en: 'Menu',
   ru: 'Меню',
   uk: 'Меню',
   sr: 'Meni',
 };
 
-const closeLabels: Record<string, string> = {
+const closeLabels: Record<Lang, string> = {
   en: 'Close',
   ru: 'Закрыть',
   uk: 'Закрити',
   sr: 'Zatvori',
 };
 
-export default function MobileMenu() {
-  const pathname = usePathname() || '/en';
-  const lang = pathname.split('/').filter(Boolean)[0] || 'en';
+export default function MobileMenu({ lang, links }: { lang: Lang; links: NavLink[] }) {
   const [open, setOpen] = useState(false);
-  const [links, setLinks] = useState<NavLink[]>([]);
-
-  useEffect(() => {
-    const collectLinks = () => {
-      const nav = document.querySelector('.site-header nav');
-      if (!nav) return;
-
-      const items = Array.from(nav.querySelectorAll('a'))
-        .map((a) => ({
-          href: a.getAttribute('href') || '#',
-          label: (a.textContent || '').trim(),
-        }))
-        .filter((item) => item.label);
-
-      setLinks(items);
-    };
-
-    collectLinks();
-    const timer = window.setTimeout(collectLinks, 100);
-    return () => window.clearTimeout(timer);
-  }, [pathname]);
-
-  useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
 
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : '';
@@ -66,7 +39,7 @@ export default function MobileMenu() {
         onClick={() => setOpen(true)}
       >
         <span aria-hidden="true" className="mobile-menu-icon">☰</span>
-        <span>{menuLabels[lang] || menuLabels.en}</span>
+        <span>{menuLabels[lang]}</span>
       </button>
 
       {open && (
@@ -75,7 +48,7 @@ export default function MobileMenu() {
             <div className="mobile-menu-top">
               <span className="mobile-menu-title">Koretskiy Consulting</span>
               <button type="button" className="mobile-menu-close" onClick={() => setOpen(false)}>
-                {closeLabels[lang] || closeLabels.en} ×
+                {closeLabels[lang]} ×
               </button>
             </div>
 
