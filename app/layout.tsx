@@ -14,9 +14,10 @@ import ContactDetails from './components/ContactDetails';
 import LegalFooter from './components/LegalFooter';
 import NewsletterSignup from './components/NewsletterSignup';
 import ProjectEstimateCTAInjector from './components/ProjectEstimateCTAInjector';
+import { business } from '../lib/business';
 
 export const metadata: Metadata = {
-  title: 'Koretskiy Consulting',
+  title: business.operatingName,
   description: 'Independent consulting for complex technical and business decisions.',
 };
 
