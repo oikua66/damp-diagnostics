@@ -104,6 +104,22 @@ export default async function MethodologyDetailPage({ params }: Props) {
         </section>
       )}
 
+      {slug === 'opportunity-assessment' && (
+        <section className="section split" style={{ background: 'var(--panel)' }}>
+          <div>
+            <p className="eyebrow">PDF</p>
+            <h2>{l.pdf}</h2>
+          </div>
+          <div className="prose">
+            <p>{m.pdfText}</p>
+            <div className="hero-actions">
+              <a className="button button-light" href={publicMethodologyPdfs[lang].path} target="_blank" rel="noreferrer">{l.view}</a>
+              <a className="button button-dark" href={publicMethodologyPdfs[lang].path} download>{l.download}</a>
+            </div>
+          </div>
+        </section>
+      )}
+
       {page.related?.length ? (
         <section className="section">
           <p className="eyebrow">{l.related}</p>
