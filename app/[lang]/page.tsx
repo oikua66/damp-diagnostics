@@ -296,6 +296,7 @@ export default async function LocalizedHome({ params }: Props) {
         </div>
         <div className="prose">
           {e.deliverables.map((item) => <p key={item}>— {item}</p>)}
+          <a className="button button-light" href={`/${lang}/methodology`}>{methodologyCta[lang]}</a>
         </div>
       </section>
 
