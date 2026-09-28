@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { languages, type Lang } from '../../../lib/translations';
 import { buildMetadata } from '../../../lib/seo';
-import { methodology, methodologySlugs } from '../../../lib/methodology';
+import { methodology, methodologySlugs, publicMethodologyPdfs } from '../../../lib/methodology';
 import SiteHeader from '../../components/SiteHeader';
 
 type Props = { params: Promise<{ lang: string }> };
@@ -18,6 +18,8 @@ const intro: Record<Lang, {
   pagesTitle: string;
   softwareTitle: string;
   open: string;
+  viewPdf: string;
+  downloadPdf: string;
 }> = {
   ru: {
     title: 'Методология инженерного анализа и принятия решений',
@@ -29,7 +31,7 @@ const intro: Record<Lang, {
     aritzCta: 'Открыть раздел ARITZ',
     pagesTitle: 'Разделы методологии',
     softwareTitle: 'От методологии к программной реализации',
-    open: 'Открыть',
+    open: 'Открыть', viewPdf: 'Просмотреть PDF', downloadPdf: 'Скачать PDF',
   },
   en: {
     title: 'Engineering analysis and decision methodology',
@@ -41,7 +43,7 @@ const intro: Record<Lang, {
     aritzCta: 'Open ARITZ',
     pagesTitle: 'Methodology sections',
     softwareTitle: 'From methodology to software implementation',
-    open: 'Open',
+    open: 'Open', viewPdf: 'View PDF', downloadPdf: 'Download PDF',
   },
   uk: {
     title: 'Методологія інженерного аналізу та прийняття рішень',
@@ -53,7 +55,7 @@ const intro: Record<Lang, {
     aritzCta: 'Відкрити ARITZ',
     pagesTitle: 'Розділи методології',
     softwareTitle: 'Від методології до програмної реалізації',
-    open: 'Відкрити',
+    open: 'Відкрити', viewPdf: 'Переглянути PDF', downloadPdf: 'Завантажити PDF',
   },
   sr: {
     title: 'Metodologija inženjerske analize i donošenja odluka',
@@ -65,7 +67,7 @@ const intro: Record<Lang, {
     aritzCta: 'Otvori ARITZ',
     pagesTitle: 'Delovi metodologije',
     softwareTitle: 'Od metodologije do softverske realizacije',
-    open: 'Otvori',
+    open: 'Otvori', viewPdf: 'Pregledaj PDF', downloadPdf: 'Preuzmi PDF',
   },
 };
 
@@ -159,7 +161,11 @@ export default async function MethodologyPage({ params }: Props) {
         </div>
         <div className="prose">
           <p>{m.pdfText}</p>
-          <a className="button button-light" href={`/${lang}/methodology/library`}>{m.pdfPending}</a>
+          <div className="hero-actions">
+            <a className="button button-light" href={publicMethodologyPdfs[lang].path} target="_blank" rel="noreferrer">{t.viewPdf}</a>
+            <a className="button button-dark" href={publicMethodologyPdfs[lang].path} download>{t.downloadPdf}</a>
+            <a className="button button-light" href={`/${lang}/methodology/library`}>{m.pdfPending}</a>
+          </div>
         </div>
       </section>
     </main>

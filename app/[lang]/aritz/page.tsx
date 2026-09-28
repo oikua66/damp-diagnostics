@@ -2,7 +2,8 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { languages, type Lang } from '../../../lib/translations';
 import { buildMetadata } from '../../../lib/seo';
-import { methodology } from '../../../lib/methodology';
+import { methodology, publicMethodologyPdfs } from '../../../lib/methodology';
+import { aritzPages, aritzSlugs } from '../../../lib/aritz';
 import SiteHeader from '../../components/SiteHeader';
 
 type Props = { params: Promise<{ lang: string }> };
@@ -23,6 +24,10 @@ const copy: Record<Lang, {
   trizTitle: string;
   trizText: string;
   methodologyCta: string;
+  topicsTitle: string;
+  open: string;
+  viewPdf: string;
+  downloadPdf: string;
 }> = {
   ru: {
     title: 'ARITZ / АРИЗ — инженерный метод решения задач',
@@ -44,6 +49,7 @@ const copy: Record<Lang, {
     trizTitle: 'ARITZ и ТРИЗ',
     trizText: 'Классическая ТРИЗ / АРИЗ является методологической основой. Публичный ARITZ здесь — практическая инженерная реализация с акцентом на доказательства, прослеживаемость, расчёты, неопределённость, проверку и экспертную эскалацию.',
     methodologyCta: 'Вернуться к общей методологии',
+    topicsTitle: 'Основные разделы ARITZ', open: 'Открыть', viewPdf: 'Просмотреть PDF', downloadPdf: 'Скачать PDF',
   },
   en: {
     title: 'ARITZ — an engineering problem-solving method',
@@ -65,6 +71,7 @@ const copy: Record<Lang, {
     trizTitle: 'ARITZ and TRIZ',
     trizText: 'Classical TRIZ / ARIZ is the methodological foundation. The public ARITZ presented here is a practical engineering implementation focused on evidence, traceability, calculations, uncertainty, verification and expert escalation.',
     methodologyCta: 'Back to the full methodology',
+    topicsTitle: 'Core ARITZ sections', open: 'Open', viewPdf: 'View PDF', downloadPdf: 'Download PDF',
   },
   uk: {
     title: 'ARITZ / АРИЗ — інженерний метод розв’язання задач',
@@ -86,6 +93,7 @@ const copy: Record<Lang, {
     trizTitle: 'ARITZ і ТРІЗ',
     trizText: 'Класична ТРІЗ / АРИЗ є методологічною основою. Публічний ARITZ тут — практична інженерна реалізація з акцентом на докази, простежуваність, розрахунки, невизначеність, перевірку та експертну ескалацію.',
     methodologyCta: 'Повернутися до загальної методології',
+    topicsTitle: 'Основні розділи ARITZ', open: 'Відкрити', viewPdf: 'Переглянути PDF', downloadPdf: 'Завантажити PDF',
   },
   sr: {
     title: 'ARITZ — inženjerski metod rešavanja problema',
@@ -107,6 +115,7 @@ const copy: Record<Lang, {
     trizTitle: 'ARITZ i TRIZ',
     trizText: 'Klasični TRIZ / ARIZ predstavlja metodološku osnovu. Javni ARITZ ovde je praktična inženjerska realizacija sa fokusom na dokaze, sledljivost, proračune, neizvesnost, verifikaciju i ekspertsku eskalaciju.',
     methodologyCta: 'Nazad na celu metodologiju',
+    topicsTitle: 'Osnovni ARITZ odeljci', open: 'Otvori', viewPdf: 'Pregledaj PDF', downloadPdf: 'Preuzmi PDF',
   },
 };
 
@@ -172,6 +181,26 @@ export default async function AritzPage({ params }: Props) {
         <div className="prose">{t.elements.map((item) => <p key={item}>— {item}</p>)}</div>
       </section>
 
+      <section className="section">
+        <div className="section-heading">
+          <p className="eyebrow">ARITZ</p>
+          <h2>{t.topicsTitle}</h2>
+        </div>
+        <div className="cards" style={{ gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', rowGap: 24 }}>
+          {aritzSlugs.map((slug,index) => {
+            const item = aritzPages[lang][slug];
+            return (
+              <article className="card" key={slug}>
+                <span className="card-number">{String(index+1).padStart(2,'0')}</span>
+                <h3>{item.title}</h3>
+                <p>{item.lead}</p>
+                <a className="button button-light" href={`/${lang}/aritz/${slug}`} style={{marginTop:28}}>{t.open}</a>
+              </article>
+            );
+          })}
+        </div>
+      </section>
+
       <section className="section split" style={{ background: 'var(--panel)' }}>
         <div><h2>{t.verifyTitle}</h2></div>
         <div className="prose"><p>{t.verify}</p></div>
@@ -195,8 +224,10 @@ export default async function AritzPage({ params }: Props) {
         <div className="prose">
           <p>{m.pdfText}</p>
           <div className="hero-actions">
+            <a className="button button-light" href={publicMethodologyPdfs[lang].path} target="_blank" rel="noreferrer">{t.viewPdf}</a>
+            <a className="button button-dark" href={publicMethodologyPdfs[lang].path} download>{t.downloadPdf}</a>
             <a className="button button-light" href={`/${lang}/methodology/library`}>{m.pdfPending}</a>
-            <a className="button button-dark" href={`/${lang}/methodology`}>{t.methodologyCta}</a>
+            <a className="button button-light" href={`/${lang}/methodology`}>{t.methodologyCta}</a>
           </div>
         </div>
       </section>

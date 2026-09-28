@@ -13,6 +13,15 @@ const methodologyPaths = [
   '/methodology/business-processes',
   '/methodology/library',
   '/aritz',
+  '/aritz/problem-formulation',
+  '/aritz/system-boundary',
+  '/aritz/contradictions',
+  '/aritz/resources',
+  '/aritz/constraints',
+  '/aritz/desired-result',
+  '/aritz/diagnose',
+  '/aritz/invent',
+  '/aritz/verify',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -29,7 +38,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         path === '/methodology' || path === '/aritz' ? 0.9 :
         path === '/tender-equipment' ? 0.85 :
         path === '/perspectives' ? 0.8 :
-        path.startsWith('/methodology/') ? 0.75 : 0.7,
+        path.startsWith('/methodology/') || path.startsWith('/aritz/') ? 0.75 : 0.7,
     })),
   );
 }

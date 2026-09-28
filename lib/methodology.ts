@@ -117,7 +117,7 @@ const commonPages: Record<Lang, Record<string, MethodologyPage>> = {
       lead: 'Здесь будут доступны справочные версии методологии для просмотра и скачивания.',
       sections: [
         { title: 'Языки', bullets: ['Русский;', 'English;', 'Українська;', 'Srpski.'] },
-        { title: 'Формат', paragraphs: ['PDF-файлы готовятся параллельно и будут добавлены сюда после публикации. Предпочтительный вариант — просмотр в браузере и прямое скачивание с koretskiy.com при сохранении мастер-копий в Google Drive.'] },
+        { title: 'Формат', paragraphs: ['Четыре публичные PDF-версии опубликованы на koretskiy.com и доступны для просмотра в браузере и прямого скачивания. Мастер-копии сохраняются в Google Drive.'] },
       ],
     },
   },
@@ -202,7 +202,7 @@ const translations: Record<Exclude<Lang, 'ru'>, Record<string, MethodologyPage>>
       lead:'Reference editions of the methodology will be available here for viewing and download.',
       sections:[
         {title:'Languages', bullets:['Русский;','English;','Українська;','Srpski.']},
-        {title:'Format', paragraphs:['The PDF editions are being prepared in parallel and will be added here after publication. The preferred setup is browser viewing and direct download from koretskiy.com while master copies remain stored in Google Drive.']},
+        {title:'Format', paragraphs:['Four public PDF editions are published on koretskiy.com and are available for browser viewing and direct download. Master copies remain stored in Google Drive.']},
       ],
     },
   },
@@ -215,7 +215,7 @@ const translations: Record<Exclude<Lang, 'ru'>, Record<string, MethodologyPage>>
     uncertainty: {slug:'uncertainty',eyebrow:'Uncertainty',title:'Невизначеність і суперечливі дані',lead:'Невідомі та конфлікти даних не повинні маскуватися впевненим текстом. Вони є частиною інженерного результату.',sections:[{title:'Статуси знання',bullets:['відоме / факт;','дані клієнта;','незалежно перевірені дані;','висновок;','припущення;','гіпотеза;','невідоме;','критично важливе невідоме.']},{title:'Умовні висновки',paragraphs:['Коли рішення залежить від неперевіреного параметра, висновок має показувати, що можна стверджувати зараз, яка умова має виконуватися і який доказ зніме невизначеність.']}]},
     checkopp: {slug:'checkopp',eyebrow:'Software implementation',title:'CheckOpp — програмна реалізація методології',lead:'CheckOpp формалізує суттєву частину методології як відтворюваний аналітичний процес для реальних проєктів і можливостей.',sections:[{title:'Що реалізується',bullets:['Opportunity Assessment;','структурування відомого і невідомого;','research & verification;','робота з конфліктами і ризиками;','ARITZ як маршрут інженерного рішення;','контроль якості та експертна ескалація.']},{title:'Що залишається методологією',paragraphs:['koretskiy.com описує публічні принципи, логіку і стандарти. CheckOpp реалізує частину цієї логіки як програмний аналітичний сервіс. Внутрішня архітектура, runtime-статуси й технічні механізми не є частиною публічної методології.']}]},
     'business-processes': {slug:'business-processes',eyebrow:'Business Processes',title:'Аналіз і модернізація бізнес-процесів',lead:'Та сама системна логіка застосовується до процесів: спочатку мета і межі, потім вузьке місце, суперечності, ресурси, альтернативи і перевірка.',sections:[{title:'Базова послідовність',paragraphs:['Мета → Межі процесу → Поточний стан → Вузьке місце → Суперечності → Ресурси → Альтернативи → Перевірка → Перебудований процес → Метрики.']},{title:'Застосування',bullets:['операційні процеси;','взаємодія підрозділів;','закупівлі та погодження;','продажі й обслуговування;','технічне управління;','процеси прийняття рішень;','модернізація наявних процедур без автоматичної заміни всієї системи.']},{title:'Цифрова реалізація',paragraphs:['Методологія може стати основою спеціалізованого цифрового інструмента. Окремий продукт буде представлено тільки після появи реально працюючої реалізації.']}]},
-    library: {slug:'library',eyebrow:'Reference Library',title:'Публічна бібліотека методології',lead:'Тут будуть доступні довідкові версії методології для перегляду і завантаження.',sections:[{title:'Мови',bullets:['Русский;','English;','Українська;','Srpski.']},{title:'Формат',paragraphs:['PDF-версії готуються паралельно і будуть додані після публікації. Бажаний варіант — перегляд у браузері та пряме завантаження з koretskiy.com зі збереженням master-копій у Google Drive.']}]},
+    library: {slug:'library',eyebrow:'Reference Library',title:'Публічна бібліотека методології',lead:'Тут будуть доступні довідкові версії методології для перегляду і завантаження.',sections:[{title:'Мови',bullets:['Русский;','English;','Українська;','Srpski.']},{title:'Формат',paragraphs:['Чотири публічні PDF-версії опубліковано на koretskiy.com. Вони доступні для перегляду у браузері та прямого завантаження, а master-копії зберігаються в Google Drive.']}]},
   },
   sr: {
     'opportunity-assessment': {slug:'opportunity-assessment',eyebrow:'Koretskiy Methodology',title:'Opportunity Assessment',lead:'Strukturisana procena projekta, tehnologije, razvoja ili poslovne prilike pre nego što se ulože značajno vreme i novac.',sections:[{title:'Cilj procene',paragraphs:['Cilj nije da se dokaže da je ideja dobra, već da se pokaže šta je poznato, šta nije poznato, gde su kritična ograničenja i koji sledeći korak može stvarno promeniti odluku.']},{title:'Šta se razmatra',bullets:['stvarni cilj i željeni rezultat;','trenutno usko grlo;','tehnička i fizička izvodljivost;','tržište, analogije i prior art;','resursi i ograničenja;','kritične nepoznanice;','uslovi za promenu ili zaustavljanje pravca;','najmanji sledeći korak relevantan za odluku.']},{title:'Rezultat',paragraphs:['Rezultat je mapa odluke: šta je potvrđeno, šta ostaje pretpostavka, koje su kontradikcije važne i šta treba proveriti dalje.']}],related:[{href:'/methodology/research-verification',label:'Istraživanje i verifikacija'},{href:'/methodology/uncertainty',label:'Neizvesnost i konfliktni podaci'}]},
@@ -226,7 +226,7 @@ const translations: Record<Exclude<Lang, 'ru'>, Record<string, MethodologyPage>>
     uncertainty: {slug:'uncertainty',eyebrow:'Uncertainty',title:'Neizvesnost i konfliktni podaci',lead:'Nepoznanice i konflikti podataka ne treba da budu sakriveni iza samouverenog teksta. Oni su deo inženjerskog rezultata.',sections:[{title:'Statusi znanja',bullets:['poznato / činjenica;','podaci klijenta;','nezavisno potvrđeni podaci;','zaključak;','pretpostavka;','hipoteza;','nepoznato;','kritična nepoznanica.']},{title:'Uslovni zaključci',paragraphs:['Kada odluka zavisi od nepotvrđenog parametra, zaključak treba da pokaže šta se sada može tvrditi, koji uslov mora da važi i koji dokaz bi uklonio neizvesnost.']}]},
     checkopp: {slug:'checkopp',eyebrow:'Software implementation',title:'CheckOpp — softverska realizacija metodologije',lead:'CheckOpp formalizuje značajan deo metodologije kao ponovljiv analitički proces za realne projekte i prilike.',sections:[{title:'Šta se realizuje',bullets:['Opportunity Assessment;','strukturisanje poznatog i nepoznatog;','research & verification;','rad sa konfliktima i rizicima;','ARITZ kao ruta za inženjersko rešavanje problema;','kontrola kvaliteta i ekspertska eskalacija.']},{title:'Šta ostaje metodologija',paragraphs:['koretskiy.com objašnjava javne principe, logiku i standarde. CheckOpp realizuje deo te logike kao softverski analitički servis. Interna arhitektura, runtime statusi i tehnički mehanizmi nisu deo javne metodologije.']}]},
     'business-processes': {slug:'business-processes',eyebrow:'Business Processes',title:'Analiza i modernizacija poslovnih procesa',lead:'Ista sistemska logika može se primeniti na procese: prvo cilj i granice, zatim usko grlo, kontradikcije, resursi, alternative i provera.',sections:[{title:'Osnovni sled',paragraphs:['Cilj → Granice procesa → Trenutno stanje → Usko grlo → Kontradikcije → Resursi → Alternative → Provera → Redizajnirani proces → Metrike.']},{title:'Primena',bullets:['operativni procesi;','međusektorski tokovi;','nabavka i odobravanja;','prodaja i korisničke usluge;','tehničko upravljanje;','procesi donošenja odluka;','modernizacija postojećih procedura bez automatske zamene čitavog sistema.']},{title:'Digitalna realizacija',paragraphs:['Metodologija može biti osnova specijalizovanog digitalnog alata za analizu i modernizaciju poslovnih procesa. Poseban proizvod treba predstavljati tek kada postoji stvarna radna realizacija.']}]},
-    library: {slug:'library',eyebrow:'Reference Library',title:'Javna biblioteka metodologije',lead:'Ovde će biti dostupna referentna izdanja metodologije za pregled i preuzimanje.',sections:[{title:'Jezici',bullets:['Русский;','English;','Українська;','Srpski.']},{title:'Format',paragraphs:['PDF izdanja se pripremaju paralelno i biće dodata nakon objavljivanja. Poželjno rešenje je pregled u pregledaču i direktno preuzimanje sa koretskiy.com, dok master kopije ostaju u Google Drive-u.']}]},
+    library: {slug:'library',eyebrow:'Reference Library',title:'Javna biblioteka metodologije',lead:'Ovde će biti dostupna referentna izdanja metodologije za pregled i preuzimanje.',sections:[{title:'Jezici',bullets:['Русский;','English;','Українська;','Srpski.']},{title:'Format',paragraphs:['Četiri javna PDF izdanja objavljena su na koretskiy.com i dostupna su za pregled u pregledaču i direktno preuzimanje. Master kopije ostaju u Google Drive-u.']}]},
   },
 };
 
@@ -238,8 +238,8 @@ export const methodology: Record<Lang, MethodologyCopy> = {
   ru: {
     authorship: 'Методология разработана Александром Корецким на основе многолетней инженерной, проектной и консультационной практики и формализована для системного анализа технических, технологических и бизнес-задач.',
     pdfTitle: 'Справочная версия методологии',
-    pdfText: 'Публичные PDF-версии готовятся на русском, английском, украинском и сербском языках. После публикации их можно будет открыть в браузере или скачать.',
-    pdfPending: 'PDF готовятся к публикации',
+    pdfText: 'Публичная краткая версия методологии доступна на русском, английском, украинском и сербском языках для просмотра в браузере и скачивания.',
+    pdfPending: 'Открыть библиотеку PDF',
     softwareLabel: 'Программная реализация',
     softwareText: 'Существенная часть методологии формализована в аналитической системе CheckOpp.',
     softwareCta: 'Открыть CheckOpp',
@@ -248,8 +248,8 @@ export const methodology: Record<Lang, MethodologyCopy> = {
   en: {
     authorship: 'The methodology was developed by Oleksandr Koretskiy from long-term engineering, project and consulting practice and formalized for systematic analysis of technical, technological and business problems.',
     pdfTitle: 'Methodology reference edition',
-    pdfText: 'Public PDF editions are being prepared in Russian, English, Ukrainian and Serbian. After publication they will be available for browser viewing and download.',
-    pdfPending: 'PDF editions are being prepared',
+    pdfText: 'The public methodology summary is available in Russian, English, Ukrainian and Serbian for browser viewing and download.',
+    pdfPending: 'Open PDF library',
     softwareLabel: 'Software implementation',
     softwareText: 'Substantial parts of the methodology are formalized in the CheckOpp analytical system.',
     softwareCta: 'Open CheckOpp',
@@ -258,8 +258,8 @@ export const methodology: Record<Lang, MethodologyCopy> = {
   uk: {
     authorship: 'Методологію розробив Олександр Корецький на основі багаторічної інженерної, проєктної та консультаційної практики і формалізував для системного аналізу технічних, технологічних та бізнес-задач.',
     pdfTitle: 'Довідкова версія методології',
-    pdfText: 'Публічні PDF-версії готуються російською, англійською, українською та сербською мовами. Після публікації їх можна буде переглядати у браузері або завантажувати.',
-    pdfPending: 'PDF готуються до публікації',
+    pdfText: 'Публічна коротка версія методології доступна російською, англійською, українською та сербською мовами для перегляду у браузері та завантаження.',
+    pdfPending: 'Відкрити бібліотеку PDF',
     softwareLabel: 'Програмна реалізація',
     softwareText: 'Суттєву частину методології формалізовано в аналітичній системі CheckOpp.',
     softwareCta: 'Відкрити CheckOpp',
@@ -268,8 +268,8 @@ export const methodology: Record<Lang, MethodologyCopy> = {
   sr: {
     authorship: 'Metodologiju je razvio Oleksandr Koretskiy na osnovu dugogodišnje inženjerske, projektne i konsultantske prakse i formalizovao je za sistemsku analizu tehničkih, tehnoloških i poslovnih problema.',
     pdfTitle: 'Referentno izdanje metodologije',
-    pdfText: 'Javna PDF izdanja pripremaju se na ruskom, engleskom, ukrajinskom i srpskom jeziku. Nakon objavljivanja biće dostupna za pregled u pregledaču i preuzimanje.',
-    pdfPending: 'PDF izdanja su u pripremi',
+    pdfText: 'Javni sažetak metodologije dostupan je na ruskom, engleskom, ukrajinskom i srpskom jeziku za pregled u pregledaču i preuzimanje.',
+    pdfPending: 'Otvori PDF biblioteku',
     softwareLabel: 'Softverska realizacija',
     softwareText: 'Značajan deo metodologije formalizovan je u analitičkom sistemu CheckOpp.',
     softwareCta: 'Otvori CheckOpp',
@@ -288,3 +288,23 @@ export const methodologySlugs = [
   'business-processes',
   'library',
 ] as const;
+
+
+export const publicMethodologyPdfs = {
+  ru: {
+    label: 'Русский',
+    path: '/methodology/CheckOpp_Methodology_Public_Summary_RU_v1.0_September_2026.pdf',
+  },
+  en: {
+    label: 'English',
+    path: '/methodology/CheckOpp_Methodology_Public_Summary_EN_v1.0_September_2026.pdf',
+  },
+  uk: {
+    label: 'Українська',
+    path: '/methodology/CheckOpp_Methodology_Public_Summary_UA_v1.0_September_2026.pdf',
+  },
+  sr: {
+    label: 'Srpski',
+    path: '/methodology/CheckOpp_Methodology_Public_Summary_SR_v1.0_September_2026.pdf',
+  },
+} as const;
