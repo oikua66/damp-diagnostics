@@ -39,7 +39,7 @@ const copy: Record<Lang, {
     flowTitle: 'DIAGNOSE → INVENT → VERIFY',
     stages: [
       { title: 'DIAGNOSE', text: 'Определить реальную проблему, границы системы, функцию, противоречия, ограничения, ресурсы и критические неизвестные.' },
-      { title: 'INVENT', text: 'Формировать варианты не как свободный brainstorming, а из структуры задачи: противоречий, ресурсов, архитектуры, разделения, перераспределения, замены, удаления и альтернативных физических механизмов.' },
+      { title: 'INVENT', text: 'Формировать варианты не как свободный поиск идей, а из структуры задачи: противоречий, ресурсов, архитектуры, разделения, перераспределения, замены, удаления и альтернативных физических механизмов.' },
       { title: 'VERIFY', text: 'Проверять физическую правдоподобность, расчёты, аналоги, литературу, патенты, стандарты, данные производителей, чувствительность, моделирование, эксперимент и необходимость профильного специалиста.' },
     ],
     elementsTitle: 'Что обязательно рассматривается',
@@ -83,7 +83,7 @@ const copy: Record<Lang, {
     flowTitle: 'DIAGNOSE → INVENT → VERIFY',
     stages: [
       { title: 'DIAGNOSE', text: 'Визначити реальну проблему, межі системи, функцію, суперечності, обмеження, ресурси та критичні невідомі.' },
-      { title: 'INVENT', text: 'Формувати варіанти зі структури задачі, а не як вільний brainstorming: із суперечностей, ресурсів, архітектури, розділення, перерозподілу, заміни, видалення та альтернативних фізичних механізмів.' },
+      { title: 'INVENT', text: 'Формувати варіанти зі структури задачі, а не як вільний пошук ідей: із суперечностей, ресурсів, архітектури, розділення, перерозподілу, заміни, видалення та альтернативних фізичних механізмів.' },
       { title: 'VERIFY', text: 'Перевіряти фізичну правдоподібність, розрахунки, аналоги, літературу, патенти, стандарти, дані виробників, чутливість, моделювання, експеримент і потребу у профільному спеціалісті.' },
     ],
     elementsTitle: 'Що обов’язково розглядається',
@@ -105,7 +105,7 @@ const copy: Record<Lang, {
     flowTitle: 'DIAGNOSE → INVENT → VERIFY',
     stages: [
       { title: 'DIAGNOSE', text: 'Definisati stvarni problem, granice sistema, funkciju, kontradikcije, ograničenja, resurse i kritične nepoznanice.' },
-      { title: 'INVENT', text: 'Formirati opcije iz strukture zadatka, a ne slobodnim brainstormingom: iz kontradikcija, resursa, arhitekture, razdvajanja, preraspodele, zamene, uklanjanja i alternativnih fizičkih mehanizama.' },
+      { title: 'INVENT', text: 'Formirati opcije iz strukture zadatka, a ne slobodnim generisanjem ideja: iz kontradikcija, resursa, arhitekture, razdvajanja, preraspodele, zamene, uklanjanja i alternativnih fizičkih mehanizama.' },
       { title: 'VERIFY', text: 'Proveriti fizičku izvodljivost, proračune, analogije, literaturu, patente, standarde, podatke proizvođača, osetljivost, simulaciju, eksperiment i potrebu za specijalistom.' },
     ],
     elementsTitle: 'Šta se obavezno razmatra',
