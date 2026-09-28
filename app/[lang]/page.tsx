@@ -118,7 +118,14 @@ const home: Record<Lang, HomeCopy> = {
   },
 };
 
-const methodologyCta: Record<Lang, string> = {\n  en: 'Open methodology',\n  ru: 'Открыть методологию',\n  uk: 'Відкрити методологію',\n  sr: 'Otvori metodologiju',\n};\n\nconst longCopy: Record<Lang, LongCopy> = {
+const methodologyCta: Record<Lang, string> = {
+  en: 'Open methodology',
+  ru: 'Открыть методологию',
+  uk: 'Відкрити методологію',
+  sr: 'Otvori metodologiju',
+};
+
+const longCopy: Record<Lang, LongCopy> = {
   en: {
     philosophyEyebrow: 'Philosophy',
     philosophyTitle: 'Finding the essential. Eliminating the unnecessary.',
