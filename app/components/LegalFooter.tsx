@@ -39,7 +39,7 @@ const copy = {
 export default function LegalFooter() {
   const pathname = usePathname() || '/en';
   const first = pathname.split('/').filter(Boolean)[0];
-  const lang = supported.has(first) ? first : 'en';
+  const lang = (supported.has(first) ? first : 'en') as keyof typeof copy;
   const t = copy[lang];
 
   return (
