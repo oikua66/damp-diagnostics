@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { languages, type Lang } from '../../../../lib/translations';
 import { buildMetadata } from '../../../../lib/seo';
-import { methodology, methodologySlugs } from '../../../../lib/methodology';
+import { methodology, methodologySlugs, publicMethodologyPdfs } from '../../../../lib/methodology';
 import SiteHeader from '../../../components/SiteHeader';
 
 type Props = { params: Promise<{ lang: string; slug: string }> };
@@ -32,11 +32,11 @@ export default async function MethodologyDetailPage({ params }: Props) {
   const page = m.pages[slug];
   if (!page) notFound();
 
-  const labels: Record<Lang, { author: string; related: string; methodology: string; pdf: string }> = {
-    ru: { author: 'Авторская методология', related: 'Связанные разделы', methodology: 'Вся методология', pdf: 'PDF и справочные материалы' },
-    en: { author: 'Authorial methodology', related: 'Related sections', methodology: 'Full methodology', pdf: 'PDF & reference materials' },
-    uk: { author: 'Авторська методологія', related: 'Пов’язані розділи', methodology: 'Уся методологія', pdf: 'PDF і довідкові матеріали' },
-    sr: { author: 'Autorska metodologija', related: 'Povezane celine', methodology: 'Cela metodologija', pdf: 'PDF i referentni materijali' },
+  const labels: Record<Lang, { author: string; related: string; methodology: string; pdf: string; view: string; download: string }> = {
+    ru: { author: 'Авторская методология', related: 'Связанные разделы', methodology: 'Вся методология', pdf: 'PDF и справочные материалы', view: 'Просмотреть', download: 'Скачать' },
+    en: { author: 'Authorial methodology', related: 'Related sections', methodology: 'Full methodology', pdf: 'PDF & reference materials', view: 'View', download: 'Download' },
+    uk: { author: 'Авторська методологія', related: 'Пов’язані розділи', methodology: 'Уся методологія', pdf: 'PDF і довідкові матеріали', view: 'Переглянути', download: 'Завантажити' },
+    sr: { author: 'Autorska metodologija', related: 'Povezane celine', methodology: 'Cela metodologija', pdf: 'PDF i referentni materijali', view: 'Pregledaj', download: 'Preuzmi' },
   };
   const l = labels[lang];
 
@@ -76,6 +76,30 @@ export default async function MethodologyDetailPage({ params }: Props) {
           <div className="prose">
             <p>{m.softwareText}</p>
             <a className="button button-dark" href="https://checkopp.com" target="_blank" rel="noreferrer">{m.softwareCta}</a>
+          </div>
+        </section>
+      )}
+
+      {slug === 'library' && (
+        <section className="section">
+          <div className="section-heading">
+            <p className="eyebrow">PDF</p>
+            <h2>{l.pdf}</h2>
+          </div>
+          <div className="cards" style={{ gridTemplateColumns: 'repeat(2, minmax(0, 1fr))' }}>
+            {(Object.keys(publicMethodologyPdfs) as Lang[]).map((code) => {
+              const item = publicMethodologyPdfs[code];
+              return (
+                <article className="card" key={code}>
+                  <span className="card-number">{code.toUpperCase()}</span>
+                  <h3>{item.label}</h3>
+                  <div className="hero-actions">
+                    <a className="button button-light" href={item.path} target="_blank" rel="noreferrer">{l.view}</a>
+                    <a className="button button-dark" href={item.path} download>{l.download}</a>
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </section>
       )}
