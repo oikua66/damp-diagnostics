@@ -4,18 +4,19 @@ import { languages, type Lang } from '../../../../lib/translations';
 import { buildMetadata } from '../../../../lib/seo';
 import { methodology } from '../../../../lib/methodology';
 import { aritzPages, aritzSlugs } from '../../../../lib/aritz';
+import { aritzExtraPages, aritzExtraSlugs } from '../../../../lib/aritz-extra';
 import SiteHeader from '../../../components/SiteHeader';
 
 type Props = { params: Promise<{ lang: string; slug: string }> };
 
 export function generateStaticParams() {
-  return languages.flatMap((lang) => aritzSlugs.map((slug) => ({ lang, slug })));
+  return languages.flatMap((lang) => [...aritzSlugs, ...aritzExtraSlugs].map((slug) => ({ lang, slug })));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang: rawLang, slug } = await params;
   const lang = (languages.includes(rawLang as Lang) ? rawLang : 'en') as Lang;
-  const page = aritzPages[lang][slug];
+  const page = aritzPages[lang][slug] ?? aritzExtraPages[lang][slug];
   if (!page) return {};
   return buildMetadata({
     lang,
@@ -29,7 +30,7 @@ export default async function AritzDetailPage({ params }: Props) {
   const { lang: rawLang, slug } = await params;
   if (!languages.includes(rawLang as Lang)) notFound();
   const lang = rawLang as Lang;
-  const page = aritzPages[lang][slug];
+  const page = aritzPages[lang][slug] ?? aritzExtraPages[lang][slug];
   if (!page) notFound();
   const m = methodology[lang];
 
@@ -40,9 +41,10 @@ export default async function AritzDetailPage({ params }: Props) {
     sr:{author:'Autorska metodologija',back:'Ceo ARITZ odeljak',prev:'Prethodni korak',next:'Sledeći korak'},
   };
   const l=labels[lang];
-  const index=aritzSlugs.indexOf(slug as typeof aritzSlugs[number]);
-  const prev=index>0?aritzSlugs[index-1]:null;
-  const next=index<aritzSlugs.length-1?aritzSlugs[index+1]:null;
+  const allSlugs=[...aritzSlugs, ...aritzExtraSlugs];
+  const index=allSlugs.indexOf(slug as typeof allSlugs[number]);
+  const prev=index>0?allSlugs[index-1]:null;
+  const next=index<allSlugs.length-1?allSlugs[index+1]:null;
 
   return (
     <main>

@@ -22,6 +22,14 @@ const methodologyPaths = [
   '/aritz/diagnose',
   '/aritz/invent',
   '/aritz/verify',
+  '/aritz/engineering-estimates',
+  '/aritz/evidence-validation',
+  '/aritz/safety-stop',
+  '/aritz/human-expert',
+  '/aritz/uncertainty',
+  '/aritz/aritz-vs-triz',
+  '/aritz/cases',
+  '/aritz/faq',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

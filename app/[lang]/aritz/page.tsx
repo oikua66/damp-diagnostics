@@ -4,6 +4,7 @@ import { languages, type Lang } from '../../../lib/translations';
 import { buildMetadata } from '../../../lib/seo';
 import { methodology, publicMethodologyPdfs } from '../../../lib/methodology';
 import { aritzPages, aritzSlugs } from '../../../lib/aritz';
+import { aritzExtraPages, aritzExtraSlugs } from '../../../lib/aritz-extra';
 import SiteHeader from '../../components/SiteHeader';
 
 type Props = { params: Promise<{ lang: string }> };
@@ -25,6 +26,7 @@ const copy: Record<Lang, {
   trizText: string;
   methodologyCta: string;
   topicsTitle: string;
+  supportTitle: string;
   open: string;
   viewPdf: string;
   downloadPdf: string;
@@ -49,7 +51,7 @@ const copy: Record<Lang, {
     trizTitle: 'ARITZ и ТРИЗ',
     trizText: 'Классическая ТРИЗ / АРИЗ является методологической основой. Публичный ARITZ здесь — практическая инженерная реализация с акцентом на доказательства, прослеживаемость, расчёты, неопределённость, проверку и экспертную эскалацию.',
     methodologyCta: 'Вернуться к общей методологии',
-    topicsTitle: 'Основные разделы ARITZ', open: 'Открыть', viewPdf: 'Просмотреть PDF', downloadPdf: 'Скачать PDF',
+    topicsTitle: 'Основные разделы ARITZ', supportTitle: 'Проверка, контроль и справочные разделы', open: 'Открыть', viewPdf: 'Просмотреть PDF', downloadPdf: 'Скачать PDF',
   },
   en: {
     title: 'ARITZ — an engineering problem-solving method',
@@ -71,7 +73,7 @@ const copy: Record<Lang, {
     trizTitle: 'ARITZ and TRIZ',
     trizText: 'Classical TRIZ / ARIZ is the methodological foundation. The public ARITZ presented here is a practical engineering implementation focused on evidence, traceability, calculations, uncertainty, verification and expert escalation.',
     methodologyCta: 'Back to the full methodology',
-    topicsTitle: 'Core ARITZ sections', open: 'Open', viewPdf: 'View PDF', downloadPdf: 'Download PDF',
+    topicsTitle: 'Core ARITZ sections', supportTitle: 'Verification, control and reference sections', open: 'Open', viewPdf: 'View PDF', downloadPdf: 'Download PDF',
   },
   uk: {
     title: 'ARITZ / АРИЗ — інженерний метод розв’язання задач',
@@ -93,7 +95,7 @@ const copy: Record<Lang, {
     trizTitle: 'ARITZ і ТРІЗ',
     trizText: 'Класична ТРІЗ / АРИЗ є методологічною основою. Публічний ARITZ тут — практична інженерна реалізація з акцентом на докази, простежуваність, розрахунки, невизначеність, перевірку та експертну ескалацію.',
     methodologyCta: 'Повернутися до загальної методології',
-    topicsTitle: 'Основні розділи ARITZ', open: 'Відкрити', viewPdf: 'Переглянути PDF', downloadPdf: 'Завантажити PDF',
+    topicsTitle: 'Основні розділи ARITZ', supportTitle: 'Перевірка, контроль і довідкові розділи', open: 'Відкрити', viewPdf: 'Переглянути PDF', downloadPdf: 'Завантажити PDF',
   },
   sr: {
     title: 'ARITZ — inženjerski metod rešavanja problema',
@@ -115,7 +117,7 @@ const copy: Record<Lang, {
     trizTitle: 'ARITZ i TRIZ',
     trizText: 'Klasični TRIZ / ARIZ predstavlja metodološku osnovu. Javni ARITZ ovde je praktična inženjerska realizacija sa fokusom na dokaze, sledljivost, proračune, neizvesnost, verifikaciju i ekspertsku eskalaciju.',
     methodologyCta: 'Nazad na celu metodologiju',
-    topicsTitle: 'Osnovni ARITZ odeljci', open: 'Otvori', viewPdf: 'Pregledaj PDF', downloadPdf: 'Preuzmi PDF',
+    topicsTitle: 'Osnovni ARITZ odeljci', supportTitle: 'Verifikacija, kontrola i referentni odeljci', open: 'Otvori', viewPdf: 'Pregledaj PDF', downloadPdf: 'Preuzmi PDF',
   },
 };
 
@@ -189,6 +191,26 @@ export default async function AritzPage({ params }: Props) {
         <div className="cards" style={{ gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', rowGap: 24 }}>
           {aritzSlugs.map((slug,index) => {
             const item = aritzPages[lang][slug];
+            return (
+              <article className="card" key={slug}>
+                <span className="card-number">{String(index+1).padStart(2,'0')}</span>
+                <h3>{item.title}</h3>
+                <p>{item.lead}</p>
+                <a className="button button-light" href={`/${lang}/aritz/${slug}`} style={{marginTop:28}}>{t.open}</a>
+              </article>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="section" style={{ background: 'var(--panel)' }}>
+        <div className="section-heading">
+          <p className="eyebrow">ARITZ</p>
+          <h2>{t.supportTitle}</h2>
+        </div>
+        <div className="cards" style={{ gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', rowGap: 24 }}>
+          {aritzExtraSlugs.map((slug,index) => {
+            const item = aritzExtraPages[lang][slug];
             return (
               <article className="card" key={slug}>
                 <span className="card-number">{String(index+1).padStart(2,'0')}</span>
