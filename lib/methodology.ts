@@ -288,3 +288,23 @@ export const methodologySlugs = [
   'business-processes',
   'library',
 ] as const;
+
+
+export const publicMethodologyPdfs = {
+  ru: {
+    label: 'Русский',
+    path: '/methodology/CheckOpp_Methodology_Public_Summary_RU_v1.0_September_2026.pdf',
+  },
+  en: {
+    label: 'English',
+    path: '/methodology/CheckOpp_Methodology_Public_Summary_EN_v1.0_September_2026.pdf',
+  },
+  uk: {
+    label: 'Українська',
+    path: '/methodology/CheckOpp_Methodology_Public_Summary_UA_v1.0_September_2026.pdf',
+  },
+  sr: {
+    label: 'Srpski',
+    path: '/methodology/CheckOpp_Methodology_Public_Summary_SR_v1.0_September_2026.pdf',
+  },
+} as const;
