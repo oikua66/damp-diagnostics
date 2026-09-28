@@ -47,6 +47,16 @@ export default async function LanguageLayout({ children, params }: Props) {
     founder: {
       '@type': 'Person',
       name: business.founder.canonicalName,
+      url: `${SITE_URL}/${safeLang}/about`,
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Koretskiy Methodology',
+      itemListElement: [
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Opportunity Assessment', url: `${SITE_URL}/${safeLang}/methodology/opportunity-assessment` } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Research & Verification', url: `${SITE_URL}/${safeLang}/methodology/research-verification` } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'ARITZ', url: `${SITE_URL}/${safeLang}/aritz` } },
+      ],
     },
     knowsAbout: [
       'Technical consulting',
@@ -55,6 +65,11 @@ export default async function LanguageLayout({ children, params }: Props) {
       'Project definition',
       'Contractor selection',
       'Independent technical review',
+      'Engineering analysis methodology',
+      'Opportunity Assessment',
+      'Evidence verification',
+      'ARITZ engineering problem solving',
+      'Business-process analysis and modernization',
     ],
   };
 
