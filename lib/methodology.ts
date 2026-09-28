@@ -238,8 +238,8 @@ export const methodology: Record<Lang, MethodologyCopy> = {
   ru: {
     authorship: 'Методология разработана Александром Корецким на основе многолетней инженерной, проектной и консультационной практики и формализована для системного анализа технических, технологических и бизнес-задач.',
     pdfTitle: 'Справочная версия методологии',
-    pdfText: 'Публичные PDF-версии готовятся на русском, английском, украинском и сербском языках. После публикации их можно будет открыть в браузере или скачать.',
-    pdfPending: 'PDF готовятся к публикации',
+    pdfText: 'Публичная краткая версия методологии доступна на русском, английском, украинском и сербском языках для просмотра в браузере и скачивания.',
+    pdfPending: 'Открыть библиотеку PDF',
     softwareLabel: 'Программная реализация',
     softwareText: 'Существенная часть методологии формализована в аналитической системе CheckOpp.',
     softwareCta: 'Открыть CheckOpp',
@@ -248,8 +248,8 @@ export const methodology: Record<Lang, MethodologyCopy> = {
   en: {
     authorship: 'The methodology was developed by Oleksandr Koretskiy from long-term engineering, project and consulting practice and formalized for systematic analysis of technical, technological and business problems.',
     pdfTitle: 'Methodology reference edition',
-    pdfText: 'Public PDF editions are being prepared in Russian, English, Ukrainian and Serbian. After publication they will be available for browser viewing and download.',
-    pdfPending: 'PDF editions are being prepared',
+    pdfText: 'The public methodology summary is available in Russian, English, Ukrainian and Serbian for browser viewing and download.',
+    pdfPending: 'Open PDF library',
     softwareLabel: 'Software implementation',
     softwareText: 'Substantial parts of the methodology are formalized in the CheckOpp analytical system.',
     softwareCta: 'Open CheckOpp',
@@ -258,8 +258,8 @@ export const methodology: Record<Lang, MethodologyCopy> = {
   uk: {
     authorship: 'Методологію розробив Олександр Корецький на основі багаторічної інженерної, проєктної та консультаційної практики і формалізував для системного аналізу технічних, технологічних та бізнес-задач.',
     pdfTitle: 'Довідкова версія методології',
-    pdfText: 'Публічні PDF-версії готуються російською, англійською, українською та сербською мовами. Після публікації їх можна буде переглядати у браузері або завантажувати.',
-    pdfPending: 'PDF готуються до публікації',
+    pdfText: 'Публічна коротка версія методології доступна російською, англійською, українською та сербською мовами для перегляду у браузері та завантаження.',
+    pdfPending: 'Відкрити бібліотеку PDF',
     softwareLabel: 'Програмна реалізація',
     softwareText: 'Суттєву частину методології формалізовано в аналітичній системі CheckOpp.',
     softwareCta: 'Відкрити CheckOpp',
@@ -268,8 +268,8 @@ export const methodology: Record<Lang, MethodologyCopy> = {
   sr: {
     authorship: 'Metodologiju je razvio Oleksandr Koretskiy na osnovu dugogodišnje inženjerske, projektne i konsultantske prakse i formalizovao je za sistemsku analizu tehničkih, tehnoloških i poslovnih problema.',
     pdfTitle: 'Referentno izdanje metodologije',
-    pdfText: 'Javna PDF izdanja pripremaju se na ruskom, engleskom, ukrajinskom i srpskom jeziku. Nakon objavljivanja biće dostupna za pregled u pregledaču i preuzimanje.',
-    pdfPending: 'PDF izdanja su u pripremi',
+    pdfText: 'Javni sažetak metodologije dostupan je na ruskom, engleskom, ukrajinskom i srpskom jeziku za pregled u pregledaču i preuzimanje.',
+    pdfPending: 'Otvori PDF biblioteku',
     softwareLabel: 'Softverska realizacija',
     softwareText: 'Značajan deo metodologije formalizovan je u analitičkom sistemu CheckOpp.',
     softwareCta: 'Otvori CheckOpp',
