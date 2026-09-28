@@ -118,6 +118,13 @@ const home: Record<Lang, HomeCopy> = {
   },
 };
 
+const methodologyCta: Record<Lang, string> = {
+  en: 'Open methodology',
+  ru: 'Открыть методологию',
+  uk: 'Відкрити методологію',
+  sr: 'Otvori metodologiju',
+};
+
 const longCopy: Record<Lang, LongCopy> = {
   en: {
     philosophyEyebrow: 'Philosophy',
@@ -289,6 +296,7 @@ export default async function LocalizedHome({ params }: Props) {
         </div>
         <div className="prose">
           {e.deliverables.map((item) => <p key={item}>— {item}</p>)}
+          <a className="button button-light" href={`/${lang}/methodology`}>{methodologyCta[lang]}</a>
         </div>
       </section>
 

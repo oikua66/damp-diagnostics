@@ -2,8 +2,6 @@ import { languageNames, languages, type Lang } from '../../lib/translations';
 import MobileMenu, { type NavLink } from './MobileMenu';
 import { business } from '../../lib/business';
 
-type LanguagePath = '' | '/about' | '/perspectives' | '/tender-equipment';
-
 type NavCopy = {
   about: string;
   services: string;
@@ -20,12 +18,12 @@ const labels: Record<Lang, NavCopy> = {
   sr: { about: 'O meni', services: 'Ključne usluge', methodology: 'Metodologija', tenders: 'Tenderi i oprema', perspectives: 'Projekti za realizaciju', contact: 'Kontakt' },
 };
 
-export default function SiteHeader({ lang, languagePath }: { lang: Lang; languagePath: LanguagePath }) {
+export default function SiteHeader({ lang, languagePath }: { lang: Lang; languagePath: string }) {
   const t = labels[lang];
   const links: NavLink[] = [
     { href: `/${lang}/about`, label: t.about },
     { href: `/${lang}#services`, label: t.services },
-    { href: `/${lang}#approach`, label: t.methodology },
+    { href: `/${lang}/methodology`, label: t.methodology },
     { href: `/${lang}/tender-equipment`, label: t.tenders },
     { href: `/${lang}/perspectives`, label: t.perspectives },
     { href: `/${lang}#contact`, label: t.contact },
