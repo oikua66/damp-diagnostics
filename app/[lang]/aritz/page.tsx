@@ -22,6 +22,8 @@ const copy: Record<Lang, {
   verify: string;
   examplesTitle: string;
   examplesText: string;
+  attributionTitle: string;
+  attributionText: string;
   trizTitle: string;
   trizText: string;
   methodologyCta: string;
@@ -48,6 +50,8 @@ const copy: Record<Lang, {
     verify: 'Концепция → Физическая правдоподобность → Расчёт / оценка → Аналоги → Литература / патенты / стандарты → Данные производителя / поставщика → Чувствительность → Эксперимент / моделирование / специалист → Решение.',
     examplesTitle: 'Примеры применения',
     examplesText: 'Публичные примеры будут добавляться по мере появления реальных инженерных задач, которые можно опубликовать без раскрытия конфиденциальной информации клиента. Учебные примеры будут прямо обозначаться как учебные.',
+    attributionTitle: 'Авторство и методологическая основа',
+    attributionText: 'Классическая ТРИЗ / АРИЗ является самостоятельной сложившейся дисциплиной и не заявляется как авторская разработка Александра Корецкого. Авторской является опубликованная здесь структура применения: постановка задачи, маршрутизация DIAGNOSE → INVENT → VERIFY, работа с доказательствами, неопределённостью, расчётами и экспертной эскалацией как часть Koretskiy Methodology.',
     trizTitle: 'ARITZ и ТРИЗ',
     trizText: 'Классическая ТРИЗ / АРИЗ является методологической основой. Публичный ARITZ здесь — практическая инженерная реализация с акцентом на доказательства, прослеживаемость, расчёты, неопределённость, проверку и привлечение профильного специалиста.',
     methodologyCta: 'Вернуться к общей методологии',
@@ -70,6 +74,8 @@ const copy: Record<Lang, {
     verify: 'Concept → Physical plausibility → Calculation / estimate → Analogues → Literature / patents / standards → Manufacturer / supplier data → Sensitivity → Experiment / simulation / specialist → Decision.',
     examplesTitle: 'Application examples',
     examplesText: 'Public examples will be added as suitable real engineering cases become available and can be published without disclosing confidential client information. Educational examples will be explicitly marked as illustrative.',
+    attributionTitle: 'Authorship and methodological foundation',
+    attributionText: 'Classical TRIZ / ARIZ is an established discipline and is not claimed as an original development by Oleksandr Koretskiy. The original contribution published here is the application framework and structure: problem framing, DIAGNOSE → INVENT → VERIFY routing, evidence handling, uncertainty, calculations and specialist escalation as part of the Koretskiy Methodology.',
     trizTitle: 'ARITZ and TRIZ',
     trizText: 'Classical TRIZ / ARIZ is the methodological foundation. The public ARITZ presented here is a practical engineering implementation focused on evidence, traceability, calculations, uncertainty, verification and specialist escalation.',
     methodologyCta: 'Back to the full methodology',
@@ -92,6 +98,8 @@ const copy: Record<Lang, {
     verify: 'Концепція → Фізична правдоподібність → Розрахунок / оцінка → Аналоги → Література / патенти / стандарти → Дані виробника / постачальника → Чутливість → Експеримент / моделювання / спеціаліст → Рішення.',
     examplesTitle: 'Приклади застосування',
     examplesText: 'Публічні приклади додаватимуться у міру появи реальних інженерних задач, які можна опублікувати без розкриття конфіденційної інформації клієнта. Навчальні приклади будуть прямо позначені як навчальні.',
+    attributionTitle: 'Авторство та методологічна основа',
+    attributionText: 'Класична ТРІЗ / АРИЗ є самостійною усталеною дисципліною і не заявляється як авторська розробка Олександра Корецького. Авторською є опублікована тут структура застосування: постановка задачі, маршрутизація DIAGNOSE → INVENT → VERIFY, робота з доказами, невизначеністю, розрахунками та залученням профільного фахівця як частина Koretskiy Methodology.',
     trizTitle: 'ARITZ і ТРІЗ',
     trizText: 'Класична ТРІЗ / АРИЗ є методологічною основою. Публічний ARITZ тут — практична інженерна реалізація з акцентом на докази, простежуваність, розрахунки, невизначеність, перевірку та залучення профільного фахівця.',
     methodologyCta: 'Повернутися до загальної методології',
@@ -114,6 +122,8 @@ const copy: Record<Lang, {
     verify: 'Koncept → Fizička izvodljivost → Proračun / procena → Analogije → Literatura / patenti / standardi → Podaci proizvođača / dobavljača → Osetljivost → Eksperiment / simulacija / specijalista → Odluka.',
     examplesTitle: 'Primeri primene',
     examplesText: 'Javni primeri će se dodavati kako budu dostupni realni inženjerski slučajevi koji mogu da se objave bez otkrivanja poverljivih podataka klijenta. Edukativni primeri biće jasno označeni kao ilustrativni.',
+    attributionTitle: 'Autorstvo i metodološka osnova',
+    attributionText: 'Klasični TRIZ / ARIZ je samostalna etablirana disciplina i ne predstavlja se kao originalni razvoj Oleksandra Koretskog. Autorski deo objavljen ovde jeste okvir i struktura primene: definisanje problema, ruta DIAGNOSE → INVENT → VERIFY, rad sa dokazima, neizvesnošću, proračunima i uključivanjem stručnjaka kao deo Koretskiy Methodology.',
     trizTitle: 'ARITZ i TRIZ',
     trizText: 'Klasični TRIZ / ARIZ predstavlja metodološku osnovu. Javni ARITZ ovde je praktična inženjerska realizacija sa fokusom na dokaze, sledljivost, proračune, neizvesnost, verifikaciju i uključivanje odgovarajućeg stručnjaka.',
     methodologyCta: 'Nazad na celu metodologiju',
@@ -155,6 +165,11 @@ export default async function AritzPage({ params }: Props) {
           <p className="lead-small" style={{ maxWidth: 920 }}>{t.lead}</p>
           <p className="lead-small" style={{ maxWidth: 920, fontSize: 18 }}>{m.authorship}</p>
         </div>
+      </section>
+
+      <section className="section split" style={{ background: 'var(--panel)' }}>
+        <div><h2>{t.attributionTitle}</h2></div>
+        <div className="prose"><p>{t.attributionText}</p></div>
       </section>
 
       <section className="section split">
