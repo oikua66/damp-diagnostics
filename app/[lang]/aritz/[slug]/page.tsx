@@ -35,10 +35,10 @@ export default async function AritzDetailPage({ params }: Props) {
   const m = methodology[lang];
 
   const labels: Record<Lang,{author:string;back:string;prev:string;next:string}> = {
-    ru:{author:'Авторская методология',back:'Весь раздел ARITZ',prev:'Предыдущий шаг',next:'Следующий шаг'},
-    en:{author:'Authorial methodology',back:'Full ARITZ section',prev:'Previous step',next:'Next step'},
-    uk:{author:'Авторська методологія',back:'Увесь розділ ARITZ',prev:'Попередній крок',next:'Наступний крок'},
-    sr:{author:'Autorska metodologija',back:'Ceo ARITZ odeljak',prev:'Prethodni korak',next:'Sledeći korak'},
+    ru:{author:'Авторская методология',back:'Весь раздел ARITZ',prev:'Предыдущий раздел',next:'Следующий раздел'},
+    en:{author:'Authorial methodology',back:'Full ARITZ section',prev:'Previous section',next:'Next section'},
+    uk:{author:'Авторська методологія',back:'Увесь розділ ARITZ',prev:'Попередній розділ',next:'Наступний розділ'},
+    sr:{author:'Autorska metodologija',back:'Ceo ARITZ odeljak',prev:'Prethodni odeljak',next:'Sledeći odeljak'},
   };
   const l=labels[lang];
   const allSlugs=[...aritzSlugs, ...aritzExtraSlugs];
