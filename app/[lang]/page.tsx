@@ -48,7 +48,7 @@ const home: Record<Lang, HomeCopy> = {
     relationshipTitle: 'Consulting and methodology here. Project work in CheckOpp.',
     relationshipText: 'On koretskiy.com you can learn about the consultant, services and the authorial methodology. Methodology is documented here as a separate reference section. CheckOpp is the separate working platform and software implementation used to apply the approach to concrete tasks: the client submits materials there and the work then continues within a separate project.',
     methodologyLink: 'Methodology',
-    checkoppLink: 'CheckOpp — working platform',
+    checkoppLink: 'CheckOpp — working platform (English only)',
     directionsEyebrow: 'Where I can help',
     directionsTitle: 'Start with the task, not with the supplier.',
     directions: [
@@ -74,7 +74,7 @@ const home: Record<Lang, HomeCopy> = {
     relationshipTitle: 'Консалтинг и методология — здесь. Работа с проектами — в CheckOpp.',
     relationshipText: 'На koretskiy.com можно познакомиться с консультантом, услугами и авторской методологией. Методология опубликована здесь как самостоятельный справочный раздел. CheckOpp — отдельная рабочая платформа и программная реализация для применения подхода к конкретным задачам: там клиент передаёт материалы, после чего дальнейшая работа ведётся в рамках отдельного проекта.',
     methodologyLink: 'Методология',
-    checkoppLink: 'CheckOpp — рабочая платформа',
+    checkoppLink: 'CheckOpp — рабочая платформа (English only)',
     directionsEyebrow: 'Чем могу помочь',
     directionsTitle: 'Начинаем с задачи, а не с поставщика.',
     directions: [
@@ -100,7 +100,7 @@ const home: Record<Lang, HomeCopy> = {
     relationshipTitle: 'Консалтинг і методологія — тут. Робота з проєктами — у CheckOpp.',
     relationshipText: 'На koretskiy.com можна познайомитися з консультантом, послугами та авторською методологією. Методологія опублікована тут як окремий довідковий розділ. CheckOpp — окрема робоча платформа та програмна реалізація для застосування підходу до конкретних задач: там клієнт передає матеріали, після чого подальша робота ведеться в межах окремого проєкту.',
     methodologyLink: 'Методологія',
-    checkoppLink: 'CheckOpp — робоча платформа',
+    checkoppLink: 'CheckOpp — робоча платформа (English only)',
     directionsEyebrow: 'Чим можу допомогти',
     directionsTitle: 'Починаємо із задачі, а не з постачальника.',
     directions: [
@@ -126,7 +126,7 @@ const home: Record<Lang, HomeCopy> = {
     relationshipTitle: 'Konsalting i metodologija su ovde. Rad na projektima je u CheckOpp-u.',
     relationshipText: 'Na koretskiy.com možete da se upoznate sa konsultantom, uslugama i autorskom metodologijom. Metodologija je ovde objavljena kao poseban referentni odeljak. CheckOpp je zasebna radna platforma i softverska realizacija za primenu pristupa na konkretne zadatke: klijent tamo dostavlja materijale, a dalji rad se vodi u okviru posebnog projekta.',
     methodologyLink: 'Metodologija',
-    checkoppLink: 'CheckOpp — radna platforma',
+    checkoppLink: 'CheckOpp — radna platforma (English only)',
     directionsEyebrow: 'Kako mogu da pomognem',
     directionsTitle: 'Počinjemo od zadatka, a ne od dobavljača.',
     directions: [
