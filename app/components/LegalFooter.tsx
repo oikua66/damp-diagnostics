@@ -7,7 +7,7 @@ const supported = new Set(['en', 'ru', 'uk', 'sr']);
 
 const copy = {
   en: {
-    attribution: 'Koretskiy Methodology — an authorial methodology by Oleksandr Koretskiy for structured analysis and verification of engineering, technology and business decisions.',
+    attribution: 'Methodology © Oleksandr Koretskiy',
     methodology: 'Methodology',
     consultation: 'Individual consultation',
     privacy: 'Privacy Policy',
@@ -15,7 +15,7 @@ const copy = {
     legal: 'Legal Notice',
   },
   ru: {
-    attribution: 'Koretskiy Methodology — авторская методология Александра Корецкого для структурированного анализа и проверки инженерных, технологических и бизнес-решений.',
+    attribution: 'Methodology © Oleksandr Koretskiy',
     methodology: 'Методология',
     consultation: 'Индивидуальная консультация',
     privacy: 'Политика конфиденциальности',
@@ -23,7 +23,7 @@ const copy = {
     legal: 'Правовая информация',
   },
   uk: {
-    attribution: 'Koretskiy Methodology — авторська методологія Олександра Корецького для структурованого аналізу та перевірки інженерних, технологічних і бізнес-рішень.',
+    attribution: 'Methodology © Oleksandr Koretskiy',
     methodology: 'Методологія',
     consultation: 'Індивідуальна консультація',
     privacy: 'Політика конфіденційності',
@@ -31,7 +31,7 @@ const copy = {
     legal: 'Правова інформація',
   },
   sr: {
-    attribution: 'Koretskiy Methodology — autorska metodologija Oleksandra Koretskiy-a za strukturisanu analizu i proveru inženjerskih, tehnoloških i poslovnih odluka.',
+    attribution: 'Methodology © Oleksandr Koretskiy',
     methodology: 'Metodologija',
     consultation: 'Individualna konsultacija',
     privacy: 'Politika privatnosti',
