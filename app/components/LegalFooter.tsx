@@ -9,6 +9,7 @@ const copy = {
   en: {
     attribution: 'Koretskiy Methodology — an authorial methodology by Oleksandr Koretskiy for structured analysis and verification of engineering, technology and business decisions.',
     methodology: 'Methodology',
+    consultation: 'Individual consultation',
     privacy: 'Privacy Policy',
     terms: 'Terms of Use',
     legal: 'Legal Notice',
@@ -16,6 +17,7 @@ const copy = {
   ru: {
     attribution: 'Koretskiy Methodology — авторская методология Александра Корецкого для структурированного анализа и проверки инженерных, технологических и бизнес-решений.',
     methodology: 'Методология',
+    consultation: 'Индивидуальная консультация',
     privacy: 'Политика конфиденциальности',
     terms: 'Условия использования',
     legal: 'Правовая информация',
@@ -23,6 +25,7 @@ const copy = {
   uk: {
     attribution: 'Koretskiy Methodology — авторська методологія Олександра Корецького для структурованого аналізу та перевірки інженерних, технологічних і бізнес-рішень.',
     methodology: 'Методологія',
+    consultation: 'Індивідуальна консультація',
     privacy: 'Політика конфіденційності',
     terms: 'Умови використання',
     legal: 'Правова інформація',
@@ -30,6 +33,7 @@ const copy = {
   sr: {
     attribution: 'Koretskiy Methodology — autorska metodologija Oleksandra Koretskiy-a za strukturisanu analizu i proveru inženjerskih, tehnoloških i poslovnih odluka.',
     methodology: 'Metodologija',
+    consultation: 'Individualna konsultacija',
     privacy: 'Politika privatnosti',
     terms: 'Uslovi korišćenja',
     legal: 'Pravne informacije',
@@ -50,6 +54,7 @@ export default function LegalFooter() {
       </div>
       <div className="legal-footer-links">
         <a href={`/${lang}/methodology`}>{t.methodology}</a>
+        <a href="https://checkopp.com/individual-consultation">{t.consultation}</a>
         <a href={`/${lang}/privacy-policy`}>{t.privacy}</a>
         <a href={`/${lang}/terms-of-use`}>{t.terms}</a>
         <a href={`/${lang}/legal-notice`}>{t.legal}</a>
