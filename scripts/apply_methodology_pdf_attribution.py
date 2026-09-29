@@ -59,6 +59,10 @@ def make_overlay(width, height, first_page, info):
 for lang, info in ITEMS.items():
     path = PDF_DIR / info["file"]
     reader = PdfReader(str(path))
+    existing_text = "\n".join((page.extract_text() or "") for page in reader.pages)
+    if "© Oleksandr Koretskiy, 2026" in existing_text:
+        print(f"{lang}: attribution already present; unchanged")
+        continue
     writer = PdfWriter()
     for index, page in enumerate(reader.pages):
         width = float(page.mediabox.width)
