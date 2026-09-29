@@ -5,7 +5,7 @@ import { business, mailtoHref } from '../../lib/business';
 
 type Props = { params: Promise<{ lang: string }> };
 
-type Item = { title: string; text: string; href: string; cta: string };
+type Item = { title: string; text: string; href: string; cta: string; external?: boolean };
 type HomeCopy = {
   about: string;
   intro: string;
@@ -45,6 +45,7 @@ const home: Record<Lang, HomeCopy> = {
       { title: 'Projects for implementation', text: 'Developed technical and business concepts looking for clients, partners, investors or operators.', href: '/perspectives', cta: 'View projects' },
       { title: 'Tenders & equipment', text: 'Technical specification, alternatives, manufacturer search and independent comparison.', href: '/tender-equipment', cta: 'Open tender support' },
       { title: 'Strategic & technical consulting', text: 'Second opinion, problem framing, TOR development, option comparison and implementation roadmap.', href: '/about', cta: 'How I work' },
+      { title: 'Individual consultation', text: 'For a project, technology, engineering task, business process or commercialization challenge. First, send the description and materials through CheckOpp. After review, the scope and individual price are agreed; an invoice is issued after price approval.', href: 'https://checkopp.com/individual-consultation', cta: 'Start in CheckOpp', external: true },
     ],
     currentEyebrow: 'Now in development',
     currentTitle: 'Current projects',
@@ -65,6 +66,7 @@ const home: Record<Lang, HomeCopy> = {
       { title: 'Проекты для реализации', text: 'Проработанные технические и бизнес-концепции для заказчиков, партнёров, инвесторов или операторов.', href: '/perspectives', cta: 'Смотреть проекты' },
       { title: 'Тендеры и оборудование', text: 'Техническое задание, аналоги, поиск производителей и независимое сравнение.', href: '/tender-equipment', cta: 'Открыть направление' },
       { title: 'Стратегический и технический консалтинг', text: 'Второе мнение, постановка задачи, разработка ТЗ, сравнение вариантов и дорожная карта.', href: '/about', cta: 'Как я работаю' },
+      { title: 'Индивидуальная консультация', text: 'По проекту, технологии, инженерной задаче, бизнес-процессу или коммерциализации. Сначала передайте описание и материалы через CheckOpp. После ознакомления согласовываются объём работы и индивидуальная цена; после согласования стоимости выставляется invoice.', href: 'https://checkopp.com/individual-consultation', cta: 'Начать в CheckOpp', external: true },
     ],
     currentEyebrow: 'Сейчас в работе',
     currentTitle: 'Текущие проекты',
@@ -85,6 +87,7 @@ const home: Record<Lang, HomeCopy> = {
       { title: 'Проєкти для реалізації', text: 'Опрацьовані технічні та бізнес-концепції для замовників, партнерів, інвесторів або операторів.', href: '/perspectives', cta: 'Дивитися проєкти' },
       { title: 'Тендери та обладнання', text: 'Технічне завдання, аналоги, пошук виробників і незалежне порівняння.', href: '/tender-equipment', cta: 'Відкрити напрям' },
       { title: 'Стратегічний і технічний консалтинг', text: 'Друга думка, постановка задачі, розробка ТЗ, порівняння варіантів і дорожня карта.', href: '/about', cta: 'Як я працюю' },
+      { title: 'Індивідуальна консультація', text: 'Щодо проєкту, технології, інженерної задачі, бізнес-процесу або комерціалізації. Спочатку передайте опис і матеріали через CheckOpp. Після ознайомлення узгоджуються обсяг роботи та індивідуальна ціна; після погодження вартості виставляється invoice.', href: 'https://checkopp.com/individual-consultation', cta: 'Почати в CheckOpp', external: true },
     ],
     currentEyebrow: 'Зараз у роботі',
     currentTitle: 'Поточні проєкти',
@@ -105,6 +108,7 @@ const home: Record<Lang, HomeCopy> = {
       { title: 'Projekti za realizaciju', text: 'Razrađeni tehnički i poslovni koncepti za naručioce, partnere, investitore ili operatere.', href: '/perspectives', cta: 'Pogledaj projekte' },
       { title: 'Tenderi i oprema', text: 'Tehnička specifikacija, alternative, pronalaženje proizvođača i nezavisno poređenje.', href: '/tender-equipment', cta: 'Otvori podršku' },
       { title: 'Strateški i tehnički konsalting', text: 'Drugo mišljenje, definisanje zadatka, tehnički zadatak, poređenje opcija i plan realizacije.', href: '/about', cta: 'Kako radim' },
+      { title: 'Individualna konsultacija', text: 'Za projekat, tehnologiju, inženjerski zadatak, poslovni proces ili komercijalizaciju. Najpre pošaljite opis i materijale kroz CheckOpp. Nakon pregleda usaglašavaju se obim rada i individualna cena; nakon odobrenja cene izdaje se invoice.', href: 'https://checkopp.com/individual-consultation', cta: 'Započni u CheckOpp', external: true },
     ],
     currentEyebrow: 'Trenutno u radu',
     currentTitle: 'Aktuelni projekti',
@@ -277,13 +281,13 @@ export default async function LocalizedHome({ params }: Props) {
           <p className="eyebrow">{h.directionsEyebrow}</p>
           <h2>{h.directionsTitle}</h2>
         </div>
-        <div className="cards home-direction-grid">
+        <div className="cards cards-two home-direction-grid">
           {h.directions.map((item, index) => (
             <article className="card home-direction-card" key={item.title}>
               <span className="card-number">0{index + 1}</span>
               <h3>{item.title}</h3>
               <p>{item.text}</p>
-              <a className="button button-light" href={`/${lang}${item.href}`}>{item.cta}</a>
+              <a className="button button-light" href={item.external ? item.href : `/${lang}${item.href}`}>{item.cta}</a>
             </article>
           ))}
         </div>
