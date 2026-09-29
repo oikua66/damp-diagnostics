@@ -9,6 +9,11 @@ type Item = { title: string; text: string; href: string; cta: string; external?:
 type HomeCopy = {
   about: string;
   intro: string;
+  relationshipEyebrow: string;
+  relationshipTitle: string;
+  relationshipText: string;
+  methodologyLink: string;
+  checkoppLink: string;
   directionsEyebrow: string;
   directionsTitle: string;
   directions: Item[];
@@ -39,6 +44,11 @@ const home: Record<Lang, HomeCopy> = {
   en: {
     about: 'About',
     intro: 'Independent engineering and business consulting for complex decisions: define the real objective, compare alternatives, prepare a workable brief and move from an idea to implementation.',
+    relationshipEyebrow: 'Two connected sites',
+    relationshipTitle: 'Consulting and methodology here. Working cases in CheckOpp.',
+    relationshipText: 'On koretskiy.com you can learn about the consultant, services and the authorial methodology. Methodology is documented here as a separate reference section. CheckOpp is the separate working platform and software implementation used to apply the approach to concrete tasks: the client submits materials there and the work continues as a Case.',
+    methodologyLink: 'Methodology',
+    checkoppLink: 'CheckOpp — working platform',
     directionsEyebrow: 'Where I can help',
     directionsTitle: 'Start with the task, not with the supplier.',
     directions: [
@@ -60,6 +70,11 @@ const home: Record<Lang, HomeCopy> = {
   ru: {
     about: 'Обо мне',
     intro: 'Независимый инженерный и бизнес-консалтинг для сложных решений: определить реальную цель, сравнить варианты, подготовить рабочее ТЗ и перевести идею в реализацию.',
+    relationshipEyebrow: 'Два связанных сайта',
+    relationshipTitle: 'Консалтинг и методология — здесь. Рабочие Case — в CheckOpp.',
+    relationshipText: 'На koretskiy.com можно познакомиться с консультантом, услугами и авторской методологией. Методология опубликована здесь как самостоятельный справочный раздел. CheckOpp — отдельная рабочая платформа и программная реализация для применения подхода к конкретным задачам: там клиент передаёт материалы, после чего дальнейшая работа ведётся в рамках Case.',
+    methodologyLink: 'Методология',
+    checkoppLink: 'CheckOpp — рабочая платформа',
     directionsEyebrow: 'Чем могу помочь',
     directionsTitle: 'Начинаем с задачи, а не с поставщика.',
     directions: [
@@ -81,6 +96,11 @@ const home: Record<Lang, HomeCopy> = {
   uk: {
     about: 'Про мене',
     intro: 'Незалежний інженерний та бізнес-консалтинг для складних рішень: визначити реальну мету, порівняти варіанти, підготувати робоче ТЗ і перевести ідею в реалізацію.',
+    relationshipEyebrow: 'Два пов’язані сайти',
+    relationshipTitle: 'Консалтинг і методологія — тут. Робочі Case — у CheckOpp.',
+    relationshipText: 'На koretskiy.com можна познайомитися з консультантом, послугами та авторською методологією. Методологія опублікована тут як окремий довідковий розділ. CheckOpp — окрема робоча платформа та програмна реалізація для застосування підходу до конкретних задач: там клієнт передає матеріали, після чого подальша робота ведеться в межах Case.',
+    methodologyLink: 'Методологія',
+    checkoppLink: 'CheckOpp — робоча платформа',
     directionsEyebrow: 'Чим можу допомогти',
     directionsTitle: 'Починаємо із задачі, а не з постачальника.',
     directions: [
@@ -102,6 +122,11 @@ const home: Record<Lang, HomeCopy> = {
   sr: {
     about: 'O meni',
     intro: 'Nezavisni inženjerski i poslovni konsalting za složene odluke: definisati stvarni cilj, uporediti opcije, pripremiti operativni zadatak i prevesti ideju u realizaciju.',
+    relationshipEyebrow: 'Dva povezana sajta',
+    relationshipTitle: 'Konsalting i metodologija su ovde. Radni Case je u CheckOpp-u.',
+    relationshipText: 'Na koretskiy.com možete da se upoznate sa konsultantom, uslugama i autorskom metodologijom. Metodologija je ovde objavljena kao poseban referentni odeljak. CheckOpp je zasebna radna platforma i softverska realizacija za primenu pristupa na konkretne zadatke: klijent tamo dostavlja materijale, a dalji rad se vodi kroz Case.',
+    methodologyLink: 'Metodologija',
+    checkoppLink: 'CheckOpp — radna platforma',
     directionsEyebrow: 'Kako mogu da pomognem',
     directionsTitle: 'Počinjemo od zadatka, a ne od dobavljača.',
     directions: [
@@ -263,6 +288,20 @@ export default async function LocalizedHome({ params }: Props) {
         <div className="hero-actions">
           <a className="button button-dark" href="#services">{t.nav.services}</a>
           <a className="button button-light" href={`/${lang}/perspectives`}>{h.openProjects}</a>
+        </div>
+      </section>
+
+      <section className="section split" id="site-relationship">
+        <div>
+          <p className="eyebrow">{h.relationshipEyebrow}</p>
+          <h2>{h.relationshipTitle}</h2>
+        </div>
+        <div className="prose">
+          <p>{h.relationshipText}</p>
+          <div className="hero-actions">
+            <a className="button button-dark" href={`/${lang}/methodology`}>{h.methodologyLink}</a>
+            <a className="button button-light" href="https://checkopp.com/">{h.checkoppLink}</a>
+          </div>
         </div>
       </section>
 
