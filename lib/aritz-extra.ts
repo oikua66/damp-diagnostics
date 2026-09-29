@@ -140,7 +140,7 @@ const extra: Record<Lang, Record<string, AritzPage>> = {
       lead:'ARITZ builds on classical TRIZ/ARIZ logic but is used here as a practical engineering process with explicit evidence and verification.',
       sections:[
         {title:'Methodological foundation',paragraphs:['Classical TRIZ and ARIZ provide the language of contradictions, resources, ideality and directed problem solving. That foundation is retained.']},
-        {title:'Practical extension',bullets:['explicit evidence handling;','source provenance;','calculations and sensitivity;','visible uncertainty;','Research & Verification linkage;','STOP conditions;','expert escalation;','validation before recommendation.']},
+        {title:'Practical extension',bullets:['explicit evidence handling;','source provenance;','calculations and sensitivity;','visible uncertainty;','Research & Verification linkage;','STOP conditions;','specialist escalation;','validation before recommendation.']},
         {title:'Not a replacement for TRIZ',paragraphs:['ARITZ in this methodology does not claim to replace the full body of TRIZ. It is a practical implementation for concrete engineering analysis and decisions.']},
       ],
     },
