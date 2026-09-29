@@ -73,8 +73,10 @@ const terms = {
       'While every reasonable effort is made to keep the information accurate and up to date, Koretskiy Consulting makes no representations or warranties, express or implied, regarding the completeness, accuracy, reliability, or suitability of the information for any particular purpose.',
     ]],
     ['5. Intellectual Property', [
-      'Unless otherwise stated, all content on this website, including text, graphics, images, logos, and other materials, is the intellectual property of Koretskiy Consulting and is protected by applicable copyright and intellectual property laws.',
-      'No content may be copied, reproduced, distributed, modified, published, or used for commercial purposes without prior written permission.',
+      'The original methodology text, original structure, classifications, frameworks, explanatory materials and website/software materials created by Koretskiy Consulting are protected by applicable copyright and intellectual-property law. The methodology is an original proprietary methodology developed by Oleksandr Koretskiy; CheckOpp is its software implementation and operational environment.',
+      'This ownership statement does not claim ownership of public-domain or generally known engineering methods, classical TRIZ/ARIZ as a discipline, standards, external sources, third-party materials, or pre-existing rights belonging to clients or other authors.',
+      'Client-specific deliverables may incorporate the provider’s methodology, structure or templates while also containing client materials and third-party sources. Rights in those underlying materials remain with their respective owners; any project-specific transfer or licence is governed by the applicable engagement terms.',
+      'No protected site or methodology content may be copied, reproduced, distributed, modified, published, or used for commercial purposes without prior written permission except where applicable law permits otherwise.',
     ]],
     ['6. Third-Party Links', [
       'This website may contain links to third-party websites or services for your convenience.',
