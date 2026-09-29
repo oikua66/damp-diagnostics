@@ -43,13 +43,13 @@ const copy: Record<Lang, {
       { title: 'VERIFY', text: 'Проверять физическую правдоподобность, расчёты, аналоги, литературу, патенты, стандарты, данные производителей, чувствительность, моделирование, эксперимент и необходимость профильного специалиста.' },
     ],
     elementsTitle: 'Что обязательно рассматривается',
-    elements: ['постановка задачи;', 'границы системы;', 'противоречия;', 'ресурсы;', 'ограничения;', 'желаемый / идеальный результат;', 'инженерные оценки;', 'доказательства и валидация;', 'safety и условия остановки;', 'роль человеческого эксперта.'],
+    elements: ['постановка задачи;', 'границы системы;', 'противоречия;', 'ресурсы;', 'ограничения;', 'желаемый / идеальный результат;', 'инженерные оценки;', 'доказательства и валидация;', 'безопасность и условия остановки;', 'роль человеческого эксперта.'],
     verifyTitle: 'Цепочка проверки',
     verify: 'Концепция → Физическая правдоподобность → Расчёт / оценка → Аналоги → Литература / патенты / стандарты → Данные производителя / поставщика → Чувствительность → Эксперимент / моделирование / специалист → Решение.',
     examplesTitle: 'Примеры применения',
     examplesText: 'Публичные примеры будут добавляться по мере появления реальных инженерных задач, которые можно опубликовать без раскрытия конфиденциальной информации клиента. Учебные примеры будут прямо обозначаться как учебные.',
     trizTitle: 'ARITZ и ТРИЗ',
-    trizText: 'Классическая ТРИЗ / АРИЗ является методологической основой. Публичный ARITZ здесь — практическая инженерная реализация с акцентом на доказательства, прослеживаемость, расчёты, неопределённость, проверку и экспертную эскалацию.',
+    trizText: 'Классическая ТРИЗ / АРИЗ является методологической основой. Публичный ARITZ здесь — практическая инженерная реализация с акцентом на доказательства, прослеживаемость, расчёты, неопределённость, проверку и привлечение профильного специалиста.',
     methodologyCta: 'Вернуться к общей методологии',
     topicsTitle: 'Основные разделы ARITZ', supportTitle: 'Проверка, контроль и справочные разделы', open: 'Открыть', viewPdf: 'Просмотреть PDF', downloadPdf: 'Скачать PDF',
   },
@@ -71,7 +71,7 @@ const copy: Record<Lang, {
     examplesTitle: 'Application examples',
     examplesText: 'Public examples will be added as suitable real engineering cases become available and can be published without disclosing confidential client information. Educational examples will be explicitly marked as illustrative.',
     trizTitle: 'ARITZ and TRIZ',
-    trizText: 'Classical TRIZ / ARIZ is the methodological foundation. The public ARITZ presented here is a practical engineering implementation focused on evidence, traceability, calculations, uncertainty, verification and expert escalation.',
+    trizText: 'Classical TRIZ / ARIZ is the methodological foundation. The public ARITZ presented here is a practical engineering implementation focused on evidence, traceability, calculations, uncertainty, verification and specialist escalation.',
     methodologyCta: 'Back to the full methodology',
     topicsTitle: 'Core ARITZ sections', supportTitle: 'Verification, control and reference sections', open: 'Open', viewPdf: 'View PDF', downloadPdf: 'Download PDF',
   },
@@ -87,13 +87,13 @@ const copy: Record<Lang, {
       { title: 'VERIFY', text: 'Перевіряти фізичну правдоподібність, розрахунки, аналоги, літературу, патенти, стандарти, дані виробників, чутливість, моделювання, експеримент і потребу у профільному спеціалісті.' },
     ],
     elementsTitle: 'Що обов’язково розглядається',
-    elements: ['постановка задачі;', 'межі системи;', 'суперечності;', 'ресурси;', 'обмеження;', 'бажаний / ідеальний результат;', 'інженерні оцінки;', 'докази і валідація;', 'safety та умови зупинки;', 'роль людського експерта.'],
+    elements: ['постановка задачі;', 'межі системи;', 'суперечності;', 'ресурси;', 'обмеження;', 'бажаний / ідеальний результат;', 'інженерні оцінки;', 'докази і валідація;', 'безпека та умови зупинки;', 'роль людського експерта.'],
     verifyTitle: 'Ланцюжок перевірки',
     verify: 'Концепція → Фізична правдоподібність → Розрахунок / оцінка → Аналоги → Література / патенти / стандарти → Дані виробника / постачальника → Чутливість → Експеримент / моделювання / спеціаліст → Рішення.',
     examplesTitle: 'Приклади застосування',
     examplesText: 'Публічні приклади додаватимуться у міру появи реальних інженерних задач, які можна опублікувати без розкриття конфіденційної інформації клієнта. Навчальні приклади будуть прямо позначені як навчальні.',
     trizTitle: 'ARITZ і ТРІЗ',
-    trizText: 'Класична ТРІЗ / АРИЗ є методологічною основою. Публічний ARITZ тут — практична інженерна реалізація з акцентом на докази, простежуваність, розрахунки, невизначеність, перевірку та експертну ескалацію.',
+    trizText: 'Класична ТРІЗ / АРИЗ є методологічною основою. Публічний ARITZ тут — практична інженерна реалізація з акцентом на докази, простежуваність, розрахунки, невизначеність, перевірку та залучення профільного фахівця.',
     methodologyCta: 'Повернутися до загальної методології',
     topicsTitle: 'Основні розділи ARITZ', supportTitle: 'Перевірка, контроль і довідкові розділи', open: 'Відкрити', viewPdf: 'Переглянути PDF', downloadPdf: 'Завантажити PDF',
   },
@@ -109,13 +109,13 @@ const copy: Record<Lang, {
       { title: 'VERIFY', text: 'Proveriti fizičku izvodljivost, proračune, analogije, literaturu, patente, standarde, podatke proizvođača, osetljivost, simulaciju, eksperiment i potrebu za specijalistom.' },
     ],
     elementsTitle: 'Šta se obavezno razmatra',
-    elements: ['formulacija problema;', 'granice sistema;', 'kontradikcije;', 'resursi;', 'ograničenja;', 'željeni / idealni rezultat;', 'inženjerske procene;', 'dokazi i validacija;', 'safety i uslovi zaustavljanja;', 'uloga ljudskog eksperta.'],
+    elements: ['formulacija problema;', 'granice sistema;', 'kontradikcije;', 'resursi;', 'ograničenja;', 'željeni / idealni rezultat;', 'inženjerske procene;', 'dokazi i validacija;', 'bezbednost i uslovi zaustavljanja;', 'uloga ljudskog eksperta.'],
     verifyTitle: 'Lanac provere',
     verify: 'Koncept → Fizička izvodljivost → Proračun / procena → Analogije → Literatura / patenti / standardi → Podaci proizvođača / dobavljača → Osetljivost → Eksperiment / simulacija / specijalista → Odluka.',
     examplesTitle: 'Primeri primene',
     examplesText: 'Javni primeri će se dodavati kako budu dostupni realni inženjerski slučajevi koji mogu da se objave bez otkrivanja poverljivih podataka klijenta. Edukativni primeri biće jasno označeni kao ilustrativni.',
     trizTitle: 'ARITZ i TRIZ',
-    trizText: 'Klasični TRIZ / ARIZ predstavlja metodološku osnovu. Javni ARITZ ovde je praktična inženjerska realizacija sa fokusom na dokaze, sledljivost, proračune, neizvesnost, verifikaciju i ekspertsku eskalaciju.',
+    trizText: 'Klasični TRIZ / ARIZ predstavlja metodološku osnovu. Javni ARITZ ovde je praktična inženjerska realizacija sa fokusom na dokaze, sledljivost, proračune, neizvesnost, verifikaciju i uključivanje odgovarajućeg stručnjaka.',
     methodologyCta: 'Nazad na celu metodologiju',
     topicsTitle: 'Osnovni ARITZ odeljci', supportTitle: 'Verifikacija, kontrola i referentni odeljci', open: 'Otvori', viewPdf: 'Pregledaj PDF', downloadPdf: 'Preuzmi PDF',
   },
@@ -188,7 +188,7 @@ export default async function AritzPage({ params }: Props) {
           <p className="eyebrow">ARITZ</p>
           <h2>{t.topicsTitle}</h2>
         </div>
-        <div className="cards" style={{ gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', rowGap: 24 }}>
+        <div className="cards">
           {aritzSlugs.map((slug,index) => {
             const item = aritzPages[lang][slug];
             return (
@@ -208,7 +208,7 @@ export default async function AritzPage({ params }: Props) {
           <p className="eyebrow">ARITZ</p>
           <h2>{t.supportTitle}</h2>
         </div>
-        <div className="cards" style={{ gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', rowGap: 24 }}>
+        <div className="cards">
           {aritzExtraSlugs.map((slug,index) => {
             const item = aritzExtraPages[lang][slug];
             return (

@@ -117,7 +117,7 @@ export default async function MethodologyPage({ params }: Props) {
           <p className="eyebrow">{t.pagesTitle}</p>
           <h2>{t.pagesTitle}</h2>
         </div>
-        <div className="cards" style={{ gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', rowGap: 24 }}>
+        <div className="cards">
           {methodologySlugs.map((slug, index) => {
             const page = m.pages[slug];
             return (

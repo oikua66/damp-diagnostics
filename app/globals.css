@@ -90,7 +90,8 @@ h3 { font-size: 30px; font-weight: 600; }
 .button-light { background: transparent; }
 .section { padding: 10vh 8vw; border-bottom: 1px solid var(--line); }
 .section-heading { display: grid; grid-template-columns: .7fr 1.3fr; gap: 5vw; align-items: start; margin-bottom: 56px; }
-.cards { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); }
+.cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); row-gap: 24px; }
+.cards-two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .card { padding: 30px 28px 38px 0; border-bottom: 1px solid var(--line); min-height: 320px; }
 .card + .card { border-left: 1px solid var(--line); padding-left: 28px; }
 .card-number { display: block; margin-bottom: 70px; color: var(--muted); font-size: 13px; }

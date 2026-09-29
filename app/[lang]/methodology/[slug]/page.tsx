@@ -86,7 +86,7 @@ export default async function MethodologyDetailPage({ params }: Props) {
             <p className="eyebrow">PDF</p>
             <h2>{l.pdf}</h2>
           </div>
-          <div className="cards" style={{ gridTemplateColumns: 'repeat(2, minmax(0, 1fr))' }}>
+          <div className="cards cards-two">
             {(Object.keys(publicMethodologyPdfs) as Lang[]).map((code) => {
               const item = publicMethodologyPdfs[code];
               return (
