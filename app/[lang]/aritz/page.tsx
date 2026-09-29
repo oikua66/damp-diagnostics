@@ -71,7 +71,7 @@ const copy: Record<Lang, {
     examplesTitle: 'Application examples',
     examplesText: 'Public examples will be added as suitable real engineering cases become available and can be published without disclosing confidential client information. Educational examples will be explicitly marked as illustrative.',
     trizTitle: 'ARITZ and TRIZ',
-    trizText: 'Classical TRIZ / ARIZ is the methodological foundation. The public ARITZ presented here is a practical engineering implementation focused on evidence, traceability, calculations, uncertainty, verification and expert escalation.',
+    trizText: 'Classical TRIZ / ARIZ is the methodological foundation. The public ARITZ presented here is a practical engineering implementation focused on evidence, traceability, calculations, uncertainty, verification and specialist escalation.',
     methodologyCta: 'Back to the full methodology',
     topicsTitle: 'Core ARITZ sections', supportTitle: 'Verification, control and reference sections', open: 'Open', viewPdf: 'View PDF', downloadPdf: 'Download PDF',
   },
