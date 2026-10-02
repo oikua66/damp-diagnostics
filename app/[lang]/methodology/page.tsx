@@ -20,6 +20,9 @@ const intro: Record<Lang, {
   open: string;
   viewPdf: string;
   downloadPdf: string;
+  glossaryTitle: string;
+  glossaryText: string;
+  glossaryCta: string;
 }> = {
   ru: {
     title: 'Методология инженерного анализа и принятия решений',
@@ -32,6 +35,9 @@ const intro: Record<Lang, {
     pagesTitle: 'Разделы методологии',
     softwareTitle: 'От методологии к программной реализации',
     open: 'Открыть', viewPdf: 'Просмотреть PDF', downloadPdf: 'Скачать PDF',
+    glossaryTitle: 'Глоссарий проекта',
+    glossaryText: 'Единый терминологический справочник для Koretskiy Methodology, ARITZ и CheckOpp: 50 ключевых терминов с эквивалентами на русском, английском, украинском и сербском.',
+    glossaryCta: 'Открыть глоссарий',
   },
   en: {
     title: 'Engineering analysis and decision methodology',
@@ -44,6 +50,9 @@ const intro: Record<Lang, {
     pagesTitle: 'Methodology sections',
     softwareTitle: 'From methodology to software implementation',
     open: 'Open', viewPdf: 'View PDF', downloadPdf: 'Download PDF',
+    glossaryTitle: 'Project glossary',
+    glossaryText: 'A shared terminology reference for Koretskiy Methodology, ARITZ and CheckOpp: 50 key terms with Russian, English, Ukrainian and Serbian equivalents.',
+    glossaryCta: 'Open glossary',
   },
   uk: {
     title: 'Методологія інженерного аналізу та прийняття рішень',
@@ -56,6 +65,9 @@ const intro: Record<Lang, {
     pagesTitle: 'Розділи методології',
     softwareTitle: 'Від методології до програмної реалізації',
     open: 'Відкрити', viewPdf: 'Переглянути PDF', downloadPdf: 'Завантажити PDF',
+    glossaryTitle: 'Глосарій проєкту',
+    glossaryText: 'Спільний термінологічний довідник для Koretskiy Methodology, ARITZ і CheckOpp: 50 ключових термінів з відповідниками російською, англійською, українською та сербською.',
+    glossaryCta: 'Відкрити глосарій',
   },
   sr: {
     title: 'Metodologija inženjerske analize i donošenja odluka',
@@ -68,6 +80,9 @@ const intro: Record<Lang, {
     pagesTitle: 'Delovi metodologije',
     softwareTitle: 'Od metodologije do softverske realizacije',
     open: 'Otvori', viewPdf: 'Pregledaj PDF', downloadPdf: 'Preuzmi PDF',
+    glossaryTitle: 'Glosar projekta',
+    glossaryText: 'Zajednički terminološki vodič za Koretskiy Methodology, ARITZ i CheckOpp: 50 ključnih termina sa ruskim, engleskim, ukrajinskim i srpskim ekvivalentima.',
+    glossaryCta: 'Otvori glosar',
   },
 };
 
@@ -129,6 +144,17 @@ export default async function MethodologyPage({ params }: Props) {
               </article>
             );
           })}
+        </div>
+      </section>
+
+      <section className="section split" style={{ background: 'var(--panel)' }}>
+        <div>
+          <p className="eyebrow">Glossary</p>
+          <h2>{t.glossaryTitle}</h2>
+        </div>
+        <div className="prose">
+          <p>{t.glossaryText}</p>
+          <a className="button button-dark" href={`/${lang}/methodology/glossary`}>{t.glossaryCta}</a>
         </div>
       </section>
 
