@@ -12,6 +12,7 @@ const methodologyPaths = [
   '/methodology/checkopp',
   '/methodology/business-processes',
   '/methodology/library',
+  '/methodology/glossary',
   '/aritz',
   '/aritz/problem-formulation',
   '/aritz/system-boundary',
