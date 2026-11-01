@@ -1,12 +1,15 @@
 export type VentureStage = 'Exploring' | 'Concept' | 'Prototype' | 'MVP' | 'Validated';
 export type VentureStatus =
   | 'Private'
+  | 'Hackathon Project'
+  | 'In Development'
+  | 'Seeking Validation'
+  | 'Pilot Ready'
+  | 'Active Venture'
   | 'Open for Partnership'
-  | 'Open for Strategic Partnership'
   | 'Available for Licensing'
   | 'Available for Transfer'
   | 'In Negotiation'
-  | 'Active Venture'
   | 'Internal Tool'
   | 'Transferred'
   | 'Licensed'
@@ -78,35 +81,36 @@ export const ventures: Venture[] = [
   },
   {
     id: 'VENTURE-002', slug: 'ai-microwallet', name: 'AI MicroWallet',
-    category: ['AI', 'FinTech', 'Payments'], stage: 'MVP', status: 'Open for Partnership', visibility: 'public', created: '2026-10',
+    category: ['AI', 'FinTech', 'Payments'], stage: 'MVP', status: 'Hackathon Project', visibility: 'public', created: '2026-10',
     tagline: 'Infrastructure for economical AI microtransactions using a prefunded balance and internal ledger.',
-    teaser: 'A wallet layer designed for small AI purchases where conventional per-transaction payment costs make little economic sense.',
+    teaser: 'A wallet layer designed for small AI purchases where conventional per-transaction payment costs make little economic sense. Built for the PayPal AI Hackathon 2026.',
     problem: 'Very small AI payments are poorly served by conventional card and bank transaction economics.',
     opportunity: 'A prefunded balance can aggregate external payments while allowing many low-value internal transactions.',
     solution: 'Users top up once, spend from an internal ledger, and sellers settle aggregated balances.',
     howItWorks: ['Top up a balance.', 'Pay for AI actions internally.', 'Accumulate seller earnings.', 'Settle externally in larger batches.'],
-    businessModel: ['Transaction fee', 'B2B infrastructure licensing', 'White label'], validation: [],
+    businessModel: ['Transaction fee', 'B2B infrastructure licensing', 'White label'],
+    validation: [{ type: 'hackathon', name: 'PayPal AI Hackathon 2026', status: 'Built for hackathon submission' }],
     assets: ['Working MVP', 'Repository', 'Architecture', 'Documentation', 'Demo'],
-    nextSteps: ['Production hardening', 'Partner validation', 'Compliance and payment review', 'Commercial pilot'], handoff_readiness: 'MVP Ready',
+    nextSteps: ['Validate the use case beyond the hackathon', 'Review compliance and payment constraints', 'Decide whether to continue, license or hand off'], handoff_readiness: 'MVP Ready',
   },
   {
     id: 'VENTURE-003', slug: 'private-family-ai-home-cloud', name: 'Private Family AI Home Cloud',
-    category: ['AI', 'NAS', 'Consumer Technology'], stage: 'Concept', status: 'Open for Strategic Partnership', visibility: 'public', created: '2026-10',
+    category: ['AI', 'NAS', 'Consumer Technology'], stage: 'Concept', status: 'Hackathon Project', visibility: 'public', created: '2026-10',
     tagline: 'A private AI operating layer for the family archive, documents, memories and household workflows stored on a NAS.',
-    teaser: 'The phone becomes the capture interface; the NAS becomes permanent family memory; local AI makes the archive usable instead of merely stored.',
+    teaser: 'The phone becomes the capture interface; the NAS becomes permanent family memory; local AI makes the archive usable instead of merely stored. Developed as a UGREEN AI NAS Hackathon concept.',
     problem: 'Family files accumulate across devices but remain difficult to search, connect and reuse safely.',
     opportunity: 'NAS hardware can evolve from passive storage into a private household knowledge layer.',
     solution: 'A family AI layer over NAS storage that organizes content, retrieves it and creates useful household outputs.',
     howItWorks: ['Back up devices.', 'Classify household content.', 'Retrieve and connect information with AI.', 'Generate useful family outputs.'],
     businessModel: ['OEM integration', 'NAS software licensing', 'Premium AI feature package'], validation: [],
     assets: ['System concept', 'Workflow architecture', 'Prioritized use-case set'],
-    nextSteps: ['Verify platform capabilities', 'Build one end-to-end scenario', 'Test permissions', 'Package OEM proposal'], handoff_readiness: 'Concept',
+    nextSteps: ['Verify platform capabilities', 'Build one end-to-end scenario', 'Test permissions', 'Prepare the hackathon submission'], handoff_readiness: 'Concept',
   },
   {
     id: 'VENTURE-004', slug: 'property-intelligence-crew', name: 'Property Intelligence Crew',
-    category: ['Agentic AI', 'PropTech'], stage: 'Concept', status: 'Open for Partnership', visibility: 'public', created: '2026-10',
+    category: ['Agentic AI', 'PropTech'], stage: 'Concept', status: 'Hackathon Project', visibility: 'public', created: '2026-10',
     tagline: 'An agentic property intelligence layer that turns fragmented listings and owner inputs into normalized, continuously updated property records.',
-    teaser: 'Agents monitor accessible sources, normalize messy inputs and generate a current presentation on demand.',
+    teaser: 'Agents monitor accessible sources, normalize messy inputs and generate a current presentation on demand. Developed as a KiroWeen hackathon concept.',
     problem: 'Property information arrives in inconsistent formats across listings, emails, conversations, photos and documents.',
     opportunity: 'Agentic workflows can normalize permitted public information and keep structured property records current.',
     solution: 'A structured property registry fed by agents and human inputs, with dynamically generated property pages.',
@@ -117,7 +121,7 @@ export const ventures: Venture[] = [
   },
   {
     id: 'VENTURE-005', slug: 'interactive-book-production', name: 'Interactive Book Production',
-    category: ['Publishing Technology', 'Education', 'Interactive Content'], stage: 'MVP', status: 'Open for Partnership', visibility: 'public', created: '2026',
+    category: ['Publishing Technology', 'Education', 'Interactive Content'], stage: 'MVP', status: 'Pilot Ready', visibility: 'public', created: '2026',
     tagline: 'A production workflow that turns authored PDF material into structured interactive digital books without rewriting the source content.',
     teaser: 'A reusable system for converting conventional authored material into interactive web-based books and learning experiences.',
     problem: 'Interactive book production usually requires repeated manual restructuring, asset preparation and front-end assembly.',
@@ -126,11 +130,11 @@ export const ventures: Venture[] = [
     howItWorks: ['Upload the PDF.', 'Review extracted structure.', 'Add missing media and interactive assets.', 'Generate preview.', 'Publish the digital book.'],
     businessModel: ['Production service', 'B2B licensing', 'Publisher workflow tooling', 'White label'], validation: [],
     assets: ['Working builder', 'Interactive lesson demo', 'Repository', 'Production deployment', 'Supabase-backed project'],
-    nextSteps: ['Generalize beyond the original demo content', 'Define reusable book schemas', 'Package publisher workflows'], handoff_readiness: 'MVP Ready',
+    nextSteps: ['Run a pilot on additional source material', 'Define reusable book schemas', 'Package publisher workflows'], handoff_readiness: 'MVP Ready',
   },
   {
     id: 'VENTURE-006', slug: 'ai-property-inspection', name: 'AI Property Inspection',
-    category: ['AI', 'PropTech', 'Property Inspection'], stage: 'MVP', status: 'Active Venture', visibility: 'public', created: '2026',
+    category: ['AI', 'PropTech', 'Property Inspection'], stage: 'MVP', status: 'Pilot Ready', visibility: 'public', created: '2026',
     tagline: 'A unified AI-assisted property inspection that turns photos, documents, seller claims and observations into a structured technical risk picture.',
     teaser: 'One inspection flow with depth determined by available evidence: inspect, structure, identify risks, plan renovation scope and produce conclusions.',
     problem: 'Property evidence is fragmented across photos, documents, seller statements and observations.',
@@ -139,7 +143,7 @@ export const ventures: Venture[] = [
     howItWorks: ['Collect property identity and evidence.', 'Separate facts, claims and unknowns.', 'Assess technical risks.', 'Build renovation and specialist-check recommendations.', 'Produce a reviewable result.'],
     businessModel: ['Paid inspection report', 'B2B service', 'Partner licensing'], validation: [],
     assets: ['Working property platform', 'Unified inspection flow', 'Structured result model', 'Renovation planner', 'Repository', 'Production deployment'],
-    nextSteps: ['Production hardening', 'Collect real inspection feedback', 'Refine specialist-check logic', 'Package partner workflow'],
+    nextSteps: ['Run real inspection pilots', 'Collect practitioner feedback', 'Refine specialist-check logic', 'Harden the production workflow'],
     production_url: 'https://tools.koretskiy.rs', handoff_readiness: 'MVP Ready',
   },
   {
