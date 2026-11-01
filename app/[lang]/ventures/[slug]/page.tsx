@@ -33,6 +33,10 @@ export default async function VenturePage({ params }: Props) {
   const venture = getVentureBySlug(slug);
   if (!venture) notFound();
 
+  const isInternalTool = venture.kind === 'tool' || venture.status === 'Internal Tool';
+  const isHackathonProject = venture.status === 'Hackathon Project';
+  const isPilotReady = venture.status === 'Pilot Ready';
+
   return (
     <main className={styles.page}>
       <SiteHeader lang={safeLang} languagePath={`/ventures/${venture.slug}`} />
@@ -45,7 +49,7 @@ export default async function VenturePage({ params }: Props) {
           <div className={styles.meta}><span className={styles.pill}>{venture.id}</span><span className={styles.pill}>{venture.stage}</span><span className={styles.pill}>{venture.status}</span></div>
           <div className={styles.actions}>
             {venture.production_url ? <a className={styles.primary} href={venture.production_url} target="_blank" rel="noreferrer">{venture.slug === 'checkopp' ? 'Open CheckOpp' : 'Open Live Product'} →</a> : null}
-            <a className={styles.secondary} href="#discuss">Discuss This Venture</a>
+            {!isInternalTool ? <a className={styles.secondary} href="#discuss">Discuss This Venture</a> : null}
           </div>
         </section>
 
@@ -54,21 +58,35 @@ export default async function VenturePage({ params }: Props) {
 
         <section className={styles.section}>
           <div className={styles.twoCol}>
-            <div className={styles.copy}><h2>Current Stage</h2><p>What already exists for this venture:</p><ul className={styles.assetList}>{venture.assets.map((asset) => <li key={asset}>{asset}</li>)}</ul></div>
+            <div className={styles.copy}><h2>Current Stage</h2><p>What already exists for this {isInternalTool ? 'tool' : 'venture'}:</p><ul className={styles.assetList}>{venture.assets.map((asset) => <li key={asset}>{asset}</li>)}</ul></div>
             <div className={styles.copy}><h2>Validation</h2>{venture.validation.length ? <ul className={styles.list}>{venture.validation.map((item) => <li key={`${item.type}-${item.name}`}><strong>{item.name}</strong>{item.status ? ` — ${item.status}` : ''}</li>)}</ul> : <p className={styles.validationEmpty}>No external validation is claimed publicly yet.</p>}</div>
           </div>
         </section>
 
-        <section className={styles.section}><div className={styles.twoCol}><div className={styles.copy}><h2>Business Model</h2><ul className={styles.list}>{venture.businessModel.map((item) => <li key={item}>{item}</li>)}</ul></div><div className={styles.copy}><h2>What Happens Next</h2><ol className={styles.list}>{venture.nextSteps.map((item) => <li key={item}>{item}</li>)}</ol></div></div></section>
+        <section className={styles.section}><div className={styles.twoCol}><div className={styles.copy}><h2>{isInternalTool ? 'Role' : 'Business Model'}</h2><ul className={styles.list}>{venture.businessModel.map((item) => <li key={item}>{item}</li>)}</ul></div><div className={styles.copy}><h2>What Happens Next</h2><ol className={styles.list}>{venture.nextSteps.map((item) => <li key={item}>{item}</li>)}</ol></div></div></section>
 
-        <section className={styles.section} id="discuss">
-          <div className={styles.contact}>
-            <div className={styles.eyebrow}>Partnership / Licensing / Transfer</div>
-            <h2>Interested in taking this venture further?</h2>
-            <p>Depending on the venture, the next step may be a strategic partnership, licensing, technology transfer, acquisition/project transfer or a co-venture. Public pricing is intentionally not shown.</p>
-            <VentureContactForm ventureId={venture.id} ventureName={venture.name} email={business.email} />
-          </div>
-        </section>
+        {isInternalTool ? (
+          <section className={styles.section}>
+            <div className={styles.contact}>
+              <div className={styles.eyebrow}>Internal Development Infrastructure</div>
+              <h2>Built to support the venture-building workflow.</h2>
+              <p>This is an internal working tool rather than a venture currently offered for partnership, licensing or transfer.</p>
+            </div>
+          </section>
+        ) : (
+          <section className={styles.section} id="discuss">
+            <div className={styles.contact}>
+              <div className={styles.eyebrow}>{isHackathonProject ? 'Hackathon Project / Next Validation Step' : isPilotReady ? 'Pilot / Collaboration' : 'Partnership / Licensing / Transfer'}</div>
+              <h2>{isHackathonProject ? 'Interested in what happens after the hackathon?' : isPilotReady ? 'Interested in testing this in a real pilot?' : 'Interested in taking this venture further?'}</h2>
+              <p>{isHackathonProject
+                ? 'This project was built in a hackathon context. The next step is validation: deciding whether the concept deserves continued development, a pilot, licensing or handoff.'
+                : isPilotReady
+                  ? 'The working MVP is ready for a focused real-world pilot. A pilot can test the workflow, collect feedback and determine whether further productization or partnership makes sense.'
+                  : 'Depending on the venture, the next step may be a strategic partnership, licensing, technology transfer, acquisition/project transfer or a co-venture. Public pricing is intentionally not shown.'}</p>
+              <VentureContactForm ventureId={venture.id} ventureName={venture.name} email={business.email} />
+            </div>
+          </section>
+        )}
       </div>
     </main>
   );
