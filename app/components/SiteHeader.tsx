@@ -7,15 +7,16 @@ type NavCopy = {
   services: string;
   methodology: string;
   tenders: string;
+  ventures: string;
   perspectives: string;
   contact: string;
 };
 
 const labels: Record<Lang, NavCopy> = {
-  en: { about: 'About', services: 'Key services', methodology: 'Methodology', tenders: 'Tenders & equipment', perspectives: 'Projects for implementation', contact: 'Contact' },
-  ru: { about: 'Обо мне', services: 'Ключевые услуги', methodology: 'Методология', tenders: 'Тендеры и оборудование', perspectives: 'Проекты для реализации', contact: 'Контакты' },
-  uk: { about: 'Про мене', services: 'Ключові послуги', methodology: 'Методологія', tenders: 'Тендери та обладнання', perspectives: 'Проєкти для реалізації', contact: 'Контакти' },
-  sr: { about: 'O meni', services: 'Ključne usluge', methodology: 'Metodologija', tenders: 'Tenderi i oprema', perspectives: 'Projekti za realizaciju', contact: 'Kontakt' },
+  en: { about: 'About', services: 'Key services', methodology: 'Methodology', tenders: 'Tenders & equipment', ventures: 'Ventures', perspectives: 'Projects for implementation', contact: 'Contact' },
+  ru: { about: 'Обо мне', services: 'Ключевые услуги', methodology: 'Методология', tenders: 'Тендеры и оборудование', ventures: 'Ventures', perspectives: 'Проекты для реализации', contact: 'Контакты' },
+  uk: { about: 'Про мене', services: 'Ключові послуги', methodology: 'Методологія', tenders: 'Тендери та обладнання', ventures: 'Ventures', perspectives: 'Проєкти для реалізації', contact: 'Контакти' },
+  sr: { about: 'O meni', services: 'Ključne usluge', methodology: 'Metodologija', tenders: 'Tenderi i oprema', ventures: 'Ventures', perspectives: 'Projekti za realizaciju', contact: 'Kontakt' },
 };
 
 export default function SiteHeader({ lang, languagePath }: { lang: Lang; languagePath: string }) {
@@ -25,6 +26,7 @@ export default function SiteHeader({ lang, languagePath }: { lang: Lang; languag
     { href: `/${lang}#services`, label: t.services },
     { href: `/${lang}/methodology`, label: t.methodology },
     { href: `/${lang}/tender-equipment`, label: t.tenders },
+    { href: `/${lang}/ventures`, label: t.ventures },
     { href: `/${lang}/perspectives`, label: t.perspectives },
     { href: `/${lang}#contact`, label: t.contact },
   ];
