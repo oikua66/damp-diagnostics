@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { SITE_URL, langs } from '../lib/seo';
+import { getPublicVentures } from '../lib/ventures';
 
 const methodologyPaths = [
   '/methodology',
@@ -34,19 +35,20 @@ const methodologyPaths = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const paths = ['', '/about', '/tender-equipment', '/perspectives', ...methodologyPaths];
+  const venturePaths = ['/ventures', ...getPublicVentures().map((venture) => `/ventures/${venture.slug}`)];
+  const paths = ['', '/about', '/tender-equipment', '/perspectives', ...venturePaths, ...methodologyPaths];
   const now = new Date();
 
   return langs.flatMap((lang) =>
     paths.map((path) => ({
       url: `${SITE_URL}/${lang}${path}`,
       lastModified: now,
-      changeFrequency: path === '' || path === '/perspectives' ? 'weekly' : 'monthly',
+      changeFrequency: path === '' || path === '/perspectives' || path.startsWith('/ventures') ? 'weekly' : 'monthly',
       priority:
         path === '' ? 1 :
-        path === '/methodology' || path === '/aritz' ? 0.9 :
+        path === '/methodology' || path === '/aritz' || path === '/ventures' ? 0.9 :
         path === '/tender-equipment' ? 0.85 :
-        path === '/perspectives' ? 0.8 :
+        path === '/perspectives' || path.startsWith('/ventures/') ? 0.8 :
         path.startsWith('/methodology/') || path.startsWith('/aritz/') ? 0.75 : 0.7,
     })),
   );
