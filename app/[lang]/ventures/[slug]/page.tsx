@@ -43,7 +43,10 @@ export default async function VenturePage({ params }: Props) {
           <h1>{venture.name}</h1>
           <p className={styles.lead}>{venture.tagline}</p>
           <div className={styles.meta}><span className={styles.pill}>{venture.id}</span><span className={styles.pill}>{venture.stage}</span><span className={styles.pill}>{venture.status}</span></div>
-          <div className={styles.actions}><a className={styles.primary} href="#discuss">Discuss This Venture</a></div>
+          <div className={styles.actions}>
+            {venture.production_url ? <a className={styles.primary} href={venture.production_url} target="_blank" rel="noreferrer">{venture.slug === 'checkopp' ? 'Open CheckOpp' : 'Open Live Product'} →</a> : null}
+            <a className={styles.secondary} href="#discuss">Discuss This Venture</a>
+          </div>
         </section>
 
         <section className={styles.section}><div className={styles.twoCol}><div className={styles.copy}><h2>Problem</h2><p>{venture.problem}</p></div><div className={styles.copy}><h2>Opportunity</h2><p>{venture.opportunity}</p></div></div></section>
