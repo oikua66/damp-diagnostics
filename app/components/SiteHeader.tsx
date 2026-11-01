@@ -19,6 +19,13 @@ const labels: Record<Lang, NavCopy> = {
   sr: { about: 'O meni', services: 'Ključne usluge', methodology: 'Metodologija', tenders: 'Tenderi i oprema', ventures: 'Ventures', perspectives: 'Projekti za realizaciju', contact: 'Kontakt' },
 };
 
+const ventureCta: Record<Lang, string> = {
+  en: 'Venture Builder / Portfolio',
+  ru: 'Venture Builder / Портфолио',
+  uk: 'Venture Builder / Портфоліо',
+  sr: 'Venture Builder / Portfolio',
+};
+
 export default function SiteHeader({ lang, languagePath }: { lang: Lang; languagePath: string }) {
   const t = labels[lang];
   const links: NavLink[] = [
@@ -30,6 +37,7 @@ export default function SiteHeader({ lang, languagePath }: { lang: Lang; languag
     { href: `/${lang}/perspectives`, label: t.perspectives },
     { href: `/${lang}#contact`, label: t.contact },
   ];
+  const isHome = languagePath === '';
 
   return (
     <>
@@ -53,6 +61,11 @@ export default function SiteHeader({ lang, languagePath }: { lang: Lang; languag
         </div>
       </header>
       <MobileMenu lang={lang} links={links} />
+      {isHome && (
+        <div style={{ maxWidth: '1180px', margin: '18px auto 0', padding: '0 28px' }}>
+          <a className="button button-dark" href={`/${lang}/ventures`}>{ventureCta[lang]}</a>
+        </div>
+      )}
     </>
   );
 }
