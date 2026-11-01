@@ -63,9 +63,9 @@ export default async function VenturesPage({ params }: Props) {
           <h2 className={styles.sectionTitle}>Built for continuation, partnership or transfer.</h2>
           <div className={styles.grid}>
             {ventures.map((venture) => (
-              <article className={`${styles.card} ${venture.infrastructure ? styles.cardInfra : ''}`} key={venture.id}>
+              <article className={styles.card} key={venture.id}>
                 <div className={styles.meta}>
-                  <span className={styles.pill}>{venture.id}</span>
+                  <span className={styles.pill}>{venture.kind === 'tool' ? 'Tool' : venture.id}</span>
                   <span className={styles.pill}>{venture.stage}</span>
                   <span className={styles.pill}>{venture.status}</span>
                 </div>
@@ -73,7 +73,7 @@ export default async function VenturesPage({ params }: Props) {
                 <h3>{venture.name}</h3>
                 <p className={styles.tagline}>{venture.tagline}</p>
                 <p className={styles.teaser}>{venture.teaser}</p>
-                <a className={styles.cardLink} href={`/${safeLang}/ventures/${venture.slug}`}>View Venture →</a>
+                <a className={styles.cardLink} href={`/${safeLang}/ventures/${venture.slug}`}>View {venture.kind === 'tool' ? 'Tool' : 'Venture'} →</a>
               </article>
             ))}
           </div>
