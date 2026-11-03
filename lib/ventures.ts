@@ -160,6 +160,22 @@ export const ventures: Venture[] = [
     nextSteps: ['Increase autonomous cycle completion', 'Automate verification handoffs', 'Reduce manual continue actions', 'Harden safety boundaries'],
     production_url: 'https://orchestrator.koretskiy.com', handoff_readiness: 'MVP Ready',
   },
+  {
+    id: 'VENTURE-008', slug: 'novalex-voice', name: 'NOVALEX Voice', kind: 'tool',
+    category: ['AI', 'Education', 'Speech Technology'], stage: 'MVP', status: 'Internal Tool', visibility: 'public', created: '2026-10',
+    tagline: 'A practical text-to-speech production tool for educational audio and two-speaker dialogues.',
+    teaser: 'NOVALEX Voice turns prepared lesson or book text into natural MP3 audio with controllable voices, speaking styles, speed and two-speaker dialogue generation.',
+    problem: 'Producing consistent educational voice content manually is slow, repetitive and difficult to standardize across lessons and books.',
+    opportunity: 'A reusable voice-production layer can shorten content-production time while preserving editorial control over text, voices and delivery.',
+    solution: 'A focused production tool built around Azure Speech with single-voice and dialogue modes, reusable voice settings and downloadable MP3 output.',
+    howItWorks: ['Paste or prepare the text.', 'Choose voice, style and speed.', 'Generate single-speaker or two-speaker audio.', 'Review playback.', 'Download the MP3 for use in educational content.'],
+    businessModel: ['Internal production tool', 'Potential component of broader education-content workflows'], validation: [],
+    assets: ['Working macOS application', 'Working browser MVP', 'Production TTS backend', 'Two-voice dialogue mode', 'MP3 export'],
+    nextSteps: ['Integrate the browser version into the NOVOLEX work area', 'Keep the macOS application as a separate personal production client', 'Connect Voice to future content-production modules'],
+    repository: 'https://github.com/oikua66/novalex-voice-api',
+    demo_url: 'https://novalex-voice-meixslvlb-oikua66.vercel.app',
+    handoff_readiness: 'MVP Ready',
+  },
 ];
 
 export function getPublicVentures() {
